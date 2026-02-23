@@ -8,6 +8,10 @@ body {
    min-width: 320px;
 }
 
+main {
+   position: relative;
+}
+
 .top {
    width: 100%;
 }
@@ -414,11 +418,12 @@ section .memu_con .menu_list li .txt_box .price span:not(:last-child) {
 }
 
 .info_card {
-  display: none;
+   position: absolute;
+   opacity: 0;
 }
 
 .info_card.on {
-  display: block;
+  opacity: 1;
 }
 
 .pagenation {
