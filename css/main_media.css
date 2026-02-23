@@ -30,6 +30,11 @@
     .benefit_con ul {
         flex-wrap: wrap;
     }
+
+    .benefit_con ul li{
+        flex: 1;
+        min-width: 240px;
+    }
 }
 
 @media screen and (max-width:1024px) {
@@ -202,8 +207,20 @@
     }
 
     .btn_con button i {
-        font-size: 18px;
+        font-size: 28px;
         color: #000;
+    }
+
+    .btn_con button:nth-child(1) i{
+        padding: 2px 1px 0 0;
+    }
+
+    .btn_con button:nth-child(2) i{
+        font-size: 24px;
+    }
+
+    .btn_con button:nth-child(3) i{
+        padding: 2px 0 0 2px;
     }
 }
 
@@ -302,8 +319,9 @@
     .event .event_con ul li .txt_box p {
         font-size: 12px;
     }
-
-    .event .btn_con {
+    
+    .event .btn_con,
+    .event .btn_con button {
         display: none;
     }
 
@@ -383,8 +401,6 @@
     .service_card .txt_box p {
         font-size: 16px;
     }
-
-
 
     .event .event_con ul li .txt_box strong {
         font-size: 1rem;

@@ -163,6 +163,52 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
 
+      const $foodList = document.querySelector("#memu_food .menu_list");
+
+      if ($foodList) {
+        $foodList.innerHTML = $foodData.map(item => `
+          <li class="menu_item ${item.status}" 
+              data-cat="${item.category}"
+              data-price="${item.price}"
+              data-status="${item.status}">
+            <a href="#">
+              <div class="img_box">
+                <img src="${item.img}" alt="${item.name}">
+              </div>
+              <div class="txt_box">
+                <div class="name_con">
+                  <strong class="name">${item.name}</strong>
+                  <p class="e_name">${item.enName}</p>
+                </div>
+                <p class="price">
+                  <span>${item.price.toLocaleString()}원</span>
+                </p>
+              </div>
+            </a>
+          </li>
+        `).join("");
+      };
+
+const $foodData = [
+  {
+    name: "두바이 쫀득 초코식빵",
+    enName: "Dubai Style Chewy Chocolate Bread",
+    price: 7900,
+    category: "bakery",
+    status: "new",
+    img: "img/memu_drink/Dubai_Style_Chewy_Chocolate_Bread_img.png"
+  },
+  {
+    name: "디카페인 콜드브루 라떼",
+    enName: "Decaf Cold Brew Latte",
+    price: 6300,
+    category: "coffee",
+    status: "",
+    img: "img/memu_drink/decaf_img.png"
+  }
+];
+
+
 
     /* sub_tab 클릭 */
     if ($subTab) {
