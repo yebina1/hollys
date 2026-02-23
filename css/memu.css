@@ -85,13 +85,18 @@ main {
 #memu_drink,
 #memu_food,
 #memu_md {
-   display: none;
+  display: block;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
 }
 
 #memu_drink.menu_active,
 #memu_food.menu_active,
 #memu_md.menu_active {
-   display: block;
+  height: auto;
+  overflow: visible;
+  visibility: visible;
 }
 
 section {
@@ -238,7 +243,7 @@ section .info_con .sorting ul li button.on {
 section .memu_con .menu_list {
    display: grid;
    grid-template-columns: repeat(4, minmax(260px, 1fr));
-   gap: 24px;
+   gap: 50px 24px;
 }
 
 section .memu_con .menu_list li {

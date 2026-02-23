@@ -27,6 +27,7 @@
    <link rel="stylesheet" href="css/memu.css">
    <!-- 내 media css -->
    <link rel="stylesheet" href="css/main_media.css">
+   <link rel="stylesheet" href="css/memu_media.css">
    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
    <script defer src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis/bundled/lenis.min.js"></script>
    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
@@ -41,7 +42,7 @@
    <div class="wrap">
       <header id="site_header">
          <div class="inner">
-            <div class="logo">Logo</div>
+            <div class="logo"><a href="main.html">Logo</a></div>
             <nav>
                <ul class="gnb">
                   <li><a href="#holys">할리스</a>
@@ -51,11 +52,11 @@
                         <li><a href="#hollys_b2b">B2B사업</a></li>
                      </ul>
                   </li>
-                  <li><a href="#memu">메뉴</a>
+                  <li><a href="memu.html">메뉴</a>
                      <ul class="sub">
-                        <li><a href="#memu_drink">음료</a></li>
-                        <li><a href="#memu_food">푸드</a></li>
-                        <li><a href="#memu_md">MD</a></li>
+                        <li><a href="memu.html#memu_drink">음료</a></li>
+                        <li><a href="memu.html#memu_food">푸드</a></li>
+                        <li><a href="memu.html#memu_md">MD</a></li>
                      </ul>
                   </li>
                   <li><a href="#membership">멤버십</a>
@@ -125,9 +126,9 @@
                            메뉴 <i class="fa-solid fa-chevron-down"></i>
                         </button>
                         <ul class="m_sub">
-                           <li><a href="#memu_drink">- 음료</a></li>
-                           <li><a href="#memu_food">- 푸드</a></li>
-                           <li><a href="#memu_md">- MD</a></li>
+                           <li><a href="memu.html#memu_drink">- 음료</a></li>
+                           <li><a href="memu.html#memu_food">- 푸드</a></li>
+                           <li><a href="memu.html#memu_md">- MD</a></li>
                         </ul>
                      </li>
 
@@ -274,13 +275,13 @@
             <div class="inner">
                <div class="tit_con">
                   <div class="tit">
-                     <h3 data-aos="zoom-out-right">BEST MENU</h3>
-                     <div class="tab" data-aos="zoom-out-right">
+                     <h3>BEST MENU</h3>
+                     <div class="tab">
                         <p>음료</p>
                         <p>푸드</p>
                      </div>
                   </div> <!-- //.tit -->
-                  <a href="#memu" class="more">메뉴 더보기<span>&rarr;</span></a>
+                  <a href="memu.html" class="more">메뉴 더보기<span>&rarr;</span></a>
                </div> <!-- //.tit_con -->
                <div class="swiper drink">
                   <div class="swiper-wrapper drink_con">
@@ -449,12 +450,12 @@
             <div class="inner">
                <div class="tit_con">
                   <div class="tit">
-                     <h3 data-aos="zoom-out-right">할리스 앱 혜택</h3>
-                     <p data-aos="zoom-out-right">할리스 앱을 통해
+                     <h3>할리스 앱 혜택</h3>
+                     <p>할리스 앱을 통해
                         <br>다양한 혜택을 받아보세요.
                      </p>
                   </div> <!-- //.tit -->
-                  <a href="#membership" class="more_btn" data-aos="zoom-out-right">혜택 더보기<span>&rarr;</span></a>
+                  <a href="#membership" class="more_btn">혜택 더보기<span>&rarr;</span></a>
                </div> <!-- //.tit_con -->
                <div class="benefit_con">
                   <ul>
@@ -491,13 +492,13 @@
          </section>
          <section class="service">
             <div class="inner">
-               <div class="tit_con" data-aos="zoom-out-right">
+               <div class="tit_con">
                   <h3>간편하게 이용하는<br>할리스 서비스</h3>
                </div>
 
                <div class="service_card">
                   <ul>
-                     <li class="on">
+                     <li class="on"  data-aos="fade-down" data-aos-delay="50">
                         <img src="img/service_hollys_card_img.png" alt="할리스카드">
                         <div class="tit">
                            <h4>할리스카드</h4>
@@ -513,7 +514,7 @@
                         </div>
                      </li>
 
-                     <li>
+                     <li  data-aos="fade-down" data-aos-delay="100">
                         <img src="img/service_hollys_con_img.png" alt="할리스콘">
                         <div class="tit">
                            <h4>할리스콘</h4>
@@ -529,7 +530,7 @@
                         </div>
                      </li>
 
-                     <li>
+                     <li  data-aos="fade-down" data-aos-delay="150">
                         <img src="img/service_smart_store_img.png" alt="스마트스토어">
                         <div class="tit">
                            <h4>스마트 스토어</h4>
@@ -551,7 +552,7 @@
          <section class="event">
             <div class="inner">
                <div class="tit_con">
-                  <h3 data-aos="zoom-out-right">진행중인 이벤트</h3>
+                  <h3>진행중인 이벤트</h3>
                   <a href="#memu" class="more">이벤트 더보기<span>&rarr;</span></a>
                </div>
                <div class="swiper event_con">

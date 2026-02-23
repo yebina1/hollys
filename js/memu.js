@@ -145,38 +145,80 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   // main_tab 전환
-  const $tabBtns = document.querySelectorAll(".tab_btn");
-  const $mainSections = [
-    document.getElementById("memu_drink"),
-    document.getElementById("memu_food"),
-    document.getElementById("memu_md"),
-  ];
+const $tabBtns = document.querySelectorAll(".tab_btn");
+const $mainSections = [
+  document.getElementById("memu_drink"),
+  document.getElementById("memu_food"),
+  document.getElementById("memu_md"),
+];
 
-  function scrollToMainTab() {
-    const $target = document.querySelector(".main_tab");
-    if (!$target) return;
-    window.scrollTo({ top: $target.offsetTop, behavior: "smooth" });
+function scrollToMainTab() {
+  const $target = document.querySelector(".main_tab");
+  if (!$target) return;
+  window.scrollTo({ top: $target.offsetTop, behavior: "smooth" });
+}
+
+function scrollToSectionById(id) {
+  const $el = document.getElementById(id);
+  if (!$el) return;
+
+  const header = document.querySelector("#site_header");
+  const headerH = header ? header.offsetHeight : 0;
+
+  const top = window.pageYOffset + $el.getBoundingClientRect().top - headerH;
+  window.scrollTo({ top, behavior: "smooth" });
+}
+
+function setMainActive(idx) {
+  $tabBtns.forEach((b) => b.classList.remove("on"));
+  $mainSections.forEach((section) => section && section.classList.remove("menu_active"));
+
+  if ($tabBtns[idx]) $tabBtns[idx].classList.add("on");
+  if ($mainSections[idx]) $mainSections[idx].classList.add("menu_active");
+
+  const $activeSection = $mainSections[idx];
+  if ($activeSection && typeof $activeSection._resetMenu === "function") {
+    $activeSection._resetMenu();
   }
+}
 
-  function setMainActive(idx) {
-    $tabBtns.forEach((b) => b.classList.remove("on"));
-    $mainSections.forEach((sec) => sec && sec.classList.remove("menu_active"));
+function getIndexFromHash() {
+  const hash = window.location.hash;
+  if (!hash) return -1;
+  return $mainSections.findIndex((section) => section && ("#" + section.id) === hash);
+}
 
-    if ($tabBtns[idx]) $tabBtns[idx].classList.add("on");
-    if ($mainSections[idx]) $mainSections[idx].classList.add("menu_active");
+function initMainTab() {
+  const idx = getIndexFromHash();
+  const safeIdx = idx !== -1 ? idx : 0;
 
-    const $activeSection = $mainSections[idx];
-    if ($activeSection && typeof $activeSection._resetMenu === "function") {
-      $activeSection._resetMenu();
-    }
-  }
+  setMainActive(safeIdx);
+}
 
-  $tabBtns.forEach((btn, index) => {
-    btn.addEventListener("click", () => {
-      setMainActive(index);
-      scrollToMainTab();
+window.addEventListener("hashchange", () => {
+  const idx = getIndexFromHash();
+  if (idx !== -1) {
+    setMainActive(idx);
+    const id = $mainSections[idx]?.id;
+    if (!id) return;
+
+    requestAnimationFrame(() => {
+      requestAnimationFrame(() => {
+        scrollToSectionById(id);
+      });
     });
+  }
+});
+
+$tabBtns.forEach((btn, index) => {
+  btn.addEventListener("click", () => {
+    setMainActive(index);
+    scrollToMainTab();
+
+    const id = $mainSections[index]?.id;
+    if (id) history.replaceState(null, "", "#" + id);
   });
+});
 
   // 섹션별 기능 초기화 (필터/정렬/페이지네이션)
   document.querySelectorAll("section[id^='memu_']").forEach(($section) => {
@@ -451,5 +493,5 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   /* 최초 탭 활성화 */
-  if ($tabBtns.length && $mainSections.length) setMainActive(0);
+if ($tabBtns.length && $mainSections.length) initMainTab();
 });
