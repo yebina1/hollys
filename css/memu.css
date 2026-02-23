@@ -413,6 +413,14 @@ section .memu_con .menu_list li .txt_box .price span:not(:last-child) {
    padding-right: 10px;
 }
 
+.info_card {
+  display: none;
+}
+
+.info_card.on {
+  display: block;
+}
+
 .pagenation {
    padding-top: 80px;
    display: flex;
