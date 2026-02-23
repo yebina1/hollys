@@ -216,53 +216,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
 
-    const memuData = [
-      {
-        id: "americano",
-        name: "아메리카노",
-        eName: "Caffe Americano",
-        info: "진한 에스프레소의 맛과 향을 부드럽게 즐길 수 있는 아메리칸 스타일의 커피",
-        allergy: "",
-        sizes: [
-          { size: "Regular (354ml)", price: 4700, serve: ["hot","ice"] },
-          { size: "Grande (472ml)", price: 5400, serve: ["hot","ice"] },
-          { size: "Venti (591ml)", price: 6100, serve: ["ice-only"] }
-        ],
-        nutrition: {
-          rows: [
-            { label: "칼로리", hot: "12kcal", ice: "12kcal" },
-            { label: "단백질", hot: "1g(2%)", ice: "1g (2%)" },
-            { label: "포화지방", hot: "0.1g (0%)", ice: "0.1g (0%)" },
-            { label: "카페인", hot: "114mg", ice: "114mg" },
-            { label: "나트륨", hot: "0mg (0%)", ice: "0mg (0%)" },
-            { label: "당류", hot: "0g (0%)", ice: "0g (0%)" },
-          ]
-        }
-      }
-    ];
-
-    function renderInfo(data) {
-      const $infoCard = document.querySelector(".memu_con .menu_list li.info_card");
-      if (!$infoCard) return;
-
-      $infoCard.querySelector(".tit h4").textContent = data.name;
-      $infoCard.querySelector(".tit p").textContent = data.eName;
-      $infoCard.querySelector(".memu_info").textContent = data.info;
-
-      $infoCard.classList.add("on");
-    };
-
-    document.addEventListener("click", (e) => {
-      const $memuItem = e.target.closest(".memu_con .menu_list .menu_item");
-      if (!$memuItem) return;
-
-      const $memuId = $memuItem.dataset.id;
-      const $data = memuData.find(m => m.id === $memuId);
-
-      if ($data) {
-        renderInfo($data);
-      }
-    });
+    
 
     /* 페이지네이션 */
     function setChevronsDisabled(totalPages) {
@@ -296,7 +250,53 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
 
+      const memuData = [
+      {
+        id: "americano",
+        name: "아메리카노",
+        eName: "Caffe Americano",
+        info: "진한 에스프레소의 맛과 향을 부드럽게 즐길 수 있는 아메리칸 스타일의 커피",
+        allergy: "",
+        sizes: [
+          { size: "Regular (354ml)", price: 4700, serve: ["hot","ice"] },
+          { size: "Grande (472ml)", price: 5400, serve: ["hot","ice"] },
+          { size: "Venti (591ml)", price: 6100, serve: ["ice-only"] }
+        ],
+        nutrition: {
+          rows: [
+            { label: "칼로리", hot: "12kcal", ice: "12kcal" },
+            { label: "단백질", hot: "1g(2%)", ice: "1g (2%)" },
+            { label: "포화지방", hot: "0.1g (0%)", ice: "0.1g (0%)" },
+            { label: "카페인", hot: "114mg", ice: "114mg" },
+            { label: "나트륨", hot: "0mg (0%)", ice: "0mg (0%)" },
+            { label: "당류", hot: "0g (0%)", ice: "0g (0%)" },
+          ]
+        }
+      }
+    ];
 
+    function renderInfo(data) {
+      const $infoCard = document.querySelector(".memu_con .menu_list li .info_card");
+      if (!$infoCard) return;
+
+      $infoCard.querySelector(".tit h4").textContent = data.name;
+      $infoCard.querySelector(".tit p").textContent = data.eName;
+      $infoCard.querySelector(".memu_info").textContent = data.info;
+
+      $infoCard.classList.add("on");
+    };
+
+    document.addEventListener("click", (e) => {
+      const $memuItem = e.target.closest(".memu_con .menu_list .menu_item");
+      if (!$memuItem) return;
+
+      const $memuId = $memuItem.dataset.id;
+      const $data = memuData.find(m => m.id === $memuId);
+
+      if ($data) {
+        renderInfo($data);
+      }
+    });
 
     /* 렌더링 */
     function render() {
