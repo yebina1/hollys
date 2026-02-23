@@ -139,8 +139,8 @@ document.addEventListener("DOMContentLoaded", () => {
   function setActiveTab($type) {
     const $isDrink = $type === "drink";
 
-    $tabDrink.classList.toggle("is-active", $isDrink);
-    $tabFood.classList.toggle("is-active", !$isDrink);
+    $tabDrink.classList.toggle("on", $isDrink);
+    $tabFood.classList.toggle("on", !$isDrink);
 
     $drinkEl.style.display = $isDrink ? "" : "none";
     $foodEl.style.display = $isDrink ? "none" : "";
@@ -190,15 +190,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const $cards = document.querySelectorAll(".service_card ul > li");
 
   function closeAll() {
-    $cards.forEach(($li) => $li.classList.remove("is-active"));
+    $cards.forEach(($li) => $li.classList.remove("on"));
   }
 
   function openCard($targetLi) {
     closeAll();
-    $targetLi.classList.add("is-active");
+    $targetLi.classList.add("on");
   }
 
-  const $init = document.querySelector(".service_card ul > li.is-active") || $cards[0];
+  const $init = document.querySelector(".service_card ul > li.on") || $cards[0];
   if ($init) openCard($init);
 
   $cards.forEach(($li) => {

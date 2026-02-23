@@ -78,15 +78,15 @@ document.addEventListener("DOMContentLoaded", () => {
   if (!$menu || !$ham) return;
 
   function openMenu() {
-    $menu.classList.add("is-open");
-    document.body.classList.add("is-menu-open");
+    $menu.classList.add("on");
+    document.body.classList.add("open");
     $menu.setAttribute("aria-hidden", "false");
     $ham.setAttribute("aria-expanded", "true");
   }
 
   function closeMenu() {
-    $menu.classList.remove("is-open");
-    document.body.classList.remove("is-menu-open");
+    $menu.classList.remove("on");
+    document.body.classList.remove("open");
     $menu.setAttribute("aria-hidden", "true");
     $ham.setAttribute("aria-expanded", "false");
   }
@@ -109,11 +109,11 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!$btn || !$sub) return;
 
     $btn.addEventListener("click", () => {
-      const $isOpen = $li.classList.contains("is-open");
+      const $isOpen = $li.classList.contains("on");
 
-      $items.forEach(($other) => $other.classList.remove("is-open"));
+      $items.forEach(($other) => $other.classList.remove("on"));
 
-      if (!$isOpen) $li.classList.add("is-open");
+      if (!$isOpen) $li.classList.add("on");
     });
   });
 
@@ -134,16 +134,16 @@ document.addEventListener("DOMContentLoaded", () => {
       e.preventDefault();
       e.stopPropagation();
 
-      const $isActive = $container.classList.contains("is-active");
+      const $isActive = $container.classList.contains("on");
 
-      $langContainers.forEach(($other) => $other.classList.remove("is-active"));
+      $langContainers.forEach(($other) => $other.classList.remove("on"));
 
-      if (!$isActive) $container.classList.add("is-active");
+      if (!$isActive) $container.classList.add("on");
     });
   });
 
   document.addEventListener("click", () => {
-    $langContainers.forEach(($container) => $container.classList.remove("is-active"));
+    $langContainers.forEach(($container) => $container.classList.remove("on"));
   });
 
   // m_lang_btn (모바일 nav language 클릭 상황)
@@ -155,7 +155,7 @@ document.addEventListener("DOMContentLoaded", () => {
       e.preventDefault();
       e.stopPropagation();
 
-      const isActive = $m_langContainer.classList.toggle("is-active");
+      const isActive = $m_langContainer.classList.toggle("on");
 
       if (isActive) {
         $m_langBtn.style.borderBottomLeftRadius = "0";

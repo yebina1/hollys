@@ -15,10 +15,10 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   function setMainActive(idx) {
-    $tabBtns.forEach((b) => b.classList.remove("is-active"));
+    $tabBtns.forEach((b) => b.classList.remove("on"));
     $mainSections.forEach((sec) => sec && sec.classList.remove("menu_active"));
 
-    if ($tabBtns[idx]) $tabBtns[idx].classList.add("is-active");
+    if ($tabBtns[idx]) $tabBtns[idx].classList.add("on");
     if ($mainSections[idx]) $mainSections[idx].classList.add("menu_active");
 
     const $activeSection = $mainSections[idx];
@@ -137,8 +137,8 @@ document.addEventListener("DOMContentLoaded", () => {
       if ($subTab) {
         const $allBtn = $subTab.querySelector("button.all") || $subBtns[0];
         if ($allBtn) {
-          $subBtns.forEach((b) => b.classList.remove("is-active"));
-          $allBtn.classList.add("is-active");
+          $subBtns.forEach((b) => b.classList.remove("on"));
+          $allBtn.classList.add("on");
           $activeCat = "all";
           setPathLabel($allBtn.textContent);
         }
@@ -150,8 +150,8 @@ document.addEventListener("DOMContentLoaded", () => {
       if ($sorting) {
         const $newBtn = $sorting.querySelector("button.new") || $sortingBtns[0];
         if ($newBtn) {
-          $sortingBtns.forEach((b) => b.classList.remove("is-active"));
-          $newBtn.classList.add("is-active");
+          $sortingBtns.forEach((b) => b.classList.remove("on"));
+          $newBtn.classList.add("on");
           $sortType = "new";
         }
       } else {
@@ -168,8 +168,8 @@ document.addEventListener("DOMContentLoaded", () => {
         const $btn = e.target.closest("button");
         if (!$btn) return;
 
-        $subBtns.forEach((b) => b.classList.remove("is-active"));
-        $btn.classList.add("is-active");
+        $subBtns.forEach((b) => b.classList.remove("on"));
+        $btn.classList.add("on");
         setPathLabel($btn.textContent);
 
         $activeCat = String($btn.classList[0] || "all").toLowerCase();
@@ -181,8 +181,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const $initSub = $subTab.querySelector("button.all") || $subBtns[0];
       if ($initSub) {
-        $subBtns.forEach((b) => b.classList.remove("is-active"));
-        $initSub.classList.add("is-active");
+        $subBtns.forEach((b) => b.classList.remove("on"));
+        $initSub.classList.add("on");
         $activeCat = String($initSub.classList[0] || "all").toLowerCase();
         setPathLabel($initSub.textContent);
       }
@@ -198,8 +198,8 @@ document.addEventListener("DOMContentLoaded", () => {
         const $btn = e.target.closest("button");
         if (!$btn) return;
 
-        $sortingBtns.forEach((b) => b.classList.remove("is-active"));
-        $btn.classList.add("is-active");
+        $sortingBtns.forEach((b) => b.classList.remove("on"));
+        $btn.classList.add("on");
 
         $sortType = String($btn.classList[0] || "new").toLowerCase();
         $current = 1;
@@ -210,8 +210,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const $initSort = $sorting.querySelector("button.new");
       if ($initSort) {
-        $sortingBtns.forEach((b) => b.classList.remove("is-active"));
-        $initSort.classList.add("is-active");
+        $sortingBtns.forEach((b) => b.classList.remove("on"));
+        $initSort.classList.add("on");
         $sortType = "new";
       }
     }
@@ -237,7 +237,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const $b = document.createElement("button");
         $b.type = "button";
         $b.textContent = String($i);
-        if ($i === $current) $b.classList.add("is-active");
+        if ($i === $current) $b.classList.add("on");
 
         $b.addEventListener("click", () => {
           if ($i === $current) return;

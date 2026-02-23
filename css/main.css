@@ -228,7 +228,7 @@
    opacity: .5;
 }
 
-.bestmemu .tit_con .tit .tab p.is-active {
+.bestmemu .tit_con .tit .tab p.on {
    opacity: 1;
    font-weight: 600;
 }
@@ -561,11 +561,11 @@ f .food .food_con .f_slide6 .img_box {
 }
 
 /* 비활성 카드*/
-.service_card ul li:not(.is-active) {
+.service_card ul li:not(.on) {
    flex: 0 0 clamp(120px, 10vw, 200px);
 }
 
-.service_card ul li.is-active {
+.service_card ul li.on {
    flex: 1 1 auto;
    box-shadow: 0 25px 60px rgba(0, 0, 0, .18);
 }
@@ -590,7 +590,7 @@ f .food .food_con .f_slide6 .img_box {
    transition: .35s ease;
 }
 
-.service_card ul li.is-active::after {
+.service_card ul li.on::after {
    background: linear-gradient(to right,
          rgba(0, 0, 0, .6) 0%,
          rgba(0, 0, 0, .2) 45%,
@@ -628,11 +628,11 @@ f .food .food_con .f_slide6 .img_box {
    z-index: 3;
 }
 
-.service_card li.is-active .txt_box {
+.service_card li.on .txt_box {
    display: block;
 }
 
-.service_card li.is-active .tit {
+.service_card li.on .tit {
    opacity: 0;
    transform: translateY(10px);
 }

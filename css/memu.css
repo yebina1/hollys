@@ -69,7 +69,7 @@ body {
    color: rgba(0, 0, 0, 0.7);
 }
 
-.top .main_tab ul li button.is-active {
+.top .main_tab ul li button.on {
    color: rgb(200, 101, 101);
    border-bottom: 3px solid #FE7476;
 }
@@ -139,13 +139,13 @@ section .info_con .sub_tab li button {
    cursor: pointer;
 }
 
-section .info_con .sub_tab li button.is-active {
+section .info_con .sub_tab li button.on {
    background: rgba(200, 101, 101, 0.8);
    color: #fff;
    font-weight: 500;
 }
 
-section .info_con .sub_tab li button.is-active:hover {
+section .info_con .sub_tab li button.on:hover {
    background: rgba(200, 101, 101, 0.8);
 }
 
@@ -224,7 +224,7 @@ section .info_con .sorting ul li:hover button {
    color: #1a1a1a;
 }
 
-section .info_con .sorting ul li button.is-active {
+section .info_con .sorting ul li button.on {
    padding-bottom: 2px;
    border-bottom: 2px solid rgba(26, 26, 26, 0.8);
    color: #1a1a1a;
@@ -454,7 +454,7 @@ section .memu_con .menu_list li .txt_box .price span:not(:last-child) {
    background: rgba(0, 0, 0, 0.1);
 }
 
-.pagenation .num_page button.is-active {
+.pagenation .num_page button.on {
    color: #fff;
    background: rgba(0, 0, 0, .7);
 }
