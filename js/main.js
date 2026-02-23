@@ -1,0 +1,296 @@
+document.addEventListener("DOMContentLoaded", () => {
+  AOS.init({
+    disable: false,                //  AOS 끄지 않기! → 애니메이션 작동하게 두기
+    startEvent: 'DOMContentLoaded', //  HTML이 다 불러와지면 바로 AOS 시작!
+    initClassName: 'aos-init',      //  AOS가 준비됐다는 표시 클래스 (자동 붙음)
+    animatedClassName: 'aos-animate', //  애니메이션이 실행될 때 붙는 클래스 이름
+    useClassNames: false,           //  HTML에 data-aos 값 그대로 클래스 안 붙이기
+    disableMutationObserver: false, //  새로 생긴 요소도 자동 감시해서 애니메이션 적용
+    debounceDelay: 50,              //  창 크기 바꿀 때 0.05초 기다렸다 계산 (너무 자주 안 하게)
+    throttleDelay: 99               //  스크롤할 때 0.099초마다 한 번씩 체크 (성능 좋게!)
+  });
+
+  function syncToggleIcon($icon, $playing) {
+    if (!$icon) return;
+    if ($playing) {
+      $icon.classList.remove("bx-play");
+      $icon.classList.add("bx-parallel");
+    } else {
+      $icon.classList.remove("bx-parallel");
+      $icon.classList.add("bx-play");
+    }
+  }
+
+  /* main_visual */
+  const $slidesData = [
+    { $h2: "HOLLYS<br>시그니처 음료", $p: "가장 많이 선택받은 할리스 대표 3종" },
+    { $h2: "기다림 없이<br>주문부터 적립까지", $p: "스마트오더로 간편하게 매장 이용" },
+    { $h2: "DUBAI<br>메뉴 2종 출시", $p: "두바이 스타일의 한정 메뉴 공개" },
+    { $h2: "HOLLYS<br>서비스 모아보기", $p: "할리스콘, 할리스카드, 스마트스토어까지<br>할리스의 다양한 서비스" },
+  ];
+
+  const $mainVisual = document.querySelector(".main_visual");
+  if (!$mainVisual) return;
+
+  const $num = $mainVisual.querySelector(".main_visual .txt_area .slide_control .control_con .num");
+  const $totalEl = $mainVisual.querySelector(".main_visual .txt_area .slide_control .control_con .total");
+  const $h2 = $mainVisual.querySelector(".main_visual .txt_area .title h2");
+  const $p = $mainVisual.querySelector(".main_visual .txt_area .title p");
+  const $bar = $mainVisual.querySelector(".main_visual .txt_area .control_con .control_bar p");
+  const $txtBox = $mainVisual.querySelector(".main_visual .txt_area .title");
+
+  if (!$num || !$totalEl || !$h2 || !$p || !$bar || !$txtBox) {
+    console.error("메인 비주얼 요소를 못 찾았어", { $num, $totalEl, $h2, $p, $bar, $txtBox });
+    return;
+  }
+
+  const pad2 = (n) => String(n).padStart(2, "0");
+  const total = $slidesData.length;
+  $totalEl.textContent = pad2(total);
+
+  function animateTextSwap() {
+    $txtBox.classList.remove("change");
+    void $txtBox.offsetWidth;
+    $txtBox.classList.add("change");
+  }
+
+  function setTextByIndex(i) {
+    const d = $slidesData[i];
+    if (!d) return;
+    $h2.innerHTML = d.$h2;
+    $p.innerHTML = d.$p;
+    $num.textContent = pad2(i + 1);
+    animateTextSwap();
+  }
+
+  function setProgress(i) {
+    const percent = ((i + 1) / total) * 100;
+    $bar.style.width = `${percent}%`;
+  }
+
+  const $mainSlide = new Swiper(".main_visual .visual_swiper", {
+    loop: true,
+    autoplay: { delay: 5500, disableOnInteraction: false },
+    navigation: {
+      nextEl: ".main_visual .txt_area .slide_control .btn_box .right",
+      prevEl: ".main_visual .txt_area .slide_control .btn_box .left",
+    },
+    on: {
+      init(swiper) {
+        const i = swiper.realIndex;
+        setTextByIndex(i);
+        setProgress(i);
+      },
+      slideChange(swiper) {
+        const i = swiper.realIndex;
+        setTextByIndex(i);
+        setProgress(i);
+      },
+    },
+  });
+
+  /* bestmemu */
+  const $bestmemu = document.querySelector(".bestmemu");
+  if (!$bestmemu) return;
+
+  const $tabWrap = $bestmemu.querySelector(".tit .tab");
+  const $tabDrink = $tabWrap?.querySelectorAll("p")?.[0] || null;
+  const $tabFood = $tabWrap?.querySelectorAll("p")?.[1] || null;
+
+  const $drinkEl = $bestmemu.querySelector(".swiper.drink");
+  const $foodEl = $bestmemu.querySelector(".swiper.food");
+
+  const $prevBtn = $bestmemu.querySelector(".btn_con .btn_prev");
+  const $nextBtn = $bestmemu.querySelector(".btn_con .btn_next");
+  const $toggleBtn = $bestmemu.querySelector(".btn_con .btn_toggle");
+  const $toggleIcon = $toggleBtn?.querySelector("i") || null;
+
+  if (!$tabDrink || !$tabFood || !$drinkEl || !$foodEl || !$prevBtn || !$nextBtn || !$toggleBtn) {
+    console.error("bestmemu 요소를 못 찾았어", {
+      $tabDrink, $tabFood, $drinkEl, $foodEl, $prevBtn, $nextBtn, $toggleBtn
+    });
+    return;
+  }
+
+  if (typeof Swiper === "undefined") {
+    console.error("Swiper 로드 안됨");
+    return;
+  }
+
+  $foodEl.style.display = "none";
+
+  const $drinkSwiper = new Swiper($drinkEl, {
+    loop: false,
+    slidesPerView: "auto",
+    spaceBetween: 24,
+    autoplay: { delay: 4000, disableOnInteraction: false },
+  });
+
+  const $foodSwiper = new Swiper($foodEl, {
+    loop: false,
+    slidesPerView: "auto",
+    spaceBetween: 24,
+    autoplay: { delay: 4000, disableOnInteraction: false },
+  });
+
+  let $activeSwiper = $drinkSwiper;
+  let $isPlaying = true;
+
+  function setActiveTab($type) {
+    const $isDrink = $type === "drink";
+
+    $tabDrink.classList.toggle("is-active", $isDrink);
+    $tabFood.classList.toggle("is-active", !$isDrink);
+
+    $drinkEl.style.display = $isDrink ? "" : "none";
+    $foodEl.style.display = $isDrink ? "none" : "";
+
+    $activeSwiper = $isDrink ? $drinkSwiper : $foodSwiper;
+
+    $activeSwiper.update();
+
+    if ($isPlaying) {
+      $activeSwiper.autoplay.start();
+      ($isDrink ? $foodSwiper : $drinkSwiper).autoplay.stop();
+    } else {
+      $drinkSwiper.autoplay.stop();
+      $foodSwiper.autoplay.stop();
+    }
+
+    syncToggleIcon($toggleIcon, $isPlaying);
+  }
+
+  // 초기
+  setActiveTab("drink");
+  syncToggleIcon($toggleIcon, $isPlaying);
+
+  // 탭 이벤트
+  $tabDrink.addEventListener("click", () => setActiveTab("drink"));
+  $tabFood.addEventListener("click", () => setActiveTab("food"));
+
+  // 버튼 이벤트
+  $prevBtn.addEventListener("click", () => {
+    if ($activeSwiper.isBeginning) $activeSwiper.slideTo($activeSwiper.slides.length - 1);
+    else $activeSwiper.slidePrev();
+  });
+
+  $nextBtn.addEventListener("click", () => {
+    if ($activeSwiper.isEnd) $activeSwiper.slideTo(0);
+    else $activeSwiper.slideNext();
+  });
+
+  $toggleBtn.addEventListener("click", () => {
+    $isPlaying = !$isPlaying;
+    if ($isPlaying) $activeSwiper.autoplay.start();
+    else $activeSwiper.autoplay.stop();
+    syncToggleIcon($toggleIcon, $isPlaying);
+  });
+
+  /* service */
+  const $cards = document.querySelectorAll(".service_card ul > li");
+
+  function closeAll() {
+    $cards.forEach(($li) => $li.classList.remove("is-active"));
+  }
+
+  function openCard($targetLi) {
+    closeAll();
+    $targetLi.classList.add("is-active");
+  }
+
+  const $init = document.querySelector(".service_card ul > li.is-active") || $cards[0];
+  if ($init) openCard($init);
+
+  $cards.forEach(($li) => {
+    $li.addEventListener("click", (e) => {
+      if (e.target.closest(".more_btn")) return;
+      openCard($li);
+    });
+  });
+
+  /* event */
+  const $event = document.querySelector(".event");
+  if (!$event) return;
+
+  const $eventSwiperEl = $event.querySelector(".event_con");
+  const $eventPrev = $event.querySelector(".btn_prev");
+  const $eventNext = $event.querySelector(".btn_next");
+  const $eventToggle = $event.querySelector(".btn_toggle");
+  const $eventToggleIcon = $eventToggle?.querySelector("i") || null;
+
+  if (!$eventSwiperEl || typeof Swiper === "undefined") return;
+
+  let $eventIsPlaying = true;
+  let $eventSwiper = null;
+  const BREAKPOINT = 500;
+  const isMobile = () => window.innerWidth <= BREAKPOINT;
+
+  function initEventSwiper() {
+    if ($eventSwiper) return;
+
+    $eventSwiper = new Swiper($eventSwiperEl, {
+      slidesPerView: "auto",
+      spaceBetween: 0,
+      loop: false,
+      speed: 700,
+
+      centeredSlides: false,
+      centerInsufficientSlides: false,
+
+      autoplay: { delay: 3000, disableOnInteraction: false },
+      navigation: { prevEl: $eventPrev, nextEl: $eventNext },
+
+      on: {
+        init(swiper) {
+          swiper.slideTo(0, 0);
+        },
+        resize(swiper) {
+          swiper.slideTo(0, 0);
+        }
+      }
+    });
+
+    syncToggleIcon($eventToggleIcon, $eventIsPlaying);
+    if ($eventIsPlaying) $eventSwiper.autoplay.start();
+    else $eventSwiper.autoplay.stop();
+  }
+
+  function destroyEventSwiper() {
+    if (!$eventSwiper) return;
+
+    $eventSwiper.autoplay?.stop();
+
+    $eventSwiper.destroy(true, true);
+    $eventSwiper = null;
+
+    syncToggleIcon($eventToggleIcon, false);
+  }
+
+  function handleEventSwiperByWidth() {
+    if (isMobile()) {
+      destroyEventSwiper();
+    } else {
+      initEventSwiper();
+    }
+  }
+
+  handleEventSwiperByWidth();
+
+  let $eventResizeTimer = null;
+  window.addEventListener("resize", () => {
+    clearTimeout($eventResizeTimer);
+    $eventResizeTimer = setTimeout(handleEventSwiperByWidth, 150);
+  });
+
+  $eventToggle?.addEventListener("click", () => {
+    if (!$eventSwiper) return;
+
+    $eventIsPlaying = !$eventIsPlaying;
+
+    if ($eventIsPlaying) $eventSwiper.autoplay.start();
+    else $eventSwiper.autoplay.stop();
+
+    syncToggleIcon($eventToggleIcon, $eventIsPlaying);
+  });
+
+});

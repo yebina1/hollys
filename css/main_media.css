@@ -1,0 +1,405 @@
+@charset "utf-8";
+@media screen and (max-width:1440px) {
+    .main_visual .inner {
+        height: clamp(600px, 55vh, 735px);
+    }
+
+    .main_visual .txt_area .title h2 {
+        font-size: 3rem;
+    }
+
+    .main_visual .txt_area .title p {
+        font-size: 1.4rem;
+    }
+
+    .main_visual .txt_area .slide_control {
+        margin-top: 32px;
+    }
+
+    .main_visual .txt_area .slide_control .control_con .control_bar {
+        width: 220px;
+    }
+}
+
+@media screen and (max-width:1240px) {
+    .main_benefit .inner {
+        flex-direction: column;
+        gap: 42px;
+    }
+
+    .benefit_con ul {
+        flex-wrap: wrap;
+    }
+}
+
+@media screen and (max-width:1024px) {
+    .main_visual .txt_area .title h2 {
+        font-size: 2.8rem;
+    }
+
+    .main_visual .txt_area .title p {
+        font-size: 1.2rem;
+    }
+
+    .main_visual .txt_area .slide_control {
+        margin-top: 24px;
+    }
+
+    .main_visual .txt_area .slide_control .control_con .control_bar {
+        width: 200px;
+    }
+
+    .bestmemu .tit_con .tit h3,
+    .main_benefit .tit_con .tit h3,
+    .service .tit_con h3,
+    .event .tit_con h3 {
+        font-size: 2.1rem;
+    }
+
+    .bestmemu .tit_con .tab p {
+        font-size: 1.27rem;
+    }
+
+    .main_benefit .tit_con .tit p {
+        font-size: 1.12rem;
+    }
+
+
+    .benefit_con ul li .txt_box strong,
+    .service_card .txt_box strong {
+        font-size: 24px;
+
+    }
+
+    .service_card .txt_box strong {
+        margin-bottom: 16px;
+    }
+
+    .benefit_con ul li .txt_box p,
+    .service_card .txt_box p {
+        font-size: 16px;
+    }
+
+    .event .event_con ul li .txt_box strong {
+        font-size: 1rem;
+    }
+
+    .event .event_con ul li .txt_box p {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width:750px) {
+    .main_visual .txt_area .title h2 {
+        font-size: 2.6rem;
+    }
+
+    .main_visual .txt_area .title p {
+        font-size: 1.1rem;
+    }
+
+    .main_visual .txt_area .slide_control .control_con .control_bar {
+        width: 170px;
+    }
+
+    .bestmemu .tit_con .tit h3,
+    .main_benefit .tit_con .tit h3,
+    .service .tit_con h3,
+    .event .tit_con h3 {
+        font-size: 1.9rem;
+    }
+
+    .bestmemu .tit_con .tab p {
+        font-size: 1.2rem;
+    }
+
+    .main_benefit .tit_con .tit p {
+        font-size: 1.05rem;
+    }
+
+    .service_card ul {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .service_card ul li {
+        height: clamp(350px, 380px, 420px);
+    }
+
+    .service_card ul li img {
+        height: 100%;
+    }
+}
+
+/* @media screen and (max-width:622px) {
+    benefit_con ul {
+        justify-content: center;
+    }
+}
+ */
+@media screen and (max-width:640px) {
+    .main_visual .txt_area {
+        position: absolute;
+        left: 0;
+        bottom: 16px;
+
+        padding: 0 12vw;
+    }
+
+    .main_visual .txt_area .slide_control {
+        gap: 16px;
+    }
+
+    .main_visual .txt_area .slide_control .control_con .num,
+    .main_visual .txt_area .slide_control .control_con .total {
+        font-size: 16px;
+    }
+
+    .main_visual .txt_area .title h2 {
+        font-size: 2.5rem;
+    }
+
+    .main_visual .txt_area .title p {
+        font-size: 1.1rem;
+    }
+
+    .main_visual .txt_area .slide_control {
+        margin-top: 24px;
+    }
+
+    .main_visual .txt_area .slide_control .control_con .control_bar {
+        width: 180px;
+    }
+
+    .bestmemu .swiper-slide {
+        width: 40vw;
+    }
+
+    .drink_con .swiper-slide .img_box,
+    .food_con .swiper-slide .img_box {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 1 / 1;
+        background-size: cover;
+        background-position: center;
+    }
+
+    .bestmemu .swiper-slide .txt_box strong {
+        font-size: 1rem;
+    }
+
+    .bestmemu .swiper-slide .txt_box p {
+        font-size: 15px;
+    }
+
+    .btn_con {
+        padding-top: 24px;
+    }
+
+    .btn_con button {
+        width: 40px;
+        height: 40px;
+    }
+
+    .btn_con button i {
+        font-size: 18px;
+        color: #000;
+    }
+}
+
+@media screen and (max-width:500px) {
+    .main_visual .txt_area {
+        padding: 0 4vw;
+    }
+
+    .main_visual .txt_area .slide_control {
+        gap: 12px;
+    }
+
+    .main_visual .txt_area .title h2 {
+        font-size: 2.1rem;
+    }
+
+    .main_visual .txt_area .slide_control .control_con .control_bar {
+        width: 140px;
+    }
+
+    .service_card .txt_box {
+        left: 30px;
+        bottom: 30px;
+    }
+
+    .event .more {
+        display: none;
+    }
+
+    .event .event_con {
+        width: 100%;
+    }
+
+    .event .event_con .swiper-wrapper {
+        display: block !important;
+    }
+
+    .event .event_con ul {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .event .event_con ul li {
+        width: 100% !important;
+        flex: none !important;
+        box-shadow: 6px 4px 25px -11px rgba(0, 0, 0, 0.25);
+        border-radius: 16px;
+        overflow: hidden;
+        margin-right: 0;
+        background: #fff;
+        margin-bottom: 16px;
+    }
+
+    .event .event_con ul li:last-child {
+        margin-bottom: 0;
+    }
+
+    .event .event_con ul li:nth-child(5),
+    .event .event_con ul li:nth-child(6) {
+        display: none;
+    }
+
+    .event .event_con ul li a {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        gap: 12px;
+        width: 100%;
+    }
+
+    .event .event_con ul li .img_box {
+        flex: 0 0 110px;
+    }
+
+    .event .event_con ul li .img_box img {
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+        display: block;
+    }
+
+    .event .event_con ul li .txt_box {
+        flex: 1 1 auto;
+        width: calc(100% - 110px - 12px);
+        padding: 0;
+        min-height: auto;
+    }
+
+    .event .event_con ul li .txt_box strong {
+        margin-bottom: 6px;
+        min-height: auto;
+        font-size: 16px;
+    }
+
+    .event .event_con ul li .txt_box p {
+        font-size: 12px;
+    }
+
+    .event .btn_con {
+        display: none;
+    }
+
+    .event .btn {
+        display: flex;
+    }
+}
+
+
+@media screen and (max-width:360px) {
+    body {
+        min-width: 340px;
+    }
+
+    .main_visual .txt_area .slide_control {
+        gap: 8 px;
+    }
+
+    .main_visual .txt_area .title h2 {
+        font-size: 1.8rem;
+    }
+
+    .main_visual .txt_area .title p {
+        font-size: 1rem;
+    }
+
+    .main_visual .txt_area .slide_control .control_con .control_bar {
+        width: 120px;
+    }
+
+    .bestmemu .swiper-slide .txt_box strong {
+        font-size: 16px;
+    }
+
+    .bestmemu .swiper-slide .txt_box p {
+        font-size: 13px;
+    }
+
+    .more,
+    .main_benefit .tit_con .more_btn,
+    .service_card .more_btn {
+        font-size: 16px;
+    }
+
+    .bestmemu .tit_con {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 24px;
+    }
+
+    .bestmemu .tit_con .tit h3,
+    .main_benefit .tit_con .tit h3,
+    .service .tit_con h3,
+    .event .tit_con h3 {
+        font-size: 1.9rem;
+    }
+
+    .bestmemu .tit_con .tab p {
+        font-size: 1rem;
+    }
+
+    .btn_con {
+        padding-top: 16px;
+    }
+
+    .benefit_con ul li .txt_box strong,
+    .service_card .txt_box strong {
+        font-size: 24px;
+
+    }
+
+    .service_card .txt_box strong {
+        margin-bottom: 16px;
+    }
+
+    .benefit_con ul li .txt_box p,
+    .service_card .txt_box p {
+        font-size: 16px;
+    }
+
+
+
+    .event .event_con ul li .txt_box strong {
+        font-size: 1rem;
+    }
+
+    .event .event_con ul li .txt_box p {
+        font-size: 16px;
+    }
+
+    .service_card .txt_box strong {
+        font-size: 24px;
+        margin-bottom: 12px;
+    }
+
+    .service_card .txt_box p {
+        font-size: 14px;
+    }
+}

@@ -1,0 +1,1546 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta property="og:title" content="할리스커피 리뉴얼 프로젝트">
+   <meta name="keywords" content="할리스, 할리스커피, 카페, 시그니처 음료, 두바이 스타일, 스마트오더, 멤버십, 커피, , 카페라떼, 바닐라딜라이트">
+   <meta name="author" content="Yebin - UI/UX Designer">
+   <title>hollys</title>
+   <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+   <link href="https://cdn.jsdelivr.net/gh/sun-typeface/SUIT@2/fonts/static/woff2/SUIT.css" rel="stylesheet">
+   <!-- Basic Icons -->
+   <link href="https://cdn.boxicons.com/3.0.8/fonts/basic/boxicons.min.css" rel="stylesheet">
+   <!-- Filled Icons -->
+   <link href="https://cdn.boxicons.com/3.0.8/fonts/filled/boxicons-filled.min.css" rel="stylesheet">
+   <!-- Brand Icons -->
+   <link href="https://cdn.boxicons.com/3.0.8/fonts/brands/boxicons-brands.min.css" rel="stylesheet">
+   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+   <!-- common css -->
+   <link rel="stylesheet" href="css/reset.css">
+   <link rel="stylesheet" href="css/common.css">
+   <link rel="stylesheet" href="css/common_media.css">
+   <!-- 내 css -->
+   <link rel="stylesheet" href="css/memu.css">
+   <!-- 내 media css -->
+   <link rel="stylesheet" href="css/memu_media.css">
+   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+   <script defer src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis/bundled/lenis.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+   <script src="https://kit.fontawesome.com/588111e4fb.js" crossorigin="anonymous"></script>
+   <!-- common js -->
+   <script src="js/common.js"></script>
+   <!-- 내 js -->
+   <script src="js/memu.js"></script>
+</head>
+
+<body>
+   <div class="wrap" id="memu">
+      <header id="site_header">
+         <div class="inner">
+            <div class="logo">Logo</div>
+            <nav>
+               <ul class="gnb">
+                  <li><a href="#holys">할리스</a>
+                     <ul class="sub">
+                        <li><a href="#hollys_brand">브랜드 소개</a></li>
+                        <li><a href="#hollys_bl">BI</a></li>
+                        <li><a href="#hollys_b2b">B2B사업</a></li>
+                     </ul>
+                  </li>
+                  <li><a href="#memu">메뉴</a>
+                     <ul class="sub">
+                        <li><a href="#memu_drink">음료</a></li>
+                        <li><a href="#memu_food">푸드</a></li>
+                        <li><a href="#memu_md">MD</a></li>
+                     </ul>
+                  </li>
+                  <li><a href="#membership">멤버십</a>
+                     <ul class="sub">
+                        <li><a href="#membership_benefit">앱 혜택</a></li>
+                        <li><a href="#membership_grade">멤버십 등급</a></li>
+                        <li><a href="#membership_faq">FAQ</a></li>
+                     </ul>
+                  </li>
+                  <li><a href="#hollysmall">할리스몰</a>
+                     <ul class="sub">
+                        <li><a href="#hollysmall_hollyscard">할리스카드</a></li>
+                        <li><a href="#hollysmall_hollyscon">할리스콘</a></li>
+                        <li><a href="#hollysmall_smart_store">스마트스토어</a></li>
+                     </ul>
+                  </li>
+                  <li><a href="#store">매장검색</a>
+                     <ul class="sub">
+                        <li><a href="#s_store">매장검색</a></li>
+                     </ul>
+                  </li>
+                  <li><a href="#news">소식</a>
+                     <ul class="sub">
+                        <li><a href="#news_event">이벤트</a></li>
+                        <li><a href="#news_notice">공지사항</a></li>
+                        <li><a href="#news_inquiries">고객문의</a></li>
+                     </ul>
+                  </li>
+               </ul> <!-- //.gnb -->
+            </nav>
+            <div class="m_menu" id="m_menu" aria-hidden="true">
+               <div class="m_menu__overlay"></div>
+               <div class="m_menu__panel" role="dialog" aria-modal="true" aria-label="모바일 메뉴">
+                  <div class="m_menu__top">
+                     <div class="m_menu__logo">Logo</div>
+                     <button type="button" class="m_menu__close" aria-label="메뉴 닫기">
+                        <i class="bx bx-x bx-flip-vertical"></i>
+                     </button>
+                  </div> <!-- //.m_menu__top -->
+
+                  <ul class="m_gnb" id="m_gnb">
+                     <li>
+                        <button type="button" class="m_link">
+                           마이페이지 <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <ul class="m_sub">
+                           <li><a href="#my_info">- 정보 관리</a></li>
+                           <li><a href="#my_membership">- 나의 멤버십</a></li>
+                           <li><a href="#my_coupon">- 소지 쿠폰</a></li>
+                           <li><a href="#my_hollyscard">- 나의 할리스카드</a></li>
+                           <li><a href="#my_shoppingbag">- 장바구니</a></li>
+                        </ul>
+                     </li>
+                     <li>
+                        <button type="button" class="m_link">
+                           할리스 <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <ul class="m_sub">
+                           <li><a href="#hollys_brand">- 브랜드 소개</a></li>
+                           <li><a href="#hollys_bl">- BI</a></li>
+                           <li><a href="#hollys_b2b">- B2B사업</a></li>
+                        </ul>
+                     </li>
+
+                     <li>
+                        <button type="button" class="m_link">
+                           메뉴 <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <ul class="m_sub">
+                           <li><a href="#memu_drink">- 음료</a></li>
+                           <li><a href="#memu_food">- 푸드</a></li>
+                           <li><a href="#memu_md">- MD</a></li>
+                        </ul>
+                     </li>
+
+                     <li>
+                        <button type="button" class="m_link">
+                           멤버십 <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <ul class="m_sub">
+                           <li><a href="#membership_benefit">- 앱 혜택</a></li>
+                           <li><a href="#membership_grade">- 멤버십 등급</a></li>
+                           <li><a href="#membership_faq">- FAQ</a></li>
+                        </ul>
+                     </li>
+
+                     <li>
+                        <button type="button" class="m_link">
+                           할리스몰 <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <ul class="m_sub">
+                           <li><a href="#hollysmall_hollyscard">- 할리스카드</a></li>
+                           <li><a href="#hollysmall_hollyscon">- 할리스콘</a></li>
+                           <li><a href="#hollysmall_smart_store">- 스마트스토어</a></li>
+                        </ul>
+                     </li>
+
+                     <li>
+                        <button type="button" class="m_link">
+                           매장찾기 <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <ul class="m_sub">
+                           <li><a href="#s_store">- 매장검색</a></li>
+                        </ul>
+                     </li>
+
+                     <li>
+                        <button type="button" class="m_link">
+                           소식 <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <ul class="m_sub">
+                           <li><a href="#news_event">- 이벤트</a></li>
+                           <li><a href="#news_notice">- 공지사항</a></li>
+                           <li><a href="#news_inquiries">- 고객문의</a></li>
+                        </ul>
+                     </li>
+                  </ul>
+
+                  <div class="m_menu__bottom">
+                     <div class="m_menu__cta">
+                        <a href="#login" class="m_btn">멤버십 로그인</a>
+                        <a href="#signup" class="m_btn m_btn--dark">멤버십 가입</a>
+                     </div> <!-- //.m_menu__bottom -->
+
+                     <ul class="m_menu__util">
+                        <li class="m_lang_container">
+                           <button type="button" class="m_lang_btn">
+                              <i class="bx bx-globe-alt"></i>
+                              <span>Language</span>
+                              <i class="fa-solid fa-chevron-down"></i>
+                           </button>
+                           <ul class="m_lang_list">
+                              <li><a href="#kor">한국어</a></li>
+                              <li><a href="#eng">English</a></li>
+                              <li><a href="#cha">中国语</a></li>
+                           </ul>
+                        </li>
+                        <li><a href="#shoppingbag"><i class="bx bx-groceries"></i>장바구니</a></li>
+                        <li><a href="#Help"><i class="fa-regular fa-circle-question"></i>도움말</a></li>
+                        <li><a href="#conditions"><i class="fa-regular fa-circle-user"></i>서비스 이용 약관</a></li>
+                     </ul>
+                  </div> <!-- //.m_menu__bottom -->
+               </div> <!-- //.m_menu__panel -->
+            </div> <!-- //.m_menu -->
+            <div class="h_right">
+               <ul class="right_box">
+                  <li><a href="#login">로그인</a></li>
+                  <li><a href="#signup">멤버십가입</a></li>
+                  <li data-label="마이페이지">
+                     <a href="#mypage" class="icon-link">
+                        <i class="bx bx-user"></i>
+                     </a>
+                  </li>
+                  <li data-label="장바구니">
+                     <a href="#shoppingbag" class="icon-link">
+                        <i class="bx bx-shopping-bag"></i>
+                     </a>
+                  </li>
+                  <li data-label="Language" class="lang_container">
+                     <a href="javascript:void(0);" class="icon-link lang_btn">
+                        <i class="bx bx-globe-alt"></i>
+                     </a>
+                     <ul class="lang_list">
+                        <li><a href="#kor">한국어</a></li>
+                        <li><a href="#eng">English</a></li>
+                        <li><a href="#cha">中国语</a></li>
+                     </ul>
+                  </li>
+                  <li>
+                     <button type="button" class="ham" aria-controls="m_menu" aria-expanded="false">
+                        <i class="bx bx-menu-wide"></i>
+                     </button>
+                  </li>
+               </ul>
+            </div>
+         </div> <!-- //.inner -->
+      </header>
+      <main>
+         <div class="top">
+            <div class="bg">
+               <div class="tit">
+                  <h3>메뉴 소개</h3>
+                  <p>Hollys memu</p>
+               </div>
+            </div> <!-- //.bg -->
+            <div class="main_tab">
+               <div class="inner">
+                  <ul class="tab_list">
+                     <li><button type="button" class="tab_btn is-active" data-tab="0">음료</button></li>
+                     <li><button type="button" class="tab_btn" data-tab="1">푸드</button></li>
+                     <li><button type="button" class="tab_btn" data-tab="2">MD</button></li>
+                  </ul>
+               </div> <!-- //.inner -->
+            </div> <!-- //main_tab -->
+         </div> <!-- //.top -->
+
+         <section id="memu_drink" class="drink">
+            <div class="inner">
+               <h3>음료</h3>
+               <div class="info_con">
+                  <ul class="sub_tab">
+                     <li><button type="button" class="all">전체</button></li>
+                     <li><button type="button" class="caffe">커피</button></li>
+                     <li><button type="button" class="latte">라떼</button></li>
+                     <li><button type="button" class="tea">티</button></li>
+                     <li><button type="button" class="hollyccino_smoothie">할리치노/스무디</button></li>
+                     <li><button type="button" class="sparkling">스파클링</button></li>
+                     <li><button type="button" class="juice">주스</button></li>
+                     <li><button type="button" class="bottle">병음료</button></li>
+                  </ul>
+                  <div class="filter">
+                     <div class="result">
+                        <p><span>총</span><em>1</em><span>개</span></p>
+                     </div> <!-- //.result -->
+                     <div class="path">
+                        <p>메뉴</p>
+                        <i class="bx bx-chevron-right bx-flip-vertical"></i>
+                        <p>음료</p>
+                        <i class="bx bx-chevron-right bx-flip-vertical"></i>
+                        <p>전체</p>
+                     </div> <!-- //.path -->
+                  </div> <!-- //.filter -->
+                  <div class="sorting">
+                     <ul>
+                        <li><button type="button" class="new">신메뉴순</button></li>
+                        <li><button type="button" class="best">인기순</button></li>
+                        <li><button type="button" class="row_price">낮은가격순</button></li>
+                        <li><button type="button" class="high_price">높은가격순</button></li>
+                     </ul>
+                  </div> <!-- //.sorting -->
+               </div> <!-- //info_con -->
+               <div class="memu_con">
+                  <ul class="menu_list">
+                     <li class="menu_item new" data-cat="hollyccino_smoothie" data-price="7500" data-status="new">
+                        <a href="#">
+                           <div class="img_box">
+                              <img src="img/memu_drink/Dubai_Style_Chocolate_Parfait_img.png" alt="두바이 style 빠작 초코 파르페">
+                           </div>
+                           <div class="txt_box">
+                              <div class="name_con">
+                                 <strong class="name">두바이 st. 빠작 초코 파르페</strong>
+                                 <p class="e_name">Dubai Style Chocolate Parfait</p>
+                              </div>
+                              <p class="price"><span>G 7,500원</span></p>
+                           </div>
+                        </a>
+                     </li>
+                     <li class="menu_item new" data-cat="hollyccino_smoothie" data-price="6900" data-status="new">
+                        <a href="#">
+                           <div class="img_box">
+                              <img src="img/memu_drink/Strawberry_Acai_Bowl_Smoothie_img.png" alt="설향 딸기 아사이볼 스무디">
+                           </div>
+                           <div class="txt_box">
+                              <div class="name_con">
+                                 <strong class="name">설향 딸기 아사이볼 스무디</strong>
+                                 <p class="e_name">Strawberry Acai Bowl Smoothie</p>
+                              </div>
+                              <p class="price"><span>R 6,900원</span></p>
+                           </div>
+                        </a>
+                     </li>
+                     <li class="menu_item new" data-cat="hollyccino_smoothie" data-price="6900" data-status="new">
+                        <a href="#">
+                           <div class="img_box">
+                              <img src="img/memu_drink/Strawberry_Yogurt_Hollyccino_img.png" alt="설향 딸기 요거트 할리치노">
+                           </div>
+                           <div class="txt_box">
+                              <div class="name_con">
+                                 <strong class="name">설향 딸기 요거트 할리치노</strong>
+                                 <p class="e_name">Strawberry Yogurt Hollyccino</p>
+                              </div>
+                              <p class="price"><span>R 6,900원</span><span>G 7,600원</span></p>
+                           </div>
+                        </a>
+                     </li>
+                     <li class="menu_item new" data-cat="juice" data-price="7200">
+                        <a href="#">
+                           <div class="img_box">
+                              <img src="img/memu_drink/Fresh_Strawberry_Juice_img.png" alt="설향 생딸기 주스">
+                           </div>
+                           <div class="txt_box">
+                              <div class="name_con">
+                                 <strong class="name">설향 생딸기 주스</strong>
+                                 <p class="e_name">Fresh Strawberry Juice</p>
+                              </div>
+                              <p class="price"><span>G 7,200원</span></p>
+                           </div>
+                        </a>
+                     </li>
+                     <li class="menu_item new" data-cat="latte" data-price="6900" data-status="new">
+                        <a href="#">
+                           <div class="img_box">
+                              <img src="img/memu_drink/Strawberry_Latte_img.png" alt="설향 딸기 라떼">
+                           </div>
+                           <div class="txt_box">
+                              <div class="name_con">
+                                 <strong class="name">설향 딸기 라떼</strong>
+                                 <p class="e_name">Strawberry Latte</p>
+                              </div>
+                              <p class="price"><span>G 6,900원</span></p>
+                           </div>
+                        </a>
+                     </li>
+                     <li class="menu_item new" data-cat="hollyccino_smoothie" data-price="6900" data-status="new">
+                        <a href="#">
+                           <div class="img_box">
+                              <img src="img/memu_drink/Sweet_Potato_Brulee_Hollyccino_img.png" alt="춘식이 군고구마 브륄레 할리치노">
+                           </div>
+                           <div class="txt_box">
+                              <div class="name_con">
+                                 <strong class="name">춘식이 군고구마 브륄레 할리치노</strong>
+                                 <p class="e_name">Sweet Potato Brulee Hollyccino</p>
+                              </div>
+                              <p class="price"><span>R 6,900원</span><span>G 7,600원</span></p>
+                           </div>
+                        </a>
+                     </li>
+                     <li class="menu_item new" data-cat="caffe" data-price="6500" data-status="new">
+                        <a href="#">
+                           <div class="img_box">
+                              <img src="img/memu_drink/Peanut_Cream_Latte_img.png" alt="춘식이 땅콩 크림라떼">
+                           </div>
+                           <div class="txt_box">
+                              <div class="name_con">
+                                 <strong class="name">춘식이 땅콩 크림라떼</strong>
+                                 <p class="e_name">Peanut Cream Latte</p>
+                              </div>
+                              <p class="price"><span>R 6,500원</span><span>G 7,200원</span></p>
+                           </div>
+                        </a>
+                     </li>
+                     <li class="menu_item" data-cat="latte" data-price="6300">
+                        <a href="#">
+                           <div class="img_box">
+                              <img src="img/memu_drink/Sweet_Potato_Latte_img.png" alt="춘식이 군고구마 라떼">
+                           </div>
+                           <div class="txt_box">
+                              <div class="name_con">
+                                 <strong class="name">춘식이 군고구마 라떼</strong>
+                                 <p class="e_name">Sweet Potato Latte</p>
+                              </div>
+                              <p class="price"><span>R 6,300원</span><span>G 7,000원</span></p>
+                           </div>
+                        </a>
+                     </li>
+                     <li class="menu_item" data-cat="caffe" data-price="6200">
+                        <a href="#">
+                           <div class="img_box">
+                              <img src="img/memu_drink/Yuja_Americano_img.png" alt="유자리카노">
+                           </div>
+                           <div class="txt_box">
+                              <div class="name_con">
+                                 <strong class="name">유자리카노</strong>
+                                 <p class="e_name">Yuja Americano</p>
+                              </div>
+                              <p class="price"><span>R 6,200원</span></p>
+                           </div>
+                        </a>
+                     </li>
+                     <li class="menu_item best" data-cat="caffe" data-price="6900" data-status="best">
+                        <a href="#">
+                           <div class="img_box">
+                              <img src="img/memu_drink/Iced_Tea_with_an_Espresso_Shot_img.png" alt="아샷추">
+                           </div>
+                           <div class="txt_box">
+                              <div class="name_con">
+                                 <strong class="name">아샷추</strong>
+                                 <p class="e_name">Iced Tea with an Espresso Shot</p>
+                              </div>
+                              <p class="price"><span>G 6,900원</span><span>V 7,600원</span></p>
+                           </div>
+                        </a>
+                     </li>
+                     <li class="menu_item" data-cat="caffe" data-price="5200">
+                        <a href="#">
+                           <div class="img_box">
+                              <img src="img/memu_drink/Monster_Americano_img.png" alt="몬스터 아메리카노">
+                           </div>
+                           <div class="txt_box">
+                              <div class="name_con">
+                                 <strong class="name">몬스터 아메리카노</strong>
+                                 <p class="e_name">Monster Americano</p>
+                              </div>
+                              <p class="price"><span>R 5,200원</span><span>G 5,900원</span><span>V 6,600원</span></p>
+                           </div>
+                        </a>
+                     </li>
+                     <li class="menu_item" data-cat="caffe" data-price="5200">
+                        <a href="#">
+                           <div class="img_box">
+                              <img src="img/memu_drink/Black_Aria_Americano_img.png" alt="블랙아리아 아메리카노">
+                           </div>
+                           <div class="txt_box">
+                              <div class="name_con">
+                                 <strong class="name">블랙아리아 아메리카노</strong>
+                                 <p class="e_name">Black Aria Americano</p>
+                              </div>
+                              <p class="price"><span>R 5,200원</span><span>G 5,900원</span><span>V 6,600원</span></p>
+                           </div>
+                        </a>
+                     </li>
+                     <li class="menu_item" data-cat="caffe" data-price="5800">
+                        <a href="#">
+                           <div class="img_box">
+                              <img src="img/memu_drink/Black_Aria_Deep_Latte_img.png" alt="블랙아리아 딥라떼">
+                           </div>
+                           <div class="txt_box">
+                              <div class="name_con">
+                                 <strong class="name">블랙아리아 딥라떼</strong>
+                                 <p class="e_name">Black Aria Deep Latte</p>
+                              </div>
+                              <p class="price"><span>R 5,800원</span><span>G 6,500원</span><span>V 7,200원</span></p>
+                           </div>
+                        </a>
+                     </li>
+                     <li class="menu_item" data-cat="caffe" data-price="6200">
+                        <a href="#">
+                           <div class="img_box">
+                              <img src="img/memu_drink/Dolce_Latte_img.png" alt="돌체 라떼">
+                           </div>
+                           <div class="txt_box">
+                              <div class="name_con">
+                                 <strong class="name">돌체 라떼</strong>
+                                 <p class="e_name">Dolce Latte</p>
+                              </div>
+                              <p class="price"><span>R 6,200원</span><span>G 6,900원</span></p>
+                           </div>
+                        </a>
+                     </li>
+                     <li class="menu_item best" data-cat="caffe" data-price="6200" data-status="best">
+                        <a href="#">
+                           <div class="img_box">
+                              <img src="img/memu_drink/Vanilla_Delight_img.png" alt="바닐라 딜라이트">
+                           </div>
+                           <div class="txt_box">
+                              <div class="name_con">
+                                 <strong class="name">바닐라 딜라이트</strong>
+                                 <p class="e_name">Vanilla Delight</p>
+                              </div>
+                              <p class="price"><span>R 6,200원</span><span>G 6,900원</span><span>V 7,600원</span></p>
+                           </div>
+                        </a>
+                     </li>
+                     <li class="menu_item" data-cat="caffe" data-price="6900">
+                        <a href="#">
+                           <div class="img_box">
+                              <img src="img/memu_drink/Caramel_Macchiato_img.png" alt="카라멜 마키아또">
+                           </div>
+                           <div class="txt_box">
+                              <div class="name_con">
+                                 <strong class="name">카라멜 마키아또</strong>
+                                 <p class="e_name">Caramel Macchiato</p>
+                              </div>
+                              <p class="price"><span>G 6,900원</span></p>
+                           </div>
+                        </a>
+                     </li>
+                     <li class="menu_item" data-cat="caffe" data-price="5800">
+                        <a href="#">
+                           <div class="img_box">
+                              <img src="img/memu_drink/Caffe_Mocha_img.png" alt="카페 모카">
+                           </div>
+                           <div class="txt_box">
+                              <div class="name_con">
+                                 <strong class="name">카페 모카</strong>
+                                 <p class="e_name">Caffe Mocha</p>
+                              </div>
+                              <p class="price"><span>R 5,800원</span><span>G 6,500원</span></p>
+                           </div>
+                        </a>
+                     </li>
+                     <li class="menu_item" data-cat="caffe" data-price="5200">
+                        <a href="#">
+                           <div class="img_box">
+                              <img src="img/memu_drink/Cappuccino_img.png" alt="카푸치노">
+                           </div>
+                           <div class="txt_box">
+                              <div class="name_con">
+                                 <strong class="name">카푸치노</strong>
+                                 <p class="e_name">Cappuccino</p>
+                              </div>
+                              <p class="price"><span>R 5,200원</span><span>G 5,900원</span></p>
+                           </div>
+                        </a>
+                     </li>
+                     <li class="menu_item best" data-cat="caffe" data-price="5200" data-status="best">
+                        <a href="#">
+                           <div class="img_box">
+                              <img src="img/memu_drink/Caffe_Latte_img.png" alt="카페 라떼">
+                           </div>
+                           <div class="txt_box">
+                              <div class="name_con">
+                                 <strong class="name">카페 라떼</strong>
+                                 <p class="e_name">Caffe Latte</p>
+                              </div>
+                              <p class="price"><span>R 5,200원</span><span>G 5,900원</span><span>V 6,600원</span></p>
+                           </div>
+                        </a>
+                     </li>
+                     <li class="menu_item best" data-cat="caffe" data-price="4700" data-status="best">
+                        <a href="#">
+                           <div class="img_box">
+                              <img src="img/memu_drink/Caffe_Americano_img.png" alt="아메리카노">
+                           </div>
+                           <div class="txt_box">
+                              <div class="name_con">
+                                 <strong class="name">아메리카노</strong>
+                                 <p class="e_name">Caffe Americano</p>
+                              </div>
+                              <p class="price"><span>R 4,700원</span><span>G 5,400원</span><span>V 6,100원</span></p>
+                           </div>
+                        </a>
+                     </li>
+                     <li class="menu_item" data-cat="caffe" data-price="6200">
+                        <a href="#">
+                           <div class="img_box">
+                              <img src="img/memu_drink/Affogato_img.png" alt="아포가토">
+                           </div>
+                           <div class="txt_box">
+                              <div class="name_con">
+                                 <strong class="name">아포가토</strong>
+                                 <p class="e_name">Affogato</p>
+                              </div>
+                              <p class="price"><span>6,200원</span></p>
+                           </div>
+                        </a>
+                     </li>
+                     <li class="menu_item" data-cat="caffe" data-price="4500">
+                        <a href="#">
+                           <div class="img_box">
+                              <img src="img/memu_drink/Espresso_img.png" alt="에스프레소">
+                           </div>
+                           <div class="txt_box">
+                              <div class="name_con">
+                                 <strong class="name">에스프레소 (2샷)</strong>
+                                 <p class="e_name">Espresso</p>
+                              </div>
+                              <p class="price"><span>4,500원</span></p>
+                           </div>
+                        </a>
+                     </li>
+                     <li class="menu_item" data-cat="caffe" data-price="5500">
+                        <a href="#">
+                           <div class="img_box">
+                              <img src="img/memu_drink/Cold_Brew_Delight_img.png" alt="콜드브루 딜라이트">
+                           </div>
+                           <div class="txt_box">
+                              <div class="name_con">
+                                 <strong class="name">콜드브루 딜라이트</strong>
+                                 <p class="e_name">Cold Brew Delight</p>
+                              </div>
+                              <p class="price"><span>R 5,500원</span><span>G 7,200원</span><span>V 7,900원</span></p>
+                           </div>
+                        </a>
+                     </li>
+                     <li class="menu_item" data-cat="caffe" data-price="5600">
+                        <a href="#">
+                           <div class="img_box">
+                              <img src="img/memu_drink/Cold_Brew_Latte_img.png" alt="콜드브루 라떼">
+                           </div>
+                           <div class="txt_box">
+                              <div class="name_con">
+                                 <strong class="name">콜드브루 라떼</strong>
+                                 <p class="e_name">Cold Brew Latte</p>
+                              </div>
+                              <p class="price"><span>R 5,600원</span><span>G 6,300원</span><span>V 7,000원</span></p>
+                           </div>
+                        </a>
+                     </li>
+                     <li class="menu_item" data-cat="caffe" data-price="5000">
+                        <a href="#">
+                           <div class="img_box">
+                              <img src="img/memu_drink/Cold_Brew_img.png" alt="콜드브루">
+                           </div>
+                           <div class="txt_box">
+                              <div class="name_con">
+                                 <strong class="name">콜드브루</strong>
+                                 <p class="e_name">Cold Brew</p>
+                              </div>
+                              <p class="price"><span>R 5,000원</span><span>G 5,700원</span><span>V 6,400원</span></p>
+                           </div>
+                        </a>
+                     </li>
+                     <li class="menu_item" data-cat="caffe" data-price="5800">
+                        <a href="#">
+                           <div class="img_box">
+                              <img src="img/memu_drink/Iced_Tea_Decaf_Cold_Brew_img.png" alt="디카페인 콜드브루 아샷추">
+                           </div>
+                           <div class="txt_box">
+                              <div class="name_con">
+                                 <strong class="name">디카페인 콜드브루 아샷추</strong>
+                                 <p class="e_name">Iced Tea + Decaf Cold Brew</p>
+                              </div>
+                              <p class="price"><span>G 5,800원</span><span>V 6,500원</span></p>
+                           </div>
+                        </a>
+                     </li>
+                     <li class="menu_item" data-cat="caffe" data-price="5100">
+                        <a href="#">
+                           <div class="img_box">
+                              <img src="img/memu_drink/Decaf_Cold_Brew_img.png" alt="디카페인 콜드브루">
+                           </div>
+                           <div class="txt_box">
+                              <div class="name_con">
+                                 <strong class="name">디카페인 콜드브루</strong>
+                                 <p class="e_name">Decaf Cold Brew</p>
+                              </div>
+                              <p class="price"><span>R 5,100원</span><span>G 5,800원</span><span>V 6,500원</span></p>
+                           </div>
+                        </a>
+                     </li>
+                     <li class="menu_item" data-cat="caffe" data-price="5600">
+                        <a href="#">
+                           <div class="img_box">
+                              <img src="img/memu_drink/Decaf_Cold_Brew_Latte_img.png" alt="디카페인 콜드브루 라떼">
+                           </div>
+                           <div class="txt_box">
+                              <div class="name_con">
+                                 <strong class="name">디카페인 콜드브루 라떼</strong>
+                                 <p class="e_name">Decaf Cold Brew Latte</p>
+                              </div>
+                              <p class="price"><span>R 5,600원</span><span>G 6,300원</span><span>V 7,000원</span></p>
+                           </div>
+                        </a>
+                     </li>
+                     <li class="menu_item" data-cat="caffe" data-price="6600">
+                        <a href="#">
+                           <div class="img_box">
+                              <img src="img/memu_drink/Decaf_Cold_Brew_Vanilla_Delight_img.png"
+                                 alt="디카페인 콜드브루 바닐라 딜라이트">
+                           </div>
+                           <div class="txt_box">
+                              <div class="name_con">
+                                 <strong class="name">디카페인 콜드브루 바닐라 딜라이트</strong>
+                                 <p class="e_name">Decaf Cold Brew Vanilla Delight</p>
+                              </div>
+                              <p class="price"><span>R 6,600원</span><span>G 7,300원</span><span>V 8,000원</span></p>
+                           </div>
+                        </a>
+                     </li>
+                     <li class="menu_item" data-cat="latte" data-price="6000">
+                        <a href="#">
+                           <div class="img_box">
+                              <img src="img/memu_drink/Royal_Milk_Bubble_Tea_img.png" alt="로얄 밀크 버블티">
+                           </div>
+                           <div class="txt_box">
+                              <div class="name_con">
+                                 <strong class="name">로얄 밀크 버블티</strong>
+                                 <p class="e_name">Royal Milk Bubble Tea</p>
+                              </div>
+                              <p class="price"><span>R 6,000원</span><span>G 6,700원</span></p>
+                           </div>
+                        </a>
+                     </li>
+                     <li class="menu_item" data-cat="latte" data-price="6000">
+                        <a href="#">
+                           <div class="img_box">
+                              <img src="img/memu_drink/Royal_Milk_Tea_Latte_img.png" alt="로얄 밀크티 라떼">
+                           </div>
+                           <div class="txt_box">
+                              <div class="name_con">
+                                 <strong class="name">로얄 밀크티 라떼</strong>
+                                 <p class="e_name">Royal Milk Tea Latte</p>
+                              </div>
+                              <p class="price"><span>R 6,000원</span><span>G 6,700원</span></p>
+                           </div>
+                        </a>
+                     </li>
+                     <li class="menu_item" data-cat="latte" data-price="5900">
+                        <a href="#">
+                           <div class="img_box">
+                              <img src="img/memu_drink/Black_Sugar_Bubble_Tea_img.png" alt="흑당 버블티">
+                           </div>
+                           <div class="txt_box">
+                              <div class="name_con">
+                                 <strong class="name">흑당 버블티</strong>
+                                 <p class="e_name">Black Sugar Bubble Tea</p>
+                              </div>
+                              <p class="price"><span>R 5,900원</span><span>G 6,600원</span></p>
+                           </div>
+                        </a>
+                     </li>
+                     <li class="menu_item" data-cat="latte" data-price="6000">
+                        <a href="#">
+                           <div class="img_box">
+                              <img src="img/memu_drink/Jeju_Matcha_Latte_img.png" alt="제주 말차 라떼">
+                           </div>
+                           <div class="txt_box">
+                              <div class="name_con">
+                                 <strong class="name">제주 말차 라떼</strong>
+                                 <p class="e_name">Jeju Matcha Latte</p>
+                              </div>
+                              <p class="price"><span>R 6,000원</span><span>G 6,700원</span></p>
+                           </div>
+                        </a>
+                     </li>
+                     <li class="menu_item" data-cat="latte" data-price="6100">
+                        <a href="#">
+                           <div class="img_box">
+                              <img src="img/memu_drink/Mint_Chocolate_img.png" alt="민트초코">
+                           </div>
+                           <div class="txt_box">
+                              <div class="name_con">
+                                 <strong class="name">민트초코</strong>
+                                 <p class="e_name">Mint Chocolate</p>
+                              </div>
+                              <p class="price"><span>R 6,100원</span><span>G 6,800원</span></p>
+                           </div>
+                        </a>
+                     </li>
+                     <li class="menu_item best" data-cat="latte" data-price="5900" data-status="best">
+                        <a href="#">
+                           <div class="img_box">
+                              <img src="img/memu_drink/Chocolate_HOT_ICED_img.png" alt="핫 아이스 초코">
+                           </div>
+                           <div class="txt_box">
+                              <div class="name_con">
+                                 <strong class="name">핫/아이스 초코</strong>
+                                 <p class="e_name">Chocolate HOT/ICED</p>
+                              </div>
+                              <p class="price"><span>R 5,900원</span><span>G 6,600원</span></p>
+                           </div>
+                        </a>
+                     </li>
+                     <li class="menu_item" data-cat="latte" data-price="5900">
+                        <a href="#">
+                           <div class="img_box">
+                              <img src="img/memu_drink/White_Chocolate_img.png" alt="화이트초코">
+                           </div>
+                           <div class="txt_box">
+                              <div class="name_con">
+                                 <strong class="name">화이트초코</strong>
+                                 <p class="e_name">White Chocolate</p>
+                              </div>
+                              <p class="price"><span>R 5,900원</span><span>G 6,600원</span></p>
+                           </div>
+                        </a>
+                     </li>
+                     <li class="menu_item" data-cat="tea" data-price="6300">
+                        <a href="#">
+                           <div class="img_box">
+                              <img src="img/memu_drink/Red_Cinnamon_Vin_Chaud_img.png" alt="레드 시나몬 뱅쇼">
+                           </div>
+                           <div class="txt_box">
+                              <div class="name_con">
+                                 <strong class="name">레드 시나몬 뱅쇼</strong>
+                                 <p class="e_name">Red Cinnamon Vin Chaud</p>
+                              </div>
+                              <p class="price"><span>R 6,300원</span><span>G 7,000원</span><span>V 7,700원</span></p>
+                           </div>
+                        </a>
+                     </li>
+                     <li class="menu_item best" data-cat="tea" data-price="4700" data-status="best">
+                        <a href="#">
+                           <div class="img_box">
+                              <img src="img/memu_drink/Iced_Tea_img.png" alt="아이스티">
+                           </div>
+                           <div class="txt_box">
+                              <div class="name_con">
+                                 <strong class="name">아이스티</strong>
+                                 <p class="e_name">Iced Tea</p>
+                              </div>
+                              <p class="price"><span>G 4,700원</span><span>V 5,400원</span></p>
+                           </div>
+                        </a>
+                     </li>
+                     <li class="menu_item" data-cat="tea" data-price="5500">
+                        <a href="#">
+                           <div class="img_box">
+                              <img src="img/memu_drink/Honey_Quince_Tea_img.png" alt="꿀모과차">
+                           </div>
+                           <div class="txt_box">
+                              <div class="name_con">
+                                 <strong class="name">꿀모과차</strong>
+                                 <p class="e_name">Honey Quince Tea</p>
+                              </div>
+                              <p class="price"><span>R 5,500원</span><span>G 6,200원</span><span>V 6,900원</span></p>
+                           </div>
+                        </a>
+                     </li>
+                     <li class="menu_item" data-cat="tea" data-price="5500">
+                        <a href="#">
+                           <div class="img_box">
+                              <img src="img/memu_drink/Lemon_Ginger_Tea_img.png" alt="레몬 생강차">
+                           </div>
+                           <div class="txt_box">
+                              <div class="name_con">
+                                 <strong class="name">레몬 생강차</strong>
+                                 <p class="e_name">Lemon Ginger Tea</p>
+                              </div>
+                              <p class="price"><span>R 5,500원</span><span>G 6,200원</span><span>V 6,900원</span></p>
+                           </div>
+                        </a>
+                     </li>
+                     <li class="menu_item" data-cat="tea" data-price="5500">
+                        <a href="#">
+                           <div class="img_box">
+                              <img src="img/memu_drink/Jujube_Ginger_Tea_img.png" alt="대추 생강차">
+                           </div>
+                           <div class="txt_box">
+                              <div class="name_con">
+                                 <strong class="name">대추 생강차</strong>
+                                 <p class="e_name">Jujube Ginger Tea</p>
+                              </div>
+                              <p class="price"><span>R 5,500원</span><span>G 6,200원</span><span>V 6,900원</span></p>
+                           </div>
+                        </a>
+                     </li>
+                     <li class="menu_item best" data-cat="tea" data-status="best" data-price="5800">
+                        <a href="#">
+                           <div class="img_box">
+                              <img src="img/memu_drink/Jeju_Lemon_Apple_Tea_img.png" alt="제주 레몬 애플티">
+                           </div>
+                           <div class="txt_box">
+                              <div class="name_con">
+                                 <strong class="name">제주 레몬 애플티</strong>
+                                 <p class="e_name">Jeju Lemon Apple Tea</p>
+                              </div>
+                              <p class="price"><span>R 5,800원</span><span>G 6,500원</span><span>V 7,200원</span></p>
+                           </div>
+                        </a>
+                     </li>
+                     <li class="menu_item best" data-cat="tea" data-status="best" data-price="5700">
+                        <a href="#">
+                           <div class="img_box">
+                              <img src="img/memu_drink/Pink_Pineapple_Chamomile_Tea_img.png" alt="핑크 파인 캐모마일티">
+                           </div>
+                           <div class="txt_box">
+                              <div class="name_con">
+                                 <strong class="name">핑크 파인 캐모마일티</strong>
+                                 <p class="e_name">Pink Pineapple Chamomile Tea</p>
+                              </div>
+                              <p class="price"><span>R 5,700원</span><span>G 6,400원</span><span>V 7,100원</span></p>
+                           </div>
+                        </a>
+                     </li>
+                     <li class="menu_item" data-cat="tea" data-price="5700">
+                        <a href="#">
+                           <div class="img_box">
+                              <img src="img/memu_drink/Yuzu_Chamomile_img.png" alt="유자 캐모마일">
+                           </div>
+                           <div class="txt_box">
+                              <div class="name_con">
+                                 <strong class="name">유자 캐모마일</strong>
+                                 <p class="e_name">Yuzu Chamomile</p>
+                              </div>
+                              <p class="price"><span>R 5,700원</span><span>G 6,400원</span><span>V 7,100원</span></p>
+                           </div>
+                        </a>
+                     </li>
+                     <li class="menu_item best" data-cat="tea" data-price="5700" data-status="best">
+                        <a href="#">
+                           <div class="img_box">
+                              <img src="img/memu_drink/Peach_Earl_Grey_img.png" alt="복숭아 얼그레이">
+                           </div>
+                           <div class="txt_box">
+                              <div class="name_con">
+                                 <strong class="name">복숭아 얼그레이</strong>
+                                 <p class="e_name">Peach Earl Grey</p>
+                              </div>
+                              <p class="price"><span>R 5,700원</span><span>G 6,400원</span><span>V 7,100원</span></p>
+                           </div>
+                        </a>
+                     </li>
+                     <li class="menu_item" data-cat="tea" data-price="5300">
+                        <a href="#">
+                           <div class="img_box">
+                              <img src="img/memu_drink/Red_Grapefruit_Tea_img.png" alt="홍자몽차">
+                           </div>
+                           <div class="txt_box">
+                              <div class="name_con">
+                                 <strong class="name">홍자몽차</strong>
+                                 <p class="e_name">Red Grapefruit Tea</p>
+                              </div>
+                              <p class="price"><span>R 5,300원</span><span>G 6,000원</span><span>V 6,700원</span></p>
+                           </div>
+                        </a>
+                     </li>
+                     <li class="menu_item" data-cat="tea" data-price="5300">
+                        <a href="#">
+                           <div class="img_box">
+                              <img src="img/memu_drink/jeju_Hanrabong_tangerine_tea_img.png" alt="제주 한라봉 감귤차">
+                           </div>
+                           <div class="txt_box">
+                              <div class="name_con">
+                                 <strong class="name">제주 한라봉 감귤차</strong>
+                                 <p class="e_name">jeju Hanrabong tangerine tea</p>
+                              </div>
+                              <p class="price"><span>R 5,300원</span><span>G 6,000원</span><span>V 6,700원</span></p>
+                           </div>
+                        </a>
+                     </li>
+                     <li class="menu_item" data-cat="tea" data-price="5300">
+                        <a href="#">
+                           <div class="img_box">
+                              <img src="img/memu_drink/Goheung_Yuzu_Tea_img.png" alt="고흥 유자차">
+                           </div>
+                           <div class="txt_box">
+                              <div class="name_con">
+                                 <strong class="name">고흥 유자차</strong>
+                                 <p class="e_name">Goheung Yuzu Tea</p>
+                              </div>
+                              <p class="price"><span>R 5,300원</span><span>G 6,000원</span><span>V 6,700원</span></p>
+                           </div>
+                        </a>
+                     </li>
+                     <li class="menu_item" data-cat="tea" data-price="4900">
+                        <a href="#">
+                           <div class="img_box">
+                              <img src="img/memu_drink/Green_Tea_img.png" alt="해남 녹차">
+                           </div>
+                           <div class="txt_box">
+                              <div class="name_con">
+                                 <strong class="name">해남 녹차</strong>
+                                 <p class="e_name">Green Tea</p>
+                              </div>
+                              <p class="price"><span>G 4,900원</span></p>
+                           </div>
+                        </a>
+                     </li>
+                     <li class="menu_item" data-cat="tea" data-price="4900">
+                        <a href="#">
+                           <div class="img_box">
+                              <img src="img/memu_drink/Peppermint_Tea_img.png" alt="페퍼민트">
+                           </div>
+                           <div class="txt_box">
+                              <div class="name_con">
+                                 <strong class="name">페퍼민트</strong>
+                                 <p class="e_name">Peppermint Tea</p>
+                              </div>
+                              <p class="price"><span>G 4,900원</span></p>
+                           </div>
+                        </a>
+                     </li>
+                     <li class="menu_item" data-cat="tea" data-price="4900">
+                        <a href="#">
+                           <div class="img_box">
+                              <img src="img/memu_drink/Chamomile_img.png" alt="캐모마일">
+                           </div>
+                           <div class="txt_box">
+                              <div class="name_con">
+                                 <strong class="name">캐모마일</strong>
+                                 <p class="e_name">Chamomile</p>
+                              </div>
+                              <p class="price"><span>G 4,900원</span></p>
+                           </div>
+                        </a>
+                     </li>
+                     <li class="menu_item" data-cat="tea" data-price="4900">
+                        <a href="#">
+                           <div class="img_box">
+                              <img src="img/memu_drink/Earl_Grey_img.png" alt="얼그레이">
+                           </div>
+                           <div class="txt_box">
+                              <div class="name_con">
+                                 <strong class="name">얼그레이</strong>
+                                 <p class="e_name">Earl Grey</p>
+                              </div>
+                              <p class="price"><span>G 4,900원</span></p>
+                           </div>
+                        </a>
+                     </li>
+                     <li class="menu_item" data-cat="hollyccino_smoothie" data-price="6400">
+                        <a href="#">
+                           <div class="img_box">
+                              <img src="img/memu_drink/Double_chocochip_Hollyccino_img.png" alt="더블 초코칩 할리치노">
+                           </div>
+                           <div class="txt_box">
+                              <div class="name_con">
+                                 <strong class="name">더블 초코칩 할리치노</strong>
+                                 <p class="e_name">Double chocochip Hollyccino</p>
+                              </div>
+                              <p class="price"><span>R 6,400원</span><span>G 7,100원</span></p>
+                           </div>
+                        </a>
+                     </li>
+                     <li class="menu_item" data-cat="hollyccino_smoothie" data-price="6400">
+                        <a href="#">
+                           <div class="img_box">
+                              <img src="img/memu_drink/Jeju_Matcha_Hollyccino_img.png" alt="제주 말차 할리치노">
+                           </div>
+                           <div class="txt_box">
+                              <div class="name_con">
+                                 <strong class="name">제주 말차 할리치노</strong>
+                                 <p class="e_name">Jeju Matcha Hollyccino</p>
+                              </div>
+                              <p class="price"><span>R 6,400원</span><span>G 7,100원</span></p>
+                           </div>
+                        </a>
+                     </li>
+                     <li class="menu_item" data-cat="hollyccino_smoothie" data-price="6400">
+                        <a href="#">
+                           <div class="img_box">
+                              <img src="img/memu_drink/Coldbrew_Hollyccino_img.png" alt="콜드브루 할리치노">
+                           </div>
+                           <div class="txt_box">
+                              <div class="name_con">
+                                 <strong class="name">콜드브루 할리치노</strong>
+                                 <p class="e_name">Coldbrew Hollyccino</p>
+                              </div>
+                              <p class="price"><span>R 6,400원</span><span>G 7,100원</span></p>
+                           </div>
+                        </a>
+                     </li>
+                     <li class="menu_item" data-cat="hollyccino_smoothie" data-price="6400">
+                        <a href="#">
+                           <div class="img_box">
+                              <img src="img/memu_drink/Mint_Chocochip_Hollyccino_img.png" alt="민트 초코칩 할리치노">
+                           </div>
+                           <div class="txt_box">
+                              <div class="name_con">
+                                 <strong class="name">민트 초코칩 할리치노</strong>
+                                 <p class="e_name">Mint Chocochip Hollyccino</p>
+                              </div>
+                              <p class="price"><span>R 6,400원</span><span>G 7,100원</span></p>
+                           </div>
+                        </a>
+                     </li>
+                     <li class="menu_item best" data-cat="hollyccino_smoothie" data-price="6400" data-status="best">
+                        <a href="#">
+                           <div class="img_box">
+                              <img src="img/memu_drink/Strawberry_Cheese_Cake_Hollyccino_img.png" alt="딸기 치즈케익 할리치노">
+                           </div>
+                           <div class="txt_box">
+                              <div class="name_con">
+                                 <strong class="name">딸기 치즈케익 할리치노</strong>
+                                 <p class="e_name">Strawberry Cheese Cake Hollyccino</p>
+                              </div>
+                              <p class="price"><span>R 6,400원</span><span>G 7,100원</span></p>
+                           </div>
+                        </a>
+                     </li>
+                     <li class="menu_item" data-cat="hollyccino_smoothie" data-price="6400">
+                        <a href="#">
+                           <div class="img_box">
+                              <img src="img/memu_drink/Plain_Yogurt_Hollyccino_img.png" alt="플레인 요거트 할리치노">
+                           </div>
+                           <div class="txt_box">
+                              <div class="name_con">
+                                 <strong class="name">플레인 요거트 할리치노</strong>
+                                 <p class="e_name">Plain Yogurt Hollyccino</p>
+                              </div>
+                              <p class="price"><span>R 6,400원</span><span>G 7,100원</span></p>
+                           </div>
+                        </a>
+                     </li>
+                     <li class="menu_item" data-cat="hollyccino_smoothie" data-price="5900">
+                        <a href="#">
+                           <div class="img_box">
+                              <img src="img/memu_drink/Peach_Strawberry_Blended_img.png" alt="피치 딸기 블렌디드">
+                           </div>
+                           <div class="txt_box">
+                              <div class="name_con">
+                                 <strong class="name">피치 딸기 블렌디드</strong>
+                                 <p class="e_name">Peach Strawberry Blended</p>
+                              </div>
+                              <p class="price"><span>R 5,900원</span></p>
+                           </div>
+                        </a>
+                     </li>
+                     <li class="menu_item" data-cat="hollyccino_smoothie" data-price="6500">
+                        <a href="#">
+                           <div class="img_box">
+                              <img src="img/memu_drink/Apple_Mango_Smoothie_img.png" alt="애플망고 스무디">
+                           </div>
+                           <div class="txt_box">
+                              <div class="name_con">
+                                 <strong class="name">애플망고 스무디</strong>
+                                 <p class="e_name">Apple Mango Smoothie</p>
+                              </div>
+                              <p class="price"><span>R 6,500원</span></p>
+                           </div>
+                        </a>
+                     </li>
+                     <li class="menu_item" data-cat="hollyccino_smoothie" data-price="6500">
+                        <a href="#">
+                           <div class="img_box">
+                              <img src="img/memu_drink/Strawberry_Smoothie_img.png" alt="딸기 스무디">
+                           </div>
+                           <div class="txt_box">
+                              <div class="name_con">
+                                 <strong class="name">딸기 스무디</strong>
+                                 <p class="e_name">Strawberry Smoothie</p>
+                              </div>
+                              <p class="price"><span>R 6,500원</span></p>
+                           </div>
+                        </a>
+                     </li>
+                     <li class="menu_item" data-cat="sparkling" data-price="5500">
+                        <a href="#">
+                           <div class="img_box">
+                              <img src="img/memu_drink/Lemonade_img.png" alt="레몬에이드">
+                           </div>
+                           <div class="txt_box">
+                              <div class="name_con">
+                                 <strong class="name">레몬에이드</strong>
+                                 <p class="e_name">Lemonade</p>
+                              </div>
+                              <p class="price"><span>G 5,500원</span></p>
+                           </div>
+                        </a>
+                     </li>
+                     <li class="menu_item" data-cat="sparkling" data-price="6200">
+                        <a href="#">
+                           <div class="img_box">
+                              <img src="img/memu_drink/Yuzu_Grapefruit_Sparkling_img.png" alt="유자몽 스파클링">
+                           </div>
+                           <div class="txt_box">
+                              <div class="name_con">
+                                 <strong class="name">유자몽 스파클링</strong>
+                                 <p class="e_name">Yuzu Grapefruit Sparkling</p>
+                              </div>
+                              <p class="price"><span>G 6,200원</span></p>
+                           </div>
+                        </a>
+                     </li>
+                     <li class="menu_item best" data-cat="sparkling" data-price="6200" data-status="best">
+                        <a href="#">
+                           <div class="img_box">
+                              <img src="img/memu_drink/Peach_Plum_Sparkling_img.png" alt="복숭아 자두 스파클링">
+                           </div>
+                           <div class="txt_box">
+                              <div class="name_con">
+                                 <strong class="name">복숭아 자두 스파클링</strong>
+                                 <p class="e_name">Peach Plum Sparkling</p>
+                              </div>
+                              <p class="price"><span>G 6,200원</span></p>
+                           </div>
+                        </a>
+                     </li>
+                     <li class="menu_item" data-cat="sparkling" data-price="6200">
+                        <a href="#">
+                           <div class="img_box">
+                              <img src="img/memu_drink/Green_Grape_Sparkling_img.png" alt="청포도 스파클링">
+                           </div>
+                           <div class="txt_box">
+                              <div class="name_con">
+                                 <strong class="name">청포도 스파클링</strong>
+                                 <p class="e_name">Green Grape Sparkling</p>
+                              </div>
+                              <p class="price"><span>G 6,200원</span></p>
+                           </div>
+                        </a>
+                     </li>
+                     <li class="menu_item" data-cat="juice" data-price="6600">
+                        <a href="#">
+                           <div class="img_box">
+                              <img src="img/memu_drink/Orange_Grapefruit_Juice_img.png" alt="오렌지 자몽 생과일 주스">
+                           </div>
+                           <div class="txt_box">
+                              <div class="name_con">
+                                 <strong class="name">오렌지 자몽 생과일 주스</strong>
+                                 <p class="e_name">Orange Grapefruit Juice</p>
+                              </div>
+                              <p class="price"><span>G 6,600원</span></p>
+                           </div>
+                        </a>
+                     </li>
+                     <li class="menu_item" data-cat="juice" data-price="6600">
+                        <a href="#">
+                           <div class="img_box">
+                              <img src="img/memu_drink/Tomato_Juice_img.png" alt="토마토 생과일 주스">
+                           </div>
+                           <div class="txt_box">
+                              <div class="name_con">
+                                 <strong class="name">토마토 생과일 주스</strong>
+                                 <p class="e_name">Tomato Juice</p>
+                              </div>
+                              <p class="price"><span>G 6,600원</span></p>
+                           </div>
+                        </a>
+                     </li>
+                     <li class="menu_item" data-cat="juice" data-price="6200">
+                        <a href="#">
+                           <div class="img_box">
+                              <img src="img/memu_drink/Apple_Beet_Juice_img.png" alt="사과 비트 착즙 주스">
+                           </div>
+                           <div class="txt_box">
+                              <div class="name_con">
+                                 <strong class="name">사과 비트 착즙 주스</strong>
+                                 <p class="e_name">Apple Beet Juice</p>
+                              </div>
+                              <p class="price"><span>R 6,200원</span></p>
+                           </div>
+                        </a>
+                     </li>
+                     <li class="menu_item" data-cat="juice" data-price="6200">
+                        <a href="#">
+                           <div class="img_box">
+                              <img src="img/memu_drink/Orange_Carrot_Juice_img.png" alt="오렌지 당근 착즙 주스">
+                           </div>
+                           <div class="txt_box">
+                              <div class="name_con">
+                                 <strong class="name">오렌지 당근 착즙 주스</strong>
+                                 <p class="e_name">Orange Carrot Juice</p>
+                              </div>
+                              <p class="price"><span>R 6,200원</span></p>
+                           </div>
+                        </a>
+                     </li>
+                     <li class="menu_item" data-cat="juice" data-price="6200">
+                        <a href="#">
+                           <div class="img_box">
+                              <img src="img/memu_drink/Green_Grape_Kale_Juice_img.png" alt="청포도 케일 착즙 주스">
+                           </div>
+                           <div class="txt_box">
+                              <div class="name_con">
+                                 <strong class="name">청포도 케일 착즙 주스</strong>
+                                 <p class="e_name">Green Grape Kale Juice</p>
+                              </div>
+                              <p class="price"><span>R 6,200원</span></p>
+                           </div>
+                        </a>
+                     </li>
+                     <li class="menu_item" data-cat="bottle" data-price="4500">
+                        <a href="#">
+                           <div class="img_box">
+                              <img src="img/memu_drink/Caffe_Americano_img.png" alt="스무비 애플">
+                           </div>
+                           <div class="txt_box">
+                              <div class="name_con">
+                                 <strong class="name">스무비 애플</strong>
+                                 <p class="e_name">Smoovi Apple</p>
+                              </div>
+                              <p class="price"><span>4,500원</span></p>
+                           </div>
+                        </a>
+                     </li>
+                     <li class="menu_item" data-cat="bottle" data-price="4500">
+                        <a href="#">
+                           <div class="img_box">
+                              <img src="img/memu_drink/Caffe_Americano_img.png" alt="스무비 오렌지">
+                           </div>
+                           <div class="txt_box">
+                              <div class="name_con">
+                                 <strong class="name">스무비 오렌지</strong>
+                                 <p class="e_name">Smoovi Orange</p>
+                              </div>
+                              <p class="price"><span>4,500원</span></p>
+                           </div>
+                        </a>
+                     </li>
+                     <li class="menu_item" data-cat="bottle" data-price="3900">
+                        <a href="#">
+                           <div class="img_box">
+                              <img src="img/memu_drink/Kombucha_Shine_Muscat_img.png" alt="할리스 콤부차 샤인머스캣">
+                           </div>
+                           <div class="txt_box">
+                              <div class="name_con">
+                                 <strong class="name">할리스 콤부차 샤인머스캣</strong>
+                                 <p class="e_name">Kombucha Shine Muscat</p>
+                              </div>
+                              <p class="price"><span>3,900원</span></p>
+                           </div>
+                        </a>
+                     </li>
+                     <li class="menu_item" data-cat="bottle" data-price="3900">
+                        <a href="#">
+                           <div class="img_box">
+                              <img src="img/memu_drink/Kombucha_Peach_Strawberry_img.png" alt="할리스 콤부차 피치딸기">
+                           </div>
+                           <div class="txt_box">
+                              <div class="name_con">
+                                 <strong class="name">할리스 콤부차 피치딸기</strong>
+                                 <p class="e_name">Kombucha Peach Strawberry</p>
+                              </div>
+                              <p class="price"><span>3,900원</span></p>
+                           </div>
+                        </a>
+                     </li>
+                     <li class="menu_item" data-cat="bottle" data-price="2900">
+                        <a href="#">
+                           <div class="img_box">
+                              <img src="img/memu_drink/Sparkling_Water_Lemon_Lime_img.png" alt="할리스 탄산수 레몬 라임">
+                           </div>
+                           <div class="txt_box">
+                              <div class="name_con">
+                                 <strong class="name">할리스 탄산수 레몬 라임</strong>
+                                 <p class="e_name">Sparkling Water Lemon Lime</p>
+                              </div>
+                              <p class="price"><span>2,900원</span></p>
+                           </div>
+                        </a>
+                     </li>
+                     <li class="menu_item" data-cat="bottle" data-price="2900">
+                        <a href="#">
+                           <div class="img_box">
+                              <img src="img/memu_drink/Sparkling_water_Plain_img.png" alt="할리스 탄산수 플레인">
+                           </div>
+                           <div class="txt_box">
+                              <div class="name_con">
+                                 <strong class="name">할리스 탄산수 플레인</strong>
+                                 <p class="e_name">Sparkling water Plain</p>
+                              </div>
+                              <p class="price"><span>2,900원</span></p>
+                           </div>
+                        </a>
+                     </li>
+                  </ul>
+               </div> <!-- //.memu_con -->
+               <div class="pagenation">
+                  <div class="left">
+                     <button type="button"><i class="bx bx-chevrons-left"></i></button>
+                     <button type="button"><i class="bx bx-chevron-left"></i></button>
+                  </div> <!-- //.left -->
+                  <div class="num_page">
+                     <button type="button">1</button>
+                     <button type="button">2</button>
+                     <button type="button">3</button>
+                     <button type="button">4</button>
+                     <button type="button">5</button>
+                  </div> <!-- //.num_page -->
+                  <div class="right">
+                     <button type="button"><i class="bx bx-chevron-right"></i></button>
+                     <button type="button"><i class="bx bx-chevrons-right"></i></button>
+                  </div> <!-- //.right -->
+               </div> <!-- //.pagenation -->
+            </div> <!-- //.inner -->
+         </section>
+         <section id="memu_food" class="food">
+            <div class="inner">
+               <h3>푸드</h3>
+               <div class="info_con">
+                  <ul class="sub_tab">
+                     <li><button type="button" class="all">전체</button></li>
+                     <li><button type="button" class="bakery">베이커리</button></li>
+                     <li><button type="button" class="delhi">델리</button></li>
+                     <li><button type="button" class="cake">케이크</button></li>
+                     <li><button type="button" class="snacks">스낵</button></li>
+                  </ul>
+                  <div class="filter">
+                     <div class="result">
+                        <p><span>총</span><em>0</em><span>개</span></p>
+                     </div> <!-- //.result -->
+                     <div class="path">
+                        <p>메뉴</p>
+                        <i class="bx bx-chevron-right bx-flip-vertical"></i>
+                        <p>음료</p>
+                        <i class="bx bx-chevron-right bx-flip-vertical"></i>
+                        <p>전체</p>
+                     </div> <!-- //.path -->
+                  </div> <!-- //.filter -->
+                  <div class="sorting">
+                     <ul>
+                        <li><button type="button" class="new">신메뉴순</button></li>
+                        <li><button type="button" class="best">인기순</button></li>
+                        <li><button type="button" class="row_price">낮은가격순</button></li>
+                        <li><button type="button" class="high_price">높은가격순</button></li>
+                     </ul>
+                  </div> <!-- //.sorting -->
+               </div> <!-- //info_con -->
+               <div class="memu_con">
+                  <ul class="menu_list">
+                     <li class="menu_item new" data-cat="bakery" data-price="7900" data-status="new">
+                        <a href="#">
+                           <div class="img_box">
+                              <img src="img/memu_drink/Dubai_Style_Chewy_Chocolate_Bread_img.png" alt="두바이 쫀득 초코식빵">
+                           </div>
+                           <div class="txt_box">
+                              <div class="name_con">
+                                 <strong class="name">두바이 쫀득 초코식빵</strong>
+                                 <p class="e_name">Dubai Style Chewy Chocolate Bread</p>
+                              </div>
+                              <p class="price"><span>7,900원</span></p>
+                           </div>
+                        </a>
+                     </li>
+                  </ul>
+               </div> <!-- //.memu_con -->
+            </div> <!-- //.inner -->
+            <div class="pagenation">
+               <div class="left">
+                  <button type="button"><i class="bx bx-chevrons-left"></i></button>
+                  <button type="button"><i class="bx bx-chevron-left"></i></button>
+               </div> <!-- //.left -->
+               <div class="num_page">
+                  <button type="button">1</button>
+                  <button type="button">2</button>
+                  <button type="button">3</button>
+                  <button type="button">4</button>
+                  <button type="button">5</button>
+               </div> <!-- //.num_page -->
+               <div class="right">
+                  <button type="button"><i class="bx bx-chevron-right"></i></button>
+                  <button type="button"><i class="bx bx-chevrons-right"></i></button>
+               </div> <!-- //.right -->
+            </div> <!-- //.pagenation -->
+         </section>
+         <section id="memu_md" class="md">
+            <div class="inner">
+               <h3>MD</h3>
+               <div class="info_con">
+                  <ul class="sub_tab">
+                     <li><button type="button" class="all">전체</button></li>
+                     <li><button type="button" class="life_style">라이프 스타일</button></li>
+                     <li><button type="button" class="coffee_beans">원두</button></li>
+                     <li><button type="button" class="Stick_drip bag">스틱/드립백</button></li>
+                     <li><button type="button" class="tumbler">텀블러</button></li>
+                     <li><button type="button" class="mugs_glasses">머그컵/글라스</button></li>
+                  </ul>
+                  <div class="filter">
+                     <div class="result">
+                        <p><span>총</span><em>0</em><span>개</span></p>
+                     </div> <!-- //.result -->
+                     <div class="path">
+                        <p>메뉴</p>
+                        <i class="bx bx-chevron-right bx-flip-vertical"></i>
+                        <p>음료</p>
+                        <i class="bx bx-chevron-right bx-flip-vertical"></i>
+                        <p>전체</p>
+                     </div> <!-- //.path -->
+                  </div> <!-- //.filter -->
+                  <div class="sorting">
+                     <ul>
+                        <li><button type="button" class="new">신메뉴순</button></li>
+                        <li><button type="button" class="best">인기순</button></li>
+                        <li><button type="button" class="row_price">낮은가격순</button></li>
+                        <li><button type="button" class="high_price">높은가격순</button></li>
+                     </ul>
+                  </div> <!-- //.sorting -->
+               </div> <!-- //info_con -->
+               <div class="memu_con">
+                  <div class="memu_con">
+                     <ul class="menu_list">
+                        <li class="menu_item new" data-cat="hollyccino_smoothie" data-price="7500" data-status="new">
+                           <a href="#">
+                              <div class="img_box">
+                                 <img src="img/memu_drink/Dubai_Style_Chocolate_Parfait_img.png"
+                                    alt="두바이 style 빠작 초코 파르페">
+                              </div>
+                              <div class="txt_box">
+                                 <div class="name_con">
+                                    <strong class="name">두바이 st. 빠작 초코 파르페</strong>
+                                    <p class="e_name">Dubai Style Chocolate Parfait</p>
+                                 </div>
+                                 <p class="price"><span>G 7,500원</span></p>
+                              </div>
+                           </a>
+                        </li>
+                     </ul>
+                  </div> <!-- //.memu_con -->
+               </div>
+               <div class="pagenation">
+                  <div class="left">
+                     <button type="button"><i class="bx bx-chevrons-left"></i></button>
+                     <button type="button"><i class="bx bx-chevron-left"></i></button>
+                  </div> <!-- //.left -->
+                  <div class="num_page">
+                     <button type="button">1</button>
+                     <button type="button">2</button>
+                     <button type="button">3</button>
+                     <button type="button">4</button>
+                     <button type="button">5</button>
+                  </div> <!-- //.num_page -->
+                  <div class="right">
+                     <button type="button"><i class="bx bx-chevron-right"></i></button>
+                     <button type="button"><i class="bx bx-chevrons-right"></i></button>
+                  </div> <!-- //.right -->
+               </div> <!-- //.pagenation -->
+            </div> <!-- //.inner -->
+         </section>
+      </main>
+      <footer>
+         <div class="inner">
+            <div class="logo">Logo</div>
+            <div class="f_right">
+               <div class="top_box">
+                  <a href="#"><em>개인정보처리방침</em></a>
+                  <a href="#"><em>서비스이용약관</em></a>
+                  <a href="#"><em>멤버십이용약관</em></a>
+                  <a href="#"><em>할리스카드이용약관</em></a>
+                  <a href="#"><em>고객문의</em></a>
+                  <a href="#"><em>사이트맵</em></a>
+                  <a href="#"><em>BI 소개</em></a>
+               </div>
+               <div class="bottom_box">
+                  <p><span>대표자: 윤석찬</span>대표전화: 02-2188-7100
+                  </p>
+                  <p><span>법인명: (주)케이지에프앤비</span><span>사업자등록번호: 211-87-61044</span>가맹문의 : 02-6350-7229</p>
+                  <p><span>통신판매업: 제2019-서울종로-0193호</span>주소: 서울특별시 중구 통일로 92, 2층(순화동, 케이지타워)</p>
+                  <p>COPYRIGHT (C) KG F&B. All Rights Reserved.</p>
+               </div>
+            </div>
+         </div> <!-- //.inner -->
+      </footer>
+   </div>
+</body>
+
+</html>

@@ -1,0 +1,110 @@
+@charset "utf-8";
+@media screen and (max-width:1240px) {
+    footer .inner {
+        flex-direction: column;
+        gap: 48px;
+    }
+
+    footer .logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    footer .f_right {
+        justify-content: center;
+        align-items: center;
+    }
+
+    footer .f_right .top_box {
+        gap: 16px;
+    }
+
+    footer .f_right .top_box a::after {
+        padding-right: 16px;
+    }
+
+    footer .f_right .bottom_box {
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width:1200px) {
+    header .inner {
+        height: 60px;
+    }
+
+    header .logo {
+        font-size: 1.7rem;
+    }
+
+    header nav {
+        display: none;
+    }
+
+    header .right_box>li>.ham {
+        display: flex;
+    }
+}
+
+@media screen and (max-width:900px) {
+    footer .inner {
+        gap: 32px;
+    }
+
+    footer .f_right .top_box {
+        display: none;
+    }
+}
+
+@media screen and (max-width:750px) {
+
+    header .right_box>li:nth-child(1),
+    header .right_box>li:nth-child(2),
+    header .right_box>li:nth-child(3),
+    header .right_box>li:nth-child(4),
+    header .right_box>li:nth-child(5) {
+        display: none;
+    }
+
+    header .right_box>li:last-child>button {
+        display: flex;
+    }
+}
+
+@media screen and (max-width:700px) {
+    footer .f_right .bottom_box p {
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width:680px) {
+    footer .f_right .bottom_box p:nth-child(3) span::after {
+        border: 0;
+    }
+}
+
+@media screen and (max-width:655px) {
+    footer .f_right .bottom_box p:nth-child(2) span:last-child:after {
+        border: 0;
+    }
+}
+
+@media screen and (max-width:455px) {
+    footer .f_right .bottom_box p:nth-child(2) span:first-child:after {
+        border: 0;
+    }
+
+    footer .f_right .bottom_box p:nth-child(2) span:last-child:after {
+        border-right: 1px solid rgba(26, 26, 26, 0.3);
+    }
+}
+
+@media screen and (max-width:444px) {
+    footer .f_right .bottom_box p:nth-child(2) span:last-child:after {
+        border: 0;
+    }
+}

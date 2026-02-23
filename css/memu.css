@@ -1,0 +1,422 @@
+@charset "utf-8";
+
+:root {
+   font-size: 18px;
+}
+
+body {
+   min-width: 320px;
+}
+
+.top {
+   width: 100%;
+}
+
+.top .bg {
+   width: 100%;
+   height: 520px;
+   background: url(../img/memu_page_img.jpg) center/cover;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+
+.top .bg .tit {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   color: #fff;
+}
+
+.top .bg .tit h3 {
+   font-size: 2.4rem;
+   line-height: 1.3;
+}
+
+.top .bg .tit p {
+   font-size: 1.5rem;
+}
+
+.top .main_tab {
+   width: 100%;
+   border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+}
+
+.top .main_tab .inner {
+   max-width: 1440px;
+   width: 98%;
+   margin: 0 auto;
+}
+
+.top .main_tab ul {
+   display: flex;
+   justify-content: center;
+}
+
+.top .main_tab ul li {
+   width: 240px;
+   height: 70px;
+}
+
+.top .main_tab ul li button {
+   width: 100%;
+   height: 100%;
+   font-size: 1.34rem;
+   font-weight: 500;
+   cursor: pointer;
+   position: relative;
+   color: rgba(0, 0, 0, 0.7);
+}
+
+.top .main_tab ul li button.is-active {
+   color: rgb(200, 101, 101);
+   border-bottom: 3px solid #FE7476;
+}
+
+.top .main_tab ul li button:hover {
+   color: rgb(200, 101, 101);
+}
+
+#memu_drink,
+#memu_food,
+#memu_md {
+   display: none;
+}
+
+#memu_drink.menu_active,
+#memu_food.menu_active,
+#memu_md.menu_active {
+   display: block;
+}
+
+section {
+   width: 100%;
+}
+
+section>.inner {
+   max-width: 1280px;
+   width: 98%;
+   margin: 0 auto;
+   padding-block: 120px;
+
+}
+
+section>.inner>h3 {
+   position: absolute;
+   left: -9999px;
+}
+
+section .info_con {
+   display: flex;
+   flex-direction: column;
+   gap: 24px;
+   padding-bottom: 80px;
+}
+
+/* 정렬/필터로 리스트 높이가 바뀔 때 스크롤 튐 방지 */
+section .info_con,
+section .info_con .memu_con,
+section .info_con .memu_con .menu_list {
+   overflow-anchor: none;
+}
+
+section .info_con .sub_tab {
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+}
+
+section .info_con .sub_tab li {
+   width: 100%;
+   height: 100%;
+}
+
+section .info_con .sub_tab li button {
+   width: 100%;
+   height: 62px;
+   font-size: 1.12rem;
+   background: rgba(245, 174, 174, 0.3);
+   cursor: pointer;
+}
+
+section .info_con .sub_tab li button.is-active {
+   background: rgba(200, 101, 101, 0.8);
+   color: #fff;
+   font-weight: 500;
+}
+
+section .info_con .sub_tab li button.is-active:hover {
+   background: rgba(200, 101, 101, 0.8);
+}
+
+section .info_con .sub_tab li button:hover {
+   background: rgba(245, 174, 174, 0.6);
+}
+
+section .info_con .filter {
+   display: flex;
+   flex-direction: column;
+   gap: 18px;
+   padding-top: 64px;
+}
+
+section .info_con .filter::after {
+   content: '';
+   padding-bottom: 2px;
+   border-bottom: 2px solid rgba(33, 39, 42, 0.2);
+}
+
+section .info_con .filter .result p {
+   color: #1a1a1a;
+
+}
+
+section .info_con .filter .result span:first-child {
+   padding-right: 8px;
+}
+
+section .info_con .filter .result em {
+   color: #F24242;
+   padding-right: 2px;
+   font-weight: 500;
+}
+
+section .info_con .filter .path {
+   display: flex;
+   color: #999;
+   font-size: 0.89rem;
+}
+
+section .info_con .filter .path i {
+   font-size: 1.3rem;
+}
+
+section .info_con .filter .path p:nth-of-type(3) {
+   color: #1a1a1a;
+   font-weight: 500;
+}
+
+section .info_con .sorting ul {
+   display: flex;
+   gap: 16px;
+}
+
+section .info_con .sorting ul li {
+   position: relative;
+   color: rgba(0, 0, 0, .55);
+   padding-right: 17px;
+   border-right: 1px solid rgba(26, 26, 26, 0.5);
+}
+
+section .info_con .sorting ul li:last-child {
+   padding-right: 0;
+   border: 0;
+}
+
+section .info_con .sorting ul li button {
+   font-size: 0.95rem;
+   cursor: pointer;
+   color: rgba(26, 26, 26, 0.6);
+}
+
+
+section .info_con .sorting ul li:hover button {
+   color: #1a1a1a;
+}
+
+section .info_con .sorting ul li button.is-active {
+   padding-bottom: 2px;
+   border-bottom: 2px solid rgba(26, 26, 26, 0.8);
+   color: #1a1a1a;
+   font-weight: 500;
+}
+
+section .memu_con .menu_list {
+   display: grid;
+   grid-template-columns: repeat(4, minmax(260px, 1fr));
+   gap: 24px;
+}
+
+section .memu_con .menu_list li {
+   display: flex;
+   flex-direction: column;
+   position: relative;
+}
+
+section .memu_con .menu_list li.new::after {
+   content: 'new';
+   width: 56px;
+   height: 32px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background: #FFC400;
+   font-size: 1rem;
+   font-weight: 500;
+   border-radius: 12px;
+   position: absolute;
+   left: 10px;
+   top: 10px;
+}
+
+section .memu_con .menu_list li.best::after {
+   content: 'best';
+   width: 56px;
+   height: 32px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background: rgba(255, 99, 99, 0.8);
+   font-size: 1rem;
+   font-weight: 500;
+   border-radius: 12px;
+   position: absolute;
+   left: 10px;
+   top: 10px;
+}
+
+section .memu_con .menu_list li a {
+   position: relative;
+   padding-bottom: 100px;
+   display: block;
+}
+
+section .memu_con .menu_list li .img_box {
+   width: 100%;
+   aspect-ratio: 1 / 1;
+   position: relative;
+   z-index: 99;
+}
+
+section .memu_con .menu_list li .img_box img {
+   display: block;
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+}
+
+section .memu_con .menu_list li:hover .img_box img {
+   transform: scale(1.08);
+}
+
+section .memu_con .menu_list li .txt_box {
+   position: absolute;
+   left: 0;
+   bottom: 0;
+   width: 100%;
+   padding: 100px 0 16px;
+   background: rgba(0, 0, 0, 0.05);
+   z-index: 98;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   gap: 12px;
+}
+
+section .memu_con .menu_list li:hover .txt_box {
+   background: rgba(200, 101, 101, 0.7);
+}
+
+section .memu_con .menu_list li .txt_box .name_con {
+   display: flex;
+   flex-direction: column;
+   gap: 6px;
+   text-align: center;
+   width: 100%;
+}
+
+section .memu_con .menu_list li:hover .txt_box .name,
+section .memu_con .menu_list li:hover .txt_box .price {
+   color: #fff;
+}
+
+section .memu_con .menu_list li:hover .txt_box .e_name {
+   color: #faf0f0;
+}
+
+section .memu_con .menu_list li .txt_box .name {
+   font-size: 1.12rem;
+   font-weight: 600;
+   color: #1a1a1a;
+   display: block;
+   max-width: 100%;
+   white-space: nowrap;
+   overflow: hidden;
+   text-overflow: ellipsis;
+}
+
+section .memu_con .menu_list li .txt_box .e_name {
+   font-size: 0.93rem;
+   color: rgba(33, 39, 42, 0.6);
+   font-weight: 500;
+   display: block;
+   max-width: 100%;
+   white-space: nowrap;
+   overflow: hidden;
+   text-overflow: ellipsis;
+}
+
+section .memu_con .menu_list li .txt_box .price {
+   font-size: 0.93rem;
+   color: #21272A;
+   font-weight: 500;
+   width: 100%;
+   display: block;
+   text-align: center;
+   white-space: nowrap;
+   overflow: hidden;
+   text-overflow: ellipsis;
+}
+
+section .memu_con .menu_list li .txt_box .price span {}
+
+section .memu_con .menu_list li .txt_box .price span:not(:last-child) {
+   padding-right: 10px;
+}
+
+.pagenation {
+   padding-top: 80px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 10px;
+}
+
+.pagenation button:disabled {
+   opacity: .35;
+   cursor: default;
+   pointer-events: none;
+}
+
+.pagenation .left button,
+.pagenation .right button {
+   font-size: 1.8rem;
+   margin-top: 9px;
+   cursor: pointer;
+}
+
+.pagenation .num_page {
+   display: flex;
+   gap: 8px;
+}
+
+.pagenation .num_page button {
+   font-size: 1rem;
+   width: 40px;
+   height: 40px;
+   justify-content: center;
+   align-items: center;
+   border: 2px solid rgba(0, 0, 0, 0.2);
+   border-radius: 30px;
+   cursor: pointer;
+}
+
+.pagenation .num_page button:hover {
+   background: rgba(0, 0, 0, 0.1);
+}
+
+.pagenation .num_page button.is-active {
+   color: #fff;
+   background: rgba(0, 0, 0, .7);
+}

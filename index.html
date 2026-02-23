@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta property="og:title" content="할리스커피 리뉴얼 프로젝트">
+   <meta name="keywords" content="할리스, 할리스커피, 카페, 시그니처 음료, 두바이 스타일, 스마트오더, 멤버십, 커피, 아메리카노, 카페라떼, 바닐라딜라이트">
+   <meta name="author" content="Yebin - UI/UX Designer">
+   <title>hollys</title>
+   <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+   <link href="https://cdn.jsdelivr.net/gh/sun-typeface/SUIT@2/fonts/static/woff2/SUIT.css" rel="stylesheet">
+   <!-- Basic Icons -->
+   <link href="https://cdn.boxicons.com/3.0.8/fonts/basic/boxicons.min.css" rel="stylesheet">
+   <!-- Filled Icons -->
+   <link href="https://cdn.boxicons.com/3.0.8/fonts/filled/boxicons-filled.min.css" rel="stylesheet">
+   <!-- Brand Icons -->
+   <link href="https://cdn.boxicons.com/3.0.8/fonts/brands/boxicons-brands.min.css" rel="stylesheet">
+   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+   <!-- common css -->
+   <link rel="stylesheet" href="css/reset.css">
+   <link rel="stylesheet" href="css/common.css">
+   <link rel="stylesheet" href="css/common_media.css">
+   <!-- 내 css -->
+   <link rel="stylesheet" href="css/main.css">
+   <link rel="stylesheet" href="css/memu.css">
+   <!-- 내 media css -->
+   <link rel="stylesheet" href="css/main_media.css">
+   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+   <script defer src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis/bundled/lenis.min.js"></script>
+   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+   <script src="https://kit.fontawesome.com/588111e4fb.js" crossorigin="anonymous"></script>
+   <!-- common js -->
+   <script src="js/common.js"></script>
+   <!-- 내 js -->
+   <script src="js/main.js"></script>
+</head>
+
+<body>
+   <div class="wrap">
+      <header id="site_header">
+         <div class="inner">
+            <div class="logo">Logo</div>
+            <nav>
+               <ul class="gnb">
+                  <li><a href="#holys">할리스</a>
+                     <ul class="sub">
+                        <li><a href="#hollys_brand">브랜드 소개</a></li>
+                        <li><a href="#hollys_bl">BI</a></li>
+                        <li><a href="#hollys_b2b">B2B사업</a></li>
+                     </ul>
+                  </li>
+                  <li><a href="#memu">메뉴</a>
+                     <ul class="sub">
+                        <li><a href="#memu_drink">음료</a></li>
+                        <li><a href="#memu_food">푸드</a></li>
+                        <li><a href="#memu_md">MD</a></li>
+                     </ul>
+                  </li>
+                  <li><a href="#membership">멤버십</a>
+                     <ul class="sub">
+                        <li><a href="#membership_benefit">앱 혜택</a></li>
+                        <li><a href="#membership_grade">멤버십 등급</a></li>
+                        <li><a href="#membership_faq">FAQ</a></li>
+                     </ul>
+                  </li>
+                  <li><a href="#hollysmall">할리스몰</a>
+                     <ul class="sub">
+                        <li><a href="#hollysmall_hollyscard">할리스카드</a></li>
+                        <li><a href="#hollysmall_hollyscon">할리스콘</a></li>
+                        <li><a href="#hollysmall_smart_store">스마트스토어</a></li>
+                     </ul>
+                  </li>
+                  <li><a href="#store">매장검색</a>
+                     <ul class="sub">
+                        <li><a href="#s_store">매장검색</a></li>
+                     </ul>
+                  </li>
+                  <li><a href="#news">소식</a>
+                     <ul class="sub">
+                        <li><a href="#news_event">이벤트</a></li>
+                        <li><a href="#news_notice">공지사항</a></li>
+                        <li><a href="#news_inquiries">고객문의</a></li>
+                     </ul>
+                  </li>
+               </ul> <!-- //.gnb -->
+            </nav>
+            <div class="m_menu" id="m_menu" aria-hidden="true">
+               <div class="m_menu__overlay"></div>
+               <div class="m_menu__panel" role="dialog" aria-modal="true" aria-label="모바일 메뉴">
+                  <div class="m_menu__top">
+                     <div class="m_menu__logo">Logo</div>
+                     <button type="button" class="m_menu__close" aria-label="메뉴 닫기">
+                        <i class="bx bx-x bx-flip-vertical"></i>
+                     </button>
+                  </div> <!-- //.m_menu__top -->
+
+                  <ul class="m_gnb" id="m_gnb">
+                     <li>
+                        <button type="button" class="m_link">
+                           마이페이지 <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <ul class="m_sub">
+                           <li><a href="#my_info">- 정보 관리</a></li>
+                           <li><a href="#my_membership">- 나의 멤버십</a></li>
+                           <li><a href="#my_coupon">- 소지 쿠폰</a></li>
+                           <li><a href="#my_hollyscard">- 나의 할리스카드</a></li>
+                           <li><a href="#my_shoppingbag">- 장바구니</a></li>
+                        </ul>
+                     </li>
+                     <li>
+                        <button type="button" class="m_link">
+                           할리스 <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <ul class="m_sub">
+                           <li><a href="#hollys_brand">- 브랜드 소개</a></li>
+                           <li><a href="#hollys_bl">- BI</a></li>
+                           <li><a href="#hollys_b2b">- B2B사업</a></li>
+                        </ul>
+                     </li>
+
+                     <li>
+                        <button type="button" class="m_link">
+                           메뉴 <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <ul class="m_sub">
+                           <li><a href="#memu_drink">- 음료</a></li>
+                           <li><a href="#memu_food">- 푸드</a></li>
+                           <li><a href="#memu_md">- MD</a></li>
+                        </ul>
+                     </li>
+
+                     <li>
+                        <button type="button" class="m_link">
+                           멤버십 <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <ul class="m_sub">
+                           <li><a href="#membership_benefit">- 앱 혜택</a></li>
+                           <li><a href="#membership_grade">- 멤버십 등급</a></li>
+                           <li><a href="#membership_faq">- FAQ</a></li>
+                        </ul>
+                     </li>
+
+                     <li>
+                        <button type="button" class="m_link">
+                           할리스몰 <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <ul class="m_sub">
+                           <li><a href="#hollysmall_hollyscard">- 할리스카드</a></li>
+                           <li><a href="#hollysmall_hollyscon">- 할리스콘</a></li>
+                           <li><a href="#hollysmall_smart_store">- 스마트스토어</a></li>
+                        </ul>
+                     </li>
+
+                     <li>
+                        <button type="button" class="m_link">
+                           매장찾기 <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <ul class="m_sub">
+                           <li><a href="#s_store">- 매장검색</a></li>
+                        </ul>
+                     </li>
+
+                     <li>
+                        <button type="button" class="m_link">
+                           소식 <i class="fa-solid fa-chevron-down"></i>
+                        </button>
+                        <ul class="m_sub">
+                           <li><a href="#news_event">- 이벤트</a></li>
+                           <li><a href="#news_notice">- 공지사항</a></li>
+                           <li><a href="#news_inquiries">- 고객문의</a></li>
+                        </ul>
+                     </li>
+                  </ul>
+
+                  <div class="m_menu__bottom">
+                     <div class="m_menu__cta">
+                        <a href="#login" class="m_btn">멤버십 로그인</a>
+                        <a href="#signup" class="m_btn m_btn--dark">멤버십 가입</a>
+                     </div> <!-- //.m_menu__bottom -->
+
+                     <ul class="m_menu__util">
+                        <li class="m_lang_container">
+                           <button type="button" class="m_lang_btn">
+                              <i class="bx bx-globe-alt"></i>
+                              <span>Language</span>
+                              <i class="fa-solid fa-chevron-down"></i>
+                           </button>
+                           <ul class="m_lang_list">
+                              <li><a href="#kor">한국어</a></li>
+                              <li><a href="#eng">English</a></li>
+                              <li><a href="#cha">中国语</a></li>
+                           </ul>
+                        </li>
+                        <li><a href="#shoppingbag"><i class="bx bx-groceries"></i>장바구니</a></li>
+                        <li><a href="#Help"><i class="fa-regular fa-circle-question"></i>도움말</a></li>
+                        <li><a href="#conditions"><i class="fa-regular fa-circle-user"></i>서비스 이용 약관</a></li>
+                     </ul>
+                  </div> <!-- //.m_menu__bottom -->
+               </div> <!-- //.m_menu__panel -->
+            </div> <!-- //.m_menu -->
+            <div class="h_right">
+               <ul class="right_box">
+                  <li><a href="#login">로그인</a></li>
+                  <li><a href="#signup">멤버십가입</a></li>
+                  <li data-label="마이페이지">
+                     <a href="#mypage" class="icon-link">
+                        <i class="bx bx-user"></i>
+                     </a>
+                  </li>
+                  <li data-label="장바구니">
+                     <a href="#shoppingbag" class="icon-link">
+                        <i class="bx bx-shopping-bag"></i>
+                     </a>
+                  </li>
+                  <li data-label="Language" class="lang_container">
+                     <a href="javascript:void(0);" class="icon-link lang_btn">
+                        <i class="bx bx-globe-alt"></i>
+                     </a>
+                     <ul class="lang_list">
+                        <li><a href="#kor">한국어</a></li>
+                        <li><a href="#eng">English</a></li>
+                        <li><a href="#cha">中国语</a></li>
+                     </ul>
+                  </li>
+                  <li>
+                     <button type="button" class="ham" aria-controls="m_menu" aria-expanded="false">
+                        <i class="bx bx-menu-wide"></i>
+                     </button>
+                  </li>
+               </ul>
+            </div>
+         </div> <!-- //.inner -->
+      </header>
+      <main>
+         <div class="main_visual">
+            <div class="inner">
+               <div class="swiper visual_swiper">
+                  <ul class="swiper-wrapper">
+                     <li class="swiper-slide slide1" aria-label="1번 배너"></li>
+                     <li class="swiper-slide slide2" aria-label="2번 배너"></li>
+                     <li class="swiper-slide slide3" aria-label="3번 배너"></li>
+                     <li class="swiper-slide slide4" aria-label="4번 배너"></li>
+                  </ul>
+               </div>
+
+               <div class="txt_area" aria-live="polite">
+                  <div class="title">
+                     <h2>HOLLYS<br>시그니처 음료</h2>
+                     <p>할리스의 취향과 기준을 담은 대표 음료</p>
+                  </div> <!-- //.title -->
+                  <div class="slide_control">
+                     <div class="control_con">
+                        <span class="num">01</span>
+                        <div class="control_bar" aria-hidden="true">
+                           <p></p>
+                        </div>
+                        <span class="total">06</span>
+                     </div>
+                     <div class="btn_box">
+                        <button type="button" class="left" aria-label="이전 배너">
+                           <i class="bx bx-chevron-left bx-flip-vertical"></i>
+                        </button>
+                        <button type="button" class="right" aria-label="다음 배너">
+                           <i class="bx bx-chevron-right bx-flip-vertical"></i>
+                        </button>
+                     </div>
+                  </div><!-- //.slide_control -->
+               </div> <!-- //.txt_area -->
+            </div>
+         </div> <!-- //.main_visual -->
+         <section class="bestmemu">
+            <div class="inner">
+               <div class="tit_con">
+                  <div class="tit">
+                     <h3 data-aos="zoom-out-right">BEST MENU</h3>
+                     <div class="tab" data-aos="zoom-out-right">
+                        <p>음료</p>
+                        <p>푸드</p>
+                     </div>
+                  </div> <!-- //.tit -->
+                  <a href="#memu" class="more">메뉴 더보기<span>&rarr;</span></a>
+               </div> <!-- //.tit_con -->
+               <div class="swiper drink">
+                  <div class="swiper-wrapper drink_con">
+                     <div class="swiper-slide d_slide1">
+                        <div class="img_box"></div>
+                        <div class="txt_box">
+                           <strong>아메리카노</strong>
+                           <p>Caffe Americano</p>
+                        </div>
+                     </div>
+                     <div class="swiper-slide d_slide2">
+                        <div class="img_box"></div>
+                        <div class="txt_box">
+                           <strong>아삿추</strong>
+                           <p>Iced Tea with an Espresso Shot</p>
+                        </div>
+                     </div>
+                     <div class="swiper-slide d_slide3">
+                        <div class="img_box"></div>
+                        <div class="txt_box">
+                           <strong>바닐라 딜라이트</strong>
+                           <p>Vanilla Delight</p>
+                        </div>
+                     </div>
+                     <div class="swiper-slide d_slide4">
+                        <div class="img_box"></div>
+                        <div class="txt_box">
+                           <strong>복숭아 얼그레이</strong>
+                           <p>Peach Earl Grey</p>
+                        </div>
+                     </div>
+                     <div class="swiper-slide d_slide5">
+                        <div class="img_box"></div>
+                        <div class="txt_box">
+                           <strong>핑크 파인 캐모마일티</strong>
+                           <p>Pink Pineapple Chamomile Tea</p>
+                        </div>
+                     </div>
+                     <div class="swiper-slide d_slide6">
+                        <div class="img_box"></div>
+                        <div class="txt_box">
+                           <strong>딸기 치즈케익 할리치노</strong>
+                           <p>Strawberry Cheese Cake Hollyccino</p>
+                        </div>
+                     </div>
+                     <div class="swiper-slide d_slide7">
+                        <div class="img_box"></div>
+                        <div class="txt_box">
+                           <strong>카페 라떼</strong>
+                           <p>Caffe Latte</p>
+                        </div>
+                     </div>
+                     <div class="swiper-slide d_slide8">
+                        <div class="img_box"></div>
+                        <div class="txt_box">
+                           <strong>핫/아이스 초코</strong>
+                           <p>Chocolate HOT/ICED</p>
+                        </div>
+                     </div>
+                     <div class="swiper-slide d_slide9">
+                        <div class="img_box"></div>
+                        <div class="txt_box">
+                           <strong>디카페인 콜드브루</strong>
+                           <p>Decaf Cold Brew</p>
+                        </div>
+                     </div>
+                     <div class="swiper-slide d_slide10">
+                        <div class="img_box"></div>
+                        <div class="txt_box">
+                           <strong>디카페인 콜드브루 바닐라 딜라이트</strong>
+                           <p>Decaf Cold Brew Vanilla Delight</p>
+                        </div>
+                     </div>
+                  </div> <!-- //.drink_con -->
+               </div> <!-- //.drink-->
+               <div class="swiper food">
+                  <div class="swiper-wrapper food_con">
+                     <div class="swiper-slide f_slide1">
+                        <div class="img_box"></div>
+                        <div class="txt_box">
+                           <strong>크로크무슈</strong>
+                           <p>Croque Monsieur</p>
+                        </div>
+                     </div>
+                     <div class="swiper-slide f_slide2">
+                        <div class="img_box"></div>
+                        <div class="txt_box">
+                           <strong>올리브 베이컨 파니니</strong>
+                           <p>Olive Bacon Panini</p>
+                        </div>
+                     </div>
+                     <div class="swiper-slide f_slide3">
+                        <div class="img_box"></div>
+                        <div class="txt_box">
+                           <strong>페스토 햄 파니니</strong>
+                           <p>Pesto Ham Panini</p>
+                        </div>
+                     </div>
+                     <div class="swiper-slide f_slide4">
+                        <div class="img_box"></div>
+                        <div class="txt_box">
+                           <strong>불고기 & 치즈 퀘사디아</strong>
+                           <p>Peach Earl Grey</p>
+                        </div>
+                     </div>
+                     <div class="swiper-slide f_slide5">
+                        <div class="img_box"></div>
+                        <div class="txt_box">
+                           <strong>에그 마요</strong>
+                           <p>Egg Mayo Sandwich</p>
+                        </div>
+                     </div>
+                     <div class="swiper-slide f_slide6">
+                        <div class="img_box"></div>
+                        <div class="txt_box">
+                           <strong>아이스크림 크로플</strong>
+                           <p>Croffle with Ice Cream</p>
+                        </div>
+                     </div>
+                     <div class="swiper-slide f_slide7">
+                        <div class="img_box"></div>
+                        <div class="txt_box">
+                           <strong>햄치즈 스크램블 토스트</strong>
+                           <p>Ham and Cheese Scrambled Eggs Toast</p>
+                        </div>
+                     </div>
+                     <div class="swiper-slide f_slide8">
+                        <div class="img_box"></div>
+                        <div class="txt_box">
+                           <strong>뉴욕 치즈 케이크</strong>
+                           <p>New York Cheese Cake</p>
+                        </div>
+                     </div>
+                     <div class="swiper-slide f_slide9">
+                        <div class="img_box"></div>
+                        <div class="txt_box">
+                           <strong>딸기 치즈케익 뚱카롱</strong>
+                           <p>Strawberry Cheese Cake Macaron</p>
+                        </div>
+                     </div>
+                     <div class="swiper-slide f_slide10">
+                        <div class="img_box"></div>
+                        <div class="txt_box">
+                           <strong>쿠키앤크림 쏘스윗박스</strong>
+                           <p>Cookies and Cream So Sweet box</p>
+                        </div>
+                     </div>
+                  </div> <!-- //.food_con -->
+               </div> <!-- //.food-->
+               <div class="btn_con">
+                  <button type="button" class="btn_prev" aria-label="이전">
+                     <i class="bx bx-chevron-left bx-flip-vertical"></i>
+                  </button>
+
+                  <button type="button" class="btn_toggle" aria-label="일시정지/재생">
+                     <i class="bx bx-parallel bx-flip-vertical"></i>
+                  </button>
+
+                  <button type="button" class="btn_next" aria-label="다음">
+                     <i class="bx bx-chevron-right bx-flip-vertical"></i>
+                  </button>
+               </div><!-- //.btn_con -->
+            </div> <!-- //.inner -->
+         </section> <!-- //.bestmemu -->
+         <section class="main_benefit">
+            <div class="inner">
+               <div class="tit_con">
+                  <div class="tit">
+                     <h3 data-aos="zoom-out-right">할리스 앱 혜택</h3>
+                     <p data-aos="zoom-out-right">할리스 앱을 통해
+                        <br>다양한 혜택을 받아보세요.
+                     </p>
+                  </div> <!-- //.tit -->
+                  <a href="#membership" class="more_btn" data-aos="zoom-out-right">혜택 더보기<span>&rarr;</span></a>
+               </div> <!-- //.tit_con -->
+               <div class="benefit_con">
+                  <ul>
+                     <li data-aos="fade-down" data-aos-delay="50">
+                        <i class="bx bx-stamp"></i>
+                        <div class="txt_box">
+                           <strong>크라운 적립</strong>
+                           <p>결제할수록 쌓이는 크라운으로
+                              <br>다양한 혜택을 즐겨보세요
+                           </p>
+                        </div>
+                     </li>
+                     <li data-aos="fade-down" data-aos-delay="100">
+                        <i class="bx bx-tickets"></i>
+                        <div class="txt_box">
+                           <strong>쿠폰 혜택</strong>
+                           <p>멤버십 등급에 따라 제공되는
+                              <br>다양한 쿠폰 혜택을 즐겨보세요
+                           </p>
+                        </div>
+                     </li>
+                     <li data-aos="fade-down" data-aos-delay="150">
+                        <i class="bx bx-mobile"></i>
+                        <div class="txt_box">
+                           <strong>스마트오더</strong>
+                           <p>결제부터 적립까지
+                              <br>간편하게 주문하고 픽업하세요
+                           </p>
+                        </div>
+                     </li>
+                  </ul>
+               </div> <!-- //.benefit_con -->
+            </div> <!-- //.inner -->
+         </section>
+         <section class="service">
+            <div class="inner">
+               <div class="tit_con" data-aos="zoom-out-right">
+                  <h3>간편하게 이용하는<br>할리스 서비스</h3>
+               </div>
+
+               <div class="service_card">
+                  <ul>
+                     <li class="is-active">
+                        <img src="img/service_hollys_card_img.png" alt="할리스카드">
+                        <div class="tit">
+                           <h4>할리스카드</h4>
+                        </div>
+                        <div class="txt_box">
+                           <strong>할리스카드</strong>
+                           <p>• 충전해서 사용하는 선불카드</p>
+                           <p>• 결제 시 자동으로 크라운 적립</p>
+                           <p>• 앱에서 간편하게 관리</p>
+                           <p>• 본인 및 다른 사람에게 선물하기 가능</p>
+                           <p>• 사용하지 않은 상태에 한하여 구매 취소 가능</p>
+                           <a href="#hollys_card" class="more_btn">구매하기<span>&rarr;</span></a>
+                        </div>
+                     </li>
+
+                     <li>
+                        <img src="img/service_hollys_con_img.png" alt="할리스콘">
+                        <div class="tit">
+                           <h4>할리스콘</h4>
+                        </div>
+                        <div class="txt_box">
+                           <strong>할리스콘</strong>
+                           <p>• 모바일 기프티콘 서비스</p>
+                           <p>• 구매 시 문자로 바로 전송</p>
+                           <p>• 선물하기로 간편하고 빠르게 사용 가능</p>
+                           <p>• 동일 금액의 타 상품으로 교환 가능</p>
+                           <p>(금액보다 높을 경우 초과 금액 결제)</p>
+                           <a href="#hollys_con" class="more_btn">구매하기<span>&rarr;</span></a>
+                        </div>
+                     </li>
+
+                     <li>
+                        <img src="img/service_smart_store_img.png" alt="스마트스토어">
+                        <div class="tit">
+                           <h4>스마트 스토어</h4>
+                        </div>
+                        <div class="txt_box">
+                           <strong>스마트 스토어</strong>
+                           <p>• 할리스 공식 MD 온라인 스토어</p>
+                           <p>• 네이버 스마트스토어에서 운영</p>
+                           <p>• 텀블러, 머그 등 브랜드 굿즈 판매</p>
+                           <p>• 시즌 한정 콜라보 상품 및 다양한 컬렉션 제공</p>
+                           <p>• 온라인에서 간편하게 구매</p>
+                           <a href="#smart_store" class="more_btn">구매하기<span>&rarr;</span></a>
+                        </div>
+                     </li>
+                  </ul>
+               </div> <!-- //.service_card -->
+            </div> <!-- //.inner -->
+         </section>
+         <section class="event">
+            <div class="inner">
+               <div class="tit_con">
+                  <h3 data-aos="zoom-out-right">진행중인 이벤트</h3>
+                  <a href="#memu" class="more">이벤트 더보기<span>&rarr;</span></a>
+               </div>
+               <div class="swiper event_con">
+                  <ul class="swiper-wrapper">
+                     <li class="swiper-slide e_slide1">
+                        <a href="#">
+                           <div class="img_box">
+                              <img src="img/event_dubal_st_memu_img.jpg" alt="빠작하게 즐기 는 할리스 두바이st 신메뉴 2종 출시">
+                           </div>
+                           <div class="txt_box">
+                              <strong>빠작하게 즐기 는 할리스 두바이st 신메뉴 2종 출시!</strong>
+                              <p>2026-02-04 ~ 2026-02-24</p>
+                           </div>
+                        </a>
+                     </li>
+                     <li class="swiper-slide e_slide2">
+                        <a href="#">
+                           <div class="img_box">
+                              <img src="img/event_hanbok_Harley_Bear_keyring_img.jpg"
+                                 alt="한복 입은 할리베어 등장 귀여운 할리베어 키링 만나러가요">
+                           </div>
+                           <div class="txt_box">
+                              <strong>★한복 입은 할리베어 등장★ 귀여운 할리베어 키링 만나러가요~</strong>
+                              <p>2026-02-03 ~ 2026-03-13</p>
+                           </div>
+                        </a>
+                     </li>
+                     <li class="swiper-slide e_slide3">
+                        <a href="#">
+                           <div class="img_box">
+                              <img src="img/event_membership_February_Present_img.jpg" alt="할리스 멤버십 회원을 위한 2월의 선물">
+                           </div>
+                           <div class="txt_box">
+                              <strong>할리스 멤버십 회원을 위한 2월의 선물</strong>
+                              <p>2026-02-01 ~ 2026-02-28</p>
+                           </div>
+                        </a>
+                     </li>
+                     <li class="swiper-slide e_slide4">
+                        <a href="#">
+                           <div class="img_box">
+                              <img src="img/event_Bakery_img.jpg" alt="커피가 더 맛있어지는 선택, 할리스 베이커리 출시">
+                           </div>
+                           <div class="txt_box">
+                              <strong>커피가 더 맛있어지는 선택, 할리스 베이커리 출시</strong>
+                              <p>2026-01-28 ~ 2026-03-31</p>
+                           </div>
+                        </a>
+                     </li>
+                     <li class="swiper-slide e_slide5">
+                        <a href="#">
+                           <div class="img_box">
+                              <img src="img/event_happy_berry_moments_img.jpg"
+                                 alt="Happy Berry Moments 행복해지는 맛, 1월 딸기 신메뉴 출시">
+                           </div>
+                           <div class="txt_box">
+                              <strong>Happy Berry Moments♥ 행복해지는 맛, 1월 딸기 신메뉴 출시</strong>
+                              <p>2026-01-07 ~ 2026-03-10</p>
+                           </div>
+                        </a>
+                     </li>
+                     <li class="swiper-slide e_slide6">
+                        <a href="#">
+                           <div class="img_box">
+                              <img src="img/event_real_berry_moments_img.jpg" alt="Real Berry Moments 싱그러운 딸기 신메뉴 출시">
+                           </div>
+                           <div class="txt_box">
+                              <strong>Real Berry Moments♥ 싱그러운 딸기 신메뉴 출시!</strong>
+                              <p>2026-01-01 ~ 2026-03-10</p>
+                           </div>
+                        </a>
+                     </li>
+                  </ul>
+                  <div class="btn_con">
+                     <button type="button" class="btn_prev" aria-label="이전">
+                        <i class="bx bx-chevron-left bx-flip-vertical"></i>
+                     </button>
+
+                     <button type="button" class="btn_toggle" aria-label="일시정지/재생">
+                        <i class="bx bx-parallel bx-flip-vertical"></i>
+                     </button>
+
+                     <button type="button" class="btn_next" aria-label="다음">
+                        <i class="bx bx-chevron-right bx-flip-vertical"></i>
+                     </button>
+                  </div><!-- //.btn_con -->
+                  <div class="btn">
+                     <a href="#event" class="more_btn">이벤트 더보기</a>
+                  </div>
+               </div> <!-- //.event_con -->
+            </div> <!-- //.inner -->
+         </section>
+      </main>
+      <footer>
+         <div class="inner">
+            <div class="logo">Logo</div>
+            <div class="f_right">
+               <div class="top_box">
+                  <a href="#"><em>개인정보처리방침</em></a>
+                  <a href="#"><em>서비스이용약관</em></a>
+                  <a href="#"><em>멤버십이용약관</em></a>
+                  <a href="#"><em>할리스카드이용약관</em></a>
+                  <a href="#"><em>고객문의</em></a>
+                  <a href="#"><em>사이트맵</em></a>
+                  <a href="#"><em>BI 소개</em></a>
+               </div>
+               <div class="bottom_box">
+                  <p><span>대표자: 윤석찬</span>대표전화: 02-2188-7100
+                  </p>
+                  <p><span>법인명: (주)케이지에프앤비</span><span>사업자등록번호: 211-87-61044</span>가맹문의 : 02-6350-7229</p>
+                  <p><span>통신판매업: 제2019-서울종로-0193호</span>주소: 서울특별시 중구 통일로 92, 2층(순화동, 케이지타워)</p>
+                  <p>COPYRIGHT (C) KG F&B. All Rights Reserved.</p>
+               </div>
+            </div>
+         </div> <!-- //.inner -->
+      </footer>
+   </div> <!-- //.wrap -->
+</body>
+
+</html>
