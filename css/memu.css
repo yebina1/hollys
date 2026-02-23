@@ -406,8 +406,6 @@ section .memu_con .menu_list li .txt_box .price {
    text-overflow: ellipsis;
 }
 
-section .memu_con .menu_list li .txt_box .price span {}
-
 section .memu_con .menu_list li .txt_box .price span:not(:last-child) {
    padding-right: 10px;
 }
