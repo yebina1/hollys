@@ -243,7 +243,7 @@ section .memu_con .menu_list li {
    position: relative;
 }
 
-section .memu_con .menu_list li.new::after {
+section .memu_con .menu_list li.new::before {
    content: 'new';
    width: 56px;
    height: 32px;
@@ -259,7 +259,7 @@ section .memu_con .menu_list li.new::after {
    top: 10px;
 }
 
-section .memu_con .menu_list li.best::after {
+section .memu_con .menu_list li.best::before {
    content: 'best';
    width: 56px;
    height: 32px;
@@ -274,7 +274,44 @@ section .memu_con .menu_list li.best::after {
    left: 10px;
    top: 10px;
 }
-
+section .memu_con .menu_list li.ice_only::after {
+   content: 'ice only';
+   width: 50px;
+   height: 50px;
+   text-align: center;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background: #7188FF;
+   color: #fff;
+   font-size: 1rem;
+   font-weight: 500;
+   line-height: 0.9;
+   border-radius: 50px;
+   position: absolute;
+   right: 80px;
+   bottom: 34%;
+   z-index: 99;
+}
+section .memu_con .menu_list li.hot_only::after {
+   content: 'hot only';
+   width: 50px;
+   height: 50px;
+   text-align: center;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background: #FF6767;
+   color: #fff;
+   font-size: 1rem;
+   font-weight: 500;
+   line-height: 0.9;
+   border-radius: 50px;
+   position: absolute;
+   right: 80px;
+   bottom: 34%;
+   z-index: 99;
+}
 section .memu_con .menu_list li a {
    position: relative;
    padding-bottom: 100px;
