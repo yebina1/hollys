@@ -250,7 +250,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
 
-      const memuData = [
+    const memuData = [
       {
         id: "americano",
         name: "아메리카노",
@@ -276,7 +276,7 @@ document.addEventListener("DOMContentLoaded", () => {
     ];
 
     function renderInfo(data) {
-      const $infoCard = document.querySelector(".memu_con .menu_list li .info_card");
+      const $infoCard = document.querySelector(".memu_con .info_card");
       if (!$infoCard) return;
 
       $infoCard.querySelector(".tit h4").textContent = data.name;
