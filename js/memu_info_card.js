@@ -80,24 +80,15 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     }
 
-    const $nutrition = $infoCard.querySelector(".nutrition");
-    if ($nutrition) {
+    const $tbody = $infoCard.querySelector(".nutrition .info_table tbody");
+    if ($tbody) {
       const $rows = data.nutrition?.rows || [];
       if (!$rows.length) {
-        $nutrition.style.display = "none";
-        $nutrition.innerHTML = "";
+        $tbody.style.display = "none";
+        $tbody.innerHTML = "";
       } else {
-        $nutrition.style.display = "block";
-        $nutrition.innerHTML = `
-          <table class="info_table">
-            <thead>
-              <tr>
-                <th>구분</th>
-                <th>HOT</th>
-                <th>ICE</th>
-              </tr>
-            </thead>
-            <tbody>
+        $tbody.style.display = "block";
+        $tbody.innerHTML = `
               ${$rows
                 .map(
                   (r) => `
@@ -109,8 +100,6 @@ document.addEventListener("DOMContentLoaded", () => {
                   `
                 )
                 .join("")}
-            </tbody>
-          </table>
         `;
       }
     }

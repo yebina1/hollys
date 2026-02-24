@@ -516,11 +516,3 @@ section .memu_con .menu_list li .txt_box .price span:not(:last-child) {
   border-radius:  0 16px 16px 0;
   background: #fff;
 }
-.info_card .info_right .sizes{
-   display: flex;
-   flex-direction: column;
-}
-.info_card .info_right .sizes .size{
-   display: flex;
-
-}
