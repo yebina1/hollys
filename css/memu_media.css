@@ -133,6 +133,11 @@
         max-width: 100%;
         min-width: 340px;
     }
+    
+    .info_card .info_right .close {
+        right: 24px;
+        top: 32px;
+    }
 }
 
 @media screen and (max-width:670px) {
