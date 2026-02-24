@@ -1463,7 +1463,8 @@ document.addEventListener("DOMContentLoaded", () => {
       $img.alt = data.name || "";
     }
 
-    
+    const $allergy = $infoCard.querySelector(".allergy");
+
     if ($allergy) {
   if (!data.allergy) {
     $allergy.textContent = "알레르기 유발: 없음";
