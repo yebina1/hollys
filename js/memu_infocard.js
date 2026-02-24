@@ -5,10 +5,10 @@ document.addEventListener("DOMContentLoaded", () => {
       id: "americano",
       name: "아메리카노",
       eName: "Caffe Americano",
-      img: "../img/memu_infocard/info_card_Caffe_Americano_img.png",
+      img: "./img/memu_infocard/info_card_Caffe_Americano_img.png",
       info: "진한 에스프레소의 맛과 향을 부드럽게 즐길 수 있는 아메리칸 스타일의 커피",
       nutrition: {
-        capacity : "Regular (354ml)",
+        capacity: "Regular (354ml)",
         rows: [
           { label: "칼로리 (kcal)", hot: "12kcal", ice: "12kcal" },
           { label: "단백질 (g)", hot: "1g(2%)", ice: "1g (2%)" },
@@ -71,16 +71,16 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     const $capacity = $infoCard.querySelector(".nutrition .capacity");
-      if ($capacity) {
-        const cap = data.nutrition?.capacity || "";
-        $capacity.textContent = cap;
+    if ($capacity) {
+      const cap = data.nutrition?.capacity || "";
+      $capacity.textContent = cap;
 
-        const $p = $capacity.closest("p");
-        if ($p) $p.style.display = cap ? "" : "none";
-      }
-
-      $infoCard.classList.add("on");
+      const $p = $capacity.closest("p");
+      if ($p) $p.style.display = cap ? "" : "none";
     }
+
+    $infoCard.classList.add("on");
+  }
 
   document.addEventListener("click", (e) => {
     const $menuItem = e.target.closest(".menu_item");
