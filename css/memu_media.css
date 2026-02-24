@@ -23,20 +23,9 @@
     }
 }
 
-@media screen and (max-width:960px) {
-    section .memu_con .menu_list li.new::before,
-    section .memu_con .menu_list li.best::before{
-        font-size: 0.89rem;
-        width: 48px;
-        height: 26px;
-    }
-
-    section .memu_con .menu_list li.ice_only .img_box::after,
-    section .memu_con .menu_list li.hot_only .img_box::after {
-        font-size: 0.89rem;
-        width: 45px;
-        height: 45px;
-        right: 26%;
+@media screen and (max-width:1024px){
+    section .memu_con .menu_list{
+        gap: 50px 16px;
     }
 
     section .memu_con .menu_list li a {
@@ -52,12 +41,29 @@
     }
 
     section .memu_con .menu_list li .txt_box .e_name {
-        font-size: 0.89rem;
+        font-size: 0.85rem;
     }
 
     section .memu_con .menu_list li .txt_box .price {
         font-size: 0.89rem;
     }
+}
+
+@media screen and (max-width:960px) {
+    section .memu_con .menu_list li.new::before,
+    section .memu_con .menu_list li.best::before{
+        font-size: 0.9rem;
+    }
+
+    section .memu_con .menu_list li.ice_only .img_box::after,
+    section .memu_con .menu_list li.hot_only .img_box::after {
+        font-size: 0.89rem;
+        /* width: 45px;
+        height: 45px; */
+        right: 26%;
+    }
+
+    
 }
 
 @media screen and (max-width:950px) {
@@ -78,6 +84,18 @@
     }
 }
 
+@media screen and (max-width:880px) {
+    section .memu_con .menu_list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    section .memu_con .menu_list li.ice_only .img_box::after,
+    section .memu_con .menu_list li.hot_only .img_box::after {
+    right: 32%;
+    bottom: 40px;
+    }
+}
+
 @media screen and (max-width:860px) {
     section .memu_con .menu_list li .txt_box .name {
         padding-inline: 2px;
@@ -88,14 +106,41 @@
     section .memu_con .menu_list li .txt_box {
         padding: 60px 0 16px;
     }
+
+    section .memu_con .menu_list li.ice_only .img_box::after,
+    section .memu_con .menu_list li.hot_only .img_box::after {
+    right: 28%;
+    bottom: 14%;
+    }
+}
+
+@media screen and (max-width:760px) {
+    .info_card {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: clamp(8px, 3vw, 24px);
+    }
+
+    .info_card .info_left {
+        display: none;
+    }
+
+    .info_card .info_right {
+        border-radius: 16px;
+        padding: 32px 24px;
+        width: 450px;
+        max-width: 100%;
+        min-width: 340px;
+    }
 }
 
 @media screen and (max-width:670px) {
-    section .info_con .sub_tab {
-        grid-template-columns: repeat(2, 1fr);
+    section .inner {
+        padding-inline: 16px;
     }
 
-    section .memu_con .menu_list {
+    section .info_con .sub_tab {
         grid-template-columns: repeat(2, 1fr);
     }
 
@@ -111,11 +156,7 @@
         gap: 2px;
     }
 
-    section .memu_con .menu_list li.ice_only::after,
-    section .memu_con .menu_list li.hot_only::after {
-    right: 27%;
-    bottom: 35%;
-    }
+    
 }
 
 @media screen and (max-width:560px) {
@@ -132,27 +173,19 @@
     }
 
     section .memu_con .menu_list li .txt_box {
-        padding: 60px 0 16px;
+        padding: 130px 0 16px;
         gap: 8px;
     }
     section .memu_con .menu_list li .txt_box .name_con {
         gap: 2px;
     }
-
-    section .memu_con .menu_list li .txt_box .name {
-        font-size: 0.89rem;
-    }
-
-    section .memu_con .menu_list li .txt_box .e_name {
-        font-size: 13px;
-    }
-
-    section .memu_con .menu_list li .txt_box .price {
-        font-size: 13px;
-    }
 }
 
 @media screen and (max-width:520px){
+    section .memu_con .menu_list {
+        grid-template-columns: repeat(1, 1fr);
+    }
+
     section .memu_con .menu_list li.ice_only::after,
     section .memu_con .menu_list li.hot_only::after {
     right: 22%;
@@ -161,13 +194,6 @@
 }
 
 @media screen and (max-width:460px) {
-    section .memu_con .menu_list li.new::before,
-    section .memu_con .menu_list li.best::before{
-        font-size: 0.8rem;
-        width: 42px;
-        height: 22px;
-    }
-
     section .memu_con .menu_list li.ice_only::after,
     section .memu_con .menu_list li.hot_only::after {
     font-size: 0.8rem;
@@ -180,7 +206,7 @@
     }
 
     section .memu_con .menu_list li .txt_box {
-        padding: 60px 0 16px;
+        padding: 130px 0 16px;
     }
 }
 
@@ -208,10 +234,23 @@
     }
 
     section .memu_con .menu_list li .txt_box {
-        padding: 60px 0 16px;
+        padding: 90px 0 16px;
         gap: 8px;
     }
+
     section .memu_con .menu_list li .txt_box .name_con {
         gap: 2px;
+    }
+    
+    section .memu_con .menu_list li .txt_box .name {
+        font-size: 0.89rem;
+    }
+
+    section .memu_con .menu_list li .txt_box .e_name {
+        font-size: 13px;
+    }
+
+    section .memu_con .menu_list li .txt_box .price {
+        font-size: 13px;
     }
 }
