@@ -516,3 +516,22 @@ section .memu_con .menu_list li .txt_box .price span:not(:last-child) {
   border-radius:  0 16px 16px 0;
   background: #fff;
 }
+
+.info_card .nutrition .info_table {
+   width: 100%;
+}
+
+.info_card .nutrition .info_table tr {
+   display: flex;
+   padding-block: 4px;
+}
+
+.info_card .nutrition .info_table table {
+  width: 100%;
+  table-layout: fixed;  /* 핵심 */
+}
+
+.info_card .nutrition .info_table th, td {
+  width: 33.33%;
+  text-align: center;
+}

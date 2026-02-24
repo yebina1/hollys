@@ -14,12 +14,12 @@ document.addEventListener("DOMContentLoaded", () => {
       ],
       nutrition: {
         rows: [
-          { label: "칼로리", hot: "12kcal", ice: "12kcal" },
-          { label: "단백질", hot: "1g(2%)", ice: "1g (2%)" },
-          { label: "포화지방", hot: "0.1g (0%)", ice: "0.1g (0%)" },
-          { label: "카페인", hot: "114mg", ice: "114mg" },
-          { label: "나트륨", hot: "0mg (0%)", ice: "0mg (0%)" },
-          { label: "당류", hot: "0g (0%)", ice: "0g (0%)" },
+          { label: "칼로리 (kcal)", hot: "12kcal", ice: "12kcal" },
+          { label: "단백질 (g)", hot: "1g(2%)", ice: "1g (2%)" },
+          { label: "포화지방 (g)", hot: "0.1g (0%)", ice: "0.1g (0%)" },
+          { label: "카페인 (mg)", hot: "114mg", ice: "114mg" },
+          { label: "나트륨 (mg)", hot: "0mg (0%)", ice: "0mg (0%)" },
+          { label: "당류 (g)", hot: "0g (0%)", ice: "0g (0%)" },
         ],
       },
     },
