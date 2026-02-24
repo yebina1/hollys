@@ -105,6 +105,6 @@ document.addEventListener("DOMContentLoaded", () => {
     setTimeout(() => {
       $card.classList.remove("on");
       $card.classList.remove("out");
-    }, 50); // transition 시간과 맞추기
+    }, 50);
   });
 });
