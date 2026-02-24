@@ -6,12 +6,6 @@ document.addEventListener("DOMContentLoaded", () => {
       name: "아메리카노",
       eName: "Caffe Americano",
       info: "진한 에스프레소의 맛과 향을 부드럽게 즐길 수 있는 아메리칸 스타일의 커피",
-      allergy: null,
-      sizes: [
-        { size: "Regular (354ml)", price: 4700, serve: ["hot", "ice"] },
-        { size: "Grande (472ml)", price: 5400, serve: ["hot", "ice"] },
-        { size: "Venti (591ml)", price: 6100, serve: ["ice-only"] },
-      ],
       nutrition: {
         rows: [
           { label: "칼로리 (kcal)", hot: "12kcal", ice: "12kcal" },
@@ -22,6 +16,7 @@ document.addEventListener("DOMContentLoaded", () => {
           { label: "당류 (g)", hot: "0g (0%)", ice: "0g (0%)" },
         ],
       },
+      allergy: null,
     },
   ];
 
@@ -41,42 +36,6 @@ document.addEventListener("DOMContentLoaded", () => {
       } else {
         $allergy.style.display = "block";
         $allergy.textContent = `알레르기 유발: ${data.allergy}`;
-      }
-    }
-
-    const $sizes = $infoCard.querySelector(".sizes");
-    if ($sizes) {
-      const $sizesArr = Array.isArray(data.sizes) ? data.sizes : [];
-
-      if ($sizesArr.length === 0) {
-        $sizes.style.display = "none";
-        $sizes.innerHTML = "";
-      } else {
-        $sizes.style.display = "block";
-        $sizes.innerHTML = $sizesArr
-          .map((s) => {
-            const $priceText = `₩${Number(s.price || 0).toLocaleString("ko-KR")}`;
-            const $serve = Array.isArray(s.serve) ? s.serve : [];
-
-            let $chips = "";
-            if ($serve.includes("ice-only")) {
-              $chips = `<span class="chip only">ICE ONLY</span>`;
-            } else {
-              $chips = ["hot", "ice"]
-                .filter((t) => $serve.includes(t))
-                .map((t) => `<span class="chip">${t.toUpperCase()}</span>`)
-                .join("");
-            }
-
-            return `
-              <div class="size_row">
-                <div class="size_name">${s.size || ""}</div>
-                <div class="size_price">${$priceText}</div>
-                <div class="size_serve">${$chips}</div>
-              </div>
-            `;
-          })
-          .join("");
       }
     }
 
