@@ -1466,10 +1466,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const $allergy = $infoCard.querySelector(".allergy");
     if ($allergy) {
       if (!data.allergy) {
-        $allergy.style.display = "none";
         $allergy.textContent = "";
       } else {
-        $allergy.style.display = "block";
         $allergy.textContent = `알레르기 유발: ${data.allergy}`;
       }
     }

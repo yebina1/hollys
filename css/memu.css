@@ -560,6 +560,11 @@ section .memu_con .menu_list li .txt_box .price span:not(:last-child) {
    padding: 23px 0 40px 0;
    font-size: 1.12rem;
    color: #21272A;
+   line-height: 1.4;
+   display: -webkit-box;
+   -webkit-box-orient: vertical;
+   -webkit-line-clamp: 3;
+   overflow: hidden;
 }
 
 .info_card .nutrition .info_table {
