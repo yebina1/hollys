@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-
   /* .main_tab */
   // 메인탭 버튼/섹션 활성화 및 컨테이너 상단 스크롤 처리
   const $tabBtns = document.querySelectorAll(".top .main_tab .tab_btn");
@@ -113,6 +112,30 @@ document.addEventListener("DOMContentLoaded", () => {
     let $sortType = "new";
     let $current = 1;
 
+    // 현재 레이아웃 열 수 계산
+    function getColumnCount(listEl) {
+      const $style = getComputedStyle(listEl);
+      const $gtc = $style.gridTemplateColumns;
+      if ($gtc && $gtc !== "none") {
+        return Math.max(1, $gtc.split(" ").filter(Boolean).length);
+      }
+      return 1;
+    }
+
+    // 열 수에 따른 페이지당 개수
+    function getPerPageByCols(cols) {
+      if (cols >= 4) return 20;
+      if (cols === 3) return 18;
+      if (cols === 2) return 16;
+      return 12;
+    }
+
+    // 현재 섹션의 perPage
+    function getPerPage() {
+      const $cols = getColumnCount($list);
+      return getPerPageByCols($cols);
+    }
+
     // 필터 결과 목록
     function getFilteredItems() {
       if ($activeCat === "all") return [...$itemsAll];
@@ -152,7 +175,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
         case "best":
           return $copy.sort((a, b) => {
-            const $diff = (getStatus(b) === "best") - (getStatus(a) === "best");
+            const $diff =
+              (getStatus(b) === "best") - (getStatus(a) === "best");
             if ($diff !== 0) return $diff;
             return getBaseIndex(a) - getBaseIndex(b);
           });
@@ -180,9 +204,53 @@ document.addEventListener("DOMContentLoaded", () => {
       if ($pathLastEl) $pathLastEl.textContent = String(text || "").trim();
     }
 
+    /* .pagenation */
+    // 페이지 버튼, 화살표
+    const $pager = $section.querySelector(".pagenation");
+    const $numWrap = $pager ? $pager.querySelector(".num_page") : null;
+    const $btnFirst = $pager
+      ? $pager.querySelector(".left button:nth-child(1)")
+      : null;
+    const $btnPrev = $pager
+      ? $pager.querySelector(".left button:nth-child(2)")
+      : null;
+    const $btnNext = $pager
+      ? $pager.querySelector(".right button:nth-child(1)")
+      : null;
+    const $btnLast = $pager
+      ? $pager.querySelector(".right button:nth-child(2)")
+      : null;
+
+    // 페이지 숫자 렌더
+    function renderPaging(totalPages) {
+      if (!$pager || !$numWrap) return;
+
+      $numWrap.innerHTML = "";
+      for (let $i = 1; $i <= totalPages; $i++) {
+        const $b = document.createElement("button");
+        $b.type = "button";
+        $b.textContent = String($i);
+        if ($i === $current) $b.classList.add("on");
+
+        $b.addEventListener("click", () => {
+          if ($i === $current) return;
+          $current = $i;
+          render();
+          scrollToContainerTopDeferred();
+        });
+
+        $numWrap.appendChild($b);
+      }
+
+      if ($btnFirst) $btnFirst.disabled = totalPages <= 5 || $current === 1;
+      if ($btnLast) $btnLast.disabled = totalPages <= 5 || $current === totalPages;
+      if ($btnPrev) $btnPrev.disabled = $current === 1;
+      if ($btnNext) $btnNext.disabled = $current === totalPages;
+    }
+
     // 리스트 렌더, 페이지 렌더
     function render() {
-      const $perPage = 20;
+      const $perPage = getPerPage();
 
       const $filtered = getFilteredItems();
       const $sorted = applySort($filtered);
@@ -285,47 +353,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     /* .pagenation */
-    // 페이지 버튼, 화살표
-    const $pager = $section.querySelector(".pagenation");
-    const $numWrap = $pager ? $pager.querySelector(".num_page") : null;
-    const $btnFirst = $pager ? $pager.querySelector(".left button:nth-child(1)") : null;
-    const $btnPrev = $pager ? $pager.querySelector(".left button:nth-child(2)") : null;
-    const $btnNext = $pager ? $pager.querySelector(".right button:nth-child(1)") : null;
-    const $btnLast = $pager ? $pager.querySelector(".right button:nth-child(2)") : null;
-
-    // 페이지 렌더
-    function renderPaging($totalPages) {
-      if (!$pager || !$numWrap) return;
-
-      $numWrap.innerHTML = "";
-      for (let $i = 1; $i <= $totalPages; $i++) {
-        const $b = document.createElement("button");
-        $b.type = "button";
-        $b.textContent = String($i);
-        if ($i === $current) $b.classList.add("on");
-
-        // 숫자 페이지 클릭 이벤트
-        $b.addEventListener("click", () => {
-          if ($i === $current) return;
-          $current = $i;
-          render();
-          scrollToContainerTopDeferred();
-        });
-
-        $numWrap.appendChild($b);
-      }
-
-      if ($btnFirst) $btnFirst.disabled = $totalPages <= 5 || $current === 1;
-      if ($btnLast) $btnLast.disabled = $totalPages <= 5 || $current === $totalPages;
-      if ($btnPrev) $btnPrev.disabled = $current === 1;
-      if ($btnNext) $btnNext.disabled = $current === $totalPages;
-    }
-
     // 페이지 클릭 이벤트
     function bindPaging() {
       if (!$pager) return;
 
-      // 화살표 클릭 이벤트
       if ($btnFirst) {
         $btnFirst.addEventListener("click", () => {
           $current = 1;
@@ -344,7 +375,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if ($btnNext) {
         $btnNext.addEventListener("click", () => {
-          const $perPage = 20;
+          const $perPage = getPerPage();
           const $totalPages = Math.max(
             1,
             Math.ceil(applySort(getFilteredItems()).length / $perPage)
@@ -358,7 +389,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
       if ($btnLast) {
         $btnLast.addEventListener("click", () => {
-          const $perPage = 20;
+          const $perPage = getPerPage();
           const $totalPages = Math.max(
             1,
             Math.ceil(applySort(getFilteredItems()).length / $perPage)
@@ -369,6 +400,20 @@ document.addEventListener("DOMContentLoaded", () => {
         });
       }
     }
+
+    // 리사이즈 시 열 수 바뀌면 페이지 계산 다시
+    const $onResize = (() => {
+      let $t = null;
+      return () => {
+        clearTimeout($t);
+        $t = setTimeout(() => {
+          $current = 1;
+          render();
+        }, 120);
+      };
+    })();
+
+    window.addEventListener("resize", $onResize);
 
     /* init */
     // 섹션 초기 상태 세팅, 렌더

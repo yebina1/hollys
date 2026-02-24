@@ -43,7 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
       status: "new",
       name: "올리브 치즈 큐브 식빵",
       eName: "Olive Cheese Cube Bread",
-      price: 5300,
+      price: 4500,
       img: "img/memu_drink/Garlic_Bagel_img.png",
     },
   ];
