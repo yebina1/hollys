@@ -1,15 +1,86 @@
 document.addEventListener("DOMContentLoaded", () => {
-  AOS.init({
-    disable: false,                //  AOS 끄지 않기! → 애니메이션 작동하게 두기
-    startEvent: 'DOMContentLoaded', //  HTML이 다 불러와지면 바로 AOS 시작!
-    initClassName: 'aos-init',      //  AOS가 준비됐다는 표시 클래스 (자동 붙음)
-    animatedClassName: 'aos-animate', //  애니메이션이 실행될 때 붙는 클래스 이름
-    useClassNames: false,           //  HTML에 data-aos 값 그대로 클래스 안 붙이기
-    disableMutationObserver: false, //  새로 생긴 요소도 자동 감시해서 애니메이션 적용
-    debounceDelay: 50,              //  창 크기 바꿀 때 0.05초 기다렸다 계산 (너무 자주 안 하게)
-    throttleDelay: 99               //  스크롤할 때 0.099초마다 한 번씩 체크 (성능 좋게!)
+  const $aosMobile = window.innerWidth <= 750;
+
+  if (!$aosMobile) {
+    AOS.init({
+      disable: false,
+      initClassName: 'aos-init',
+      animatedClassName: 'aos-animate',
+      useClassNames: false,
+      disableMutationObserver: false,
+      debounceDelay: 50,
+      throttleDelay: 99
+    });
+    return;
+  }
+
+  const $items = Array.from(document.querySelectorAll('[data-aos]'));
+  const $scrollEl = document.scrollingElement || document.documentElement;
+
+  let $goingDown = true;
+  let $lastTop = $scrollEl.scrollTop;
+
+  function updateDirection() {
+    const $top = $scrollEl.scrollTop;
+    $goingDown = $top > $lastTop;
+    $lastTop = $top;
+  }
+
+  window.addEventListener('scroll', updateDirection, { passive: true });
+
+  $items.forEach(function (el) {
+    el.classList.add('aos-init');
+    el.classList.remove('aos-animate');
   });
 
+  function isInView(el) {
+    const $r = el.getBoundingClientRect();
+    const $vh = window.innerHeight || document.documentElement.clientHeight;
+    return $r.top < $vh * 0.9 && $r.bottom > $vh * 0.1;
+  }
+
+  const $observer = new IntersectionObserver(function (entries) {
+
+    entries.forEach(function (entry) {
+
+      const $el = entry.target;
+
+      if (!entry.isIntersecting) {
+        $el.classList.remove('aos-animate');
+        return;
+      }
+
+      if ($goingDown) {
+        $el.classList.add('aos-animate');
+        return;
+      }
+
+      const $prevTransition = $el.style.transition;
+      $el.style.transition = 'none';
+      $el.classList.add('aos-animate');
+      void $el.offsetHeight;
+      $el.style.transition = $prevTransition;
+
+    });
+
+  }, { threshold: 0.15 });
+
+  $items.forEach(function (el) {
+    $observer.observe(el);
+  });
+
+  updateDirection();
+
+  requestAnimationFrame(function () {
+    $items.forEach(function (el) {
+      if (isInView(el)) {
+        el.classList.add('aos-animate');
+      }
+    });
+  });
+
+
+  /* play 아이콘 클릭 */
   function syncToggleIcon($icon, $playing) {
     if (!$icon) return;
     if ($playing) {

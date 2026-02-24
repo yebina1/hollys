@@ -193,7 +193,7 @@
 
 .bestmemu .inner {
    max-width: 1440px;
-   width: 98%;
+   width: 100%;
    margin: 0 auto;
    overflow: hidden;
    padding-block: 120px;
@@ -420,7 +420,7 @@ f .food .food_con .f_slide6 .img_box {
 
 .main_benefit .inner {
    max-width: 1440px;
-   width: 98%;
+   width: 100%;
    margin: 0 auto;
    padding-block: 120px;
    display: flex;
@@ -530,7 +530,7 @@ f .food .food_con .f_slide6 .img_box {
 
 .service .inner {
    max-width: 1440px;
-   width: 98%;
+   width: 100%;
    margin: 0 auto;
    padding-block: 120px;
 }
@@ -677,13 +677,13 @@ f .food .food_con .f_slide6 .img_box {
 
 /* event */
 .event {
-   overflow: hidden;
+   overflow: visible;
    background: #fff;
 }
 
 .event .inner {
    max-width: 1440px;
-   width: 95%;
+   width: 100%;
    margin: 0 auto;
    padding-block: 120px;
 }
@@ -722,6 +722,7 @@ f .food .food_con .f_slide6 .img_box {
    cursor: pointer;
    flex: 0 0 auto;
    margin-right: 30px;
+   overflow: visible;
 }
 
 .event .event_con ul li:last-child {

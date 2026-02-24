@@ -1,4 +1,9 @@
 @charset "utf-8";
+@media screen and (max-width:1440px){
+    section .inner{
+        padding-inline: 24px;
+    }
+}
 
 @media screen and (max-width:1270px) {
     section .memu_con .menu_list {
