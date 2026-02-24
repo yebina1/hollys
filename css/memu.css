@@ -493,7 +493,7 @@ section .memu_con .menu_list li .txt_box .price span:not(:last-child) {
 }
 
 .info_card .info_left {
-  width: 360px;
+  width: 380px;
   max-width: 40vw;
   overflow: hidden;
   border-radius: 16px 0 0 16px;
@@ -510,28 +510,63 @@ section .memu_con .menu_list li .txt_box .price span:not(:last-child) {
 .info_card .info_right {
   width: 560px;
   max-width: 52vw;
-  padding: 20px 22px;
+  padding: 50px 40px;
   max-height: 78vh;
   overflow: auto;
   border-radius:  0 16px 16px 0;
   background: #fff;
+  color: #333;
+}
+
+.info_card .info_right .tit {
+   padding-bottom: 20px;
+   border-bottom: 3px solid rgba(230, 44, 44, 0.5);
+}
+
+.info_card .info_right .tit h4 {
+   font-size: 1.78rem;
+   line-height: 1.3;
+   padding-bottom: 4px;
+   color: #1a1a1a;
+}
+
+.info_card .info_right .tit p {
+   font-size: 1.12rem;
+   font-weight: 500;
+   color: rgba(33, 39, 42, 0.8);
+}
+
+.info_card .info_right .memu_info {
+   padding: 23px 0 40px 0;
+   font-size: 1.12rem;
+   color: #21272A;
 }
 
 .info_card .nutrition .info_table {
    width: 100%;
+   padding-top: 16px;
+   table-layout: fixed;
 }
 
 .info_card .nutrition .info_table tr {
    display: flex;
-   padding-block: 4px;
+   padding-block: 8px;
+   border-top: 1px solid rgba(33, 39, 42, 0.3);
 }
 
-.info_card .nutrition .info_table table {
-  width: 100%;
-  table-layout: fixed;  /* 핵심 */
+.info_card .nutrition .info_table tbody tr:last-child {
+   border-bottom: 1px solid rgba(33, 39, 42, 0.3);
+}
+
+.info_card .nutrition .info_table th {
+   font-weight: 600;
 }
 
 .info_card .nutrition .info_table th, td {
   width: 33.33%;
   text-align: center;
+}
+.info_card .nutrition .info_table td {
+   color: #666;
+   background: url(../img/);
 }
