@@ -9,7 +9,7 @@ body {
    font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
 }
 
-body.is-menu-open {
+body.open {
    overflow: hidden;
 }
 
@@ -76,7 +76,8 @@ header.scrolled .right_box>li>a>i {
 
 header .inner {
    max-width: 1440px;
-   width: 98%;
+   width: 100%;
+   padding-inline: 24px;
    margin: 0 auto;
    height: 100px;
    display: flex;
@@ -198,11 +199,11 @@ header ul.gnb>li:has(ul.sub a:hover)>a {
    pointer-events: auto;
 }
 
-/* .m_menu__overlay {
+.m_menu__overlay {
    position: absolute;
    inset: 0;
    background: rgba(0, 0, 0, .35);
-} */
+}
 
 .m_menu__panel {
    width: 50vw;
@@ -424,13 +425,14 @@ header ul.gnb>li:has(ul.sub a:hover)>a {
 .m_lang_list li:hover a {
    background: #f5f5f5;
    color: #ba2b2b;
+   font-weight: 500;
 }
 
 .m_lang_list li:last-child {
    margin-bottom: none;
 }
 
-.m_lang_container.is-active .m_lang_list {
+.m_lang_container.on .m_lang_list {
    display: block;
 }
 
@@ -516,9 +518,8 @@ header .right_box .lang_btn i {
    display: inline-block;
 }
 
-header .right_box .lang_container.is-active .lang_btn i {
+header .right_box .lang_container.on .lang_btn i {
    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), color 0.3s ease;
-   transform: rotate(360deg);
    color: #ba2b2b;
 }
 
@@ -539,7 +540,7 @@ header .right_box .lang_list {
    z-index: 10001;
 }
 
-header .right_box .lang_container.is-active .lang_list {
+header .right_box .lang_container.on .lang_list {
    opacity: 1;
    visibility: visible;
    transform: translateX(-50%) translateY(0);
@@ -561,6 +562,7 @@ header .right_box .lang_list li a {
    font-size: 0.9rem;
    color: #333;
    text-align: center;
+   font-weight: 500;
 }
 
 header .right_box .lang_list li a:hover {
