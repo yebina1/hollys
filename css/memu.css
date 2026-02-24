@@ -535,7 +535,7 @@ section .memu_con .menu_list li .txt_box .price span:not(:last-child) {
 }
 
 .info_card .info_right .close i{
-      font-size: 28px;
+      font-size: 24px;
 }
 
 .info_card .info_right .tit {
