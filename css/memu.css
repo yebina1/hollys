@@ -567,6 +567,10 @@ section .memu_con .menu_list li .txt_box .price span:not(:last-child) {
    overflow: hidden;
 }
 
+.info_card .info_right .allergy .hidden_text {
+  opacity: 0;
+}
+
 .info_card .nutrition .info_table {
    width: 100%;
    padding-top: 16px;
