@@ -23,7 +23,7 @@ main {
 .container .top .bg {
    width: 100%;
    height: 520px;
-   background: url(../img/memu_page_img.jpg) center/cover;
+   background: url(../img/memu_page_bg.jpg) center/cover;
    display: flex;
    justify-content: center;
    align-items: center;
@@ -522,5 +522,5 @@ section .memu_con .menu_list li .txt_box .price span:not(:last-child) {
 }
 .info_card .info_right .sizes .size{
    display: flex;
-   
+
 }
