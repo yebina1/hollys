@@ -10,12 +10,12 @@ document.addEventListener("DOMContentLoaded", () => {
       nutrition: {
         capacity: "Regular (354ml)",
         rows: [
-          { label: "칼로리 (kcal)", hot: "12kcal", icedd: "12kcal" },
-          { label: "당류 (g)", hot: "0g", icedd: "0g" },
-          { label: "단백질 (g)", hot: "1g(2%)", icedd: "1g (2%)" },
-          { label: "포화지방 (g)", hot: "0.1g (0%)", icedd: "0.1g (0%)" },
-          { label: "나트륨 (mg)", hot: "0g (0%)", icedd: "0g (0%)" },
-          { label: "카페인 (mg)", hot: "114mg", icedd: "114mg" },
+          { label: "칼로리 (kcal)", hot: "12kcal", iced: "12kcal" },
+          { label: "당류 (g)", hot: "0g", iced: "0g" },
+          { label: "단백질 (g)", hot: "1g(2%)", iced: "1g (2%)" },
+          { label: "포화지방 (g)", hot: "0.1g (0%)", iced: "0.1g (0%)" },
+          { label: "나트륨 (mg)", hot: "0g (0%)", iced: "0g (0%)" },
+          { label: "카페인 (mg)", hot: "114mg", iced: "114mg" },
         ],
       },
       allergy: null,
