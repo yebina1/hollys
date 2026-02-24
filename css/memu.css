@@ -12,11 +12,15 @@ main {
    position: relative;
 }
 
-.top {
+.container {
+  width: 100%;
+}
+
+.container .top {
    width: 100%;
 }
 
-.top .bg {
+.container .top .bg {
    width: 100%;
    height: 520px;
    background: url(../img/memu_page_img.jpg) center/cover;
@@ -25,7 +29,7 @@ main {
    align-items: center;
 }
 
-.top .bg .tit {
+.container .top .bg .tit {
    display: flex;
    flex-direction: column;
    justify-content: center;
@@ -33,37 +37,37 @@ main {
    color: #fff;
 }
 
-.top .bg .tit h3 {
+.container .top .bg .tit h3 {
    font-size: 2.4rem;
    line-height: 1.3;
 }
 
-.top .bg .tit p {
+.container .top .bg .tit p {
    font-size: 1.5rem;
 }
 
-.top .main_tab {
-   width: 100%;
-   border-bottom: 2px solid rgba(0, 0, 0, 0.2);
-}
-
-.top .main_tab .inner {
+.container .top .main_tab .inner {
    max-width: 1440px;
    width: 98%;
    margin: 0 auto;
 }
 
-.top .main_tab ul {
+.container .top .main_tab {
+   width: 100%;
+   border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+}
+
+.container .top .main_tab ul {
    display: flex;
    justify-content: center;
 }
 
-.top .main_tab ul li {
+.container .top .main_tab ul li {
    width: 240px;
    height: 70px;
 }
 
-.top .main_tab ul li button {
+.container .top .main_tab ul li button {
    width: 100%;
    height: 100%;
    font-size: 1.34rem;
@@ -73,34 +77,26 @@ main {
    color: rgba(0, 0, 0, 0.7);
 }
 
-.top .main_tab ul li button.on {
+.container .top .main_tab ul li button.on {
    color: rgb(200, 101, 101);
    border-bottom: 3px solid #FE7476;
 }
 
-.top .main_tab ul li button:hover {
+.container .top .main_tab ul li button:hover {
    color: rgb(200, 101, 101);
-}
-
-#memu_drink,
-#memu_food,
-#memu_md {
-  display: block;
-  height: 0;
-  overflow: hidden;
-  visibility: hidden;
-}
-
-#memu_drink.menu_active,
-#memu_food.menu_active,
-#memu_md.menu_active {
-  height: auto;
-  overflow: visible;
-  visibility: visible;
 }
 
 section {
    width: 100%;
+}
+
+/* section 토글 */
+section[id^="memu_"] {
+  display: none;
+}
+
+section[id^="memu_"].menu_active {
+  display: block;
 }
 
 section>.inner {
