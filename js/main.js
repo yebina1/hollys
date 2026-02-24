@@ -1,40 +1,49 @@
 document.addEventListener("DOMContentLoaded", () => {
   /* aos */
-const $eventAosWidth = window.innerWidth <= 500;
-const $aosScrollUpWidth = window.innerWidth <= 750;
-
-// event 카드 aos 속성 부여
-if ($eventAosWidth) {
+function applyEventAosByWidth() {
+  const $eventAosWidth = window.innerWidth <= 500;
   const $eventItems = document.querySelectorAll(".event .event_con ul li");
 
-  $eventItems.forEach(function (el, index) {
-    const $delay = 50 * index;
-    const $duration = 100 * (index + 1);
+  if (!$eventItems.length) return;
 
-    el.setAttribute("data-aos", "fade-down");
-    el.setAttribute("data-aos-delay", String($delay));
-    el.setAttribute("data-aos-duration", String($duration));
-    el.setAttribute("data-aos-easing", "ease-in-out");
-  });
+  if ($eventAosWidth) {
+    // event 카드 aos 속성 부여
+    $eventItems.forEach(function (el, index) {
+      const $delay = 50 * index;
+      const $duration = 100 * (index + 1);
+
+      el.setAttribute("data-aos", "fade-down");
+      el.setAttribute("data-aos-delay", String($delay));
+      el.setAttribute("data-aos-duration", String($duration));
+      el.setAttribute("data-aos-easing", "ease-in-out");
+    });
+  } else {
+    // 500 초과면 event에 붙인 aos 제거
+    $eventItems.forEach(function (el) {
+      el.removeAttribute("data-aos");
+      el.removeAttribute("data-aos-delay");
+      el.removeAttribute("data-aos-duration");
+      el.removeAttribute("data-aos-easing");
+      el.classList.remove("aos-init");
+      el.classList.remove("aos-animate");
+    });
+  }
+
+  if (typeof AOS !== "undefined") {
+    AOS.refreshHard();
+  }
 }
 
-// aos 초기화
-AOS.init({
-  disable: false,
-  initClassName: "aos-init",
-  animatedClassName: "aos-animate",
-  useClassNames: false,
-  disableMutationObserver: false,
-  debounceDelay: 50,
-  throttleDelay: 99,
-  once: false,
-  mirror: true
-});
+function bindAosScrollUpByWidth() {
+  const $aosScrollUpWidth = window.innerWidth <= 750;
 
-if ($aosScrollUpWidth) {
-  // 스크롤 방향에 따라 body 클래스 토글
   const $body = document.body;
   const $scrollEl = document.scrollingElement || document.documentElement;
+
+  if (!$aosScrollUpWidth) {
+    $body.classList.remove("aosScrollUp");
+    return;
+  }
 
   let $lastTop = $scrollEl.scrollTop;
   let $ticking = false;
@@ -58,6 +67,30 @@ if ($aosScrollUpWidth) {
 
   applyDirection();
 }
+
+AOS.init({
+  disable: false,
+  initClassName: "aos-init",
+  animatedClassName: "aos-animate",
+  useClassNames: false,
+  disableMutationObserver: false,
+  debounceDelay: 50,
+  throttleDelay: 99,
+  once: false,
+  mirror: true
+});
+
+applyEventAosByWidth();
+bindAosScrollUpByWidth();
+
+let $aosResizeTimer = null;
+window.addEventListener("resize", function () {
+  clearTimeout($aosResizeTimer);
+  $aosResizeTimer = setTimeout(function () {
+    applyEventAosByWidth();
+    bindAosScrollUpByWidth();
+  }, 150);
+});
 
 
   /* play 아이콘 클릭 */
