@@ -747,7 +747,7 @@ f .food .food_con .f_slide6 .img_box {
 }
 
 .event .event_con ul li .txt_box {
-   padding: 12px 0 0;
+   padding: 12px 12px;
    display: flex;
    flex-direction: column;
    min-height: 80px;
