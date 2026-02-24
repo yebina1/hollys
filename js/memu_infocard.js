@@ -1466,14 +1466,14 @@ document.addEventListener("DOMContentLoaded", () => {
     const $allergy = $infoCard.querySelector(".allergy");
 
     if ($allergy) {
-  if (!data.allergy) {
-    $allergy.textContent = "알레르기 유발: 없음";
-    $allergy.classList.add("hidden_text");
-  } else {
-    $allergy.textContent = `알레르기 유발: ${data.allergy}`;
-    $allergy.classList.remove("hidden_text");
-  }
-}
+      if (!data.allergy) {
+        $allergy.textContent = "알레르기 유발: 없음";
+        $allergy.classList.add("hidden_text");
+      } else {
+        $allergy.textContent = `▪ 알레르기 유발: ${data.allergy}`;
+        $allergy.classList.remove("hidden_text");
+      }
+    }
 
     const $tbody = $infoCard.querySelector(".nutrition .info_table tbody");
     if ($tbody) {
