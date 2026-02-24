@@ -1423,7 +1423,7 @@ document.addEventListener("DOMContentLoaded", () => {
       { label: "단백질 (g)", hot: "-", iced: "1g (1%)" },
       { label: "포화지방 (g)", hot: "-", iced: "0g" },
       { label: "나트륨 (mg)", hot: "-", iced: "15mg (1%)" },
-      { label: "카페인 (mg)", hot: "-", iced: "-" },-
+      { label: "카페인 (mg)", hot: "-", iced: "-" },
     ],
   },
   allergy: null,
