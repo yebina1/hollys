@@ -415,7 +415,7 @@ f .food .food_con .f_slide6 .img_box {
 
 /* benefit */
 .main_benefit {
-   background: url(../img/benefit_bg.png) center/cover;
+   background: url(../img/bg/main_benefit_bg.png) center/cover;
 }
 
 .main_benefit .inner {
