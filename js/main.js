@@ -1,9 +1,10 @@
 document.addEventListener("DOMContentLoaded", () => {
   /* aos */
-const $aosEventMobile = window.innerWidth <= 500;
+const $eventAosWidth = window.innerWidth <= 500;
+const $aosScrollUpWidth = window.innerWidth <= 750;
 
-if ($aosEventMobile) {
-  // event 카드에 aos 속성 넣기
+// event 카드 aos 속성 부여
+if ($eventAosWidth) {
   const $eventItems = document.querySelectorAll(".event .event_con ul li");
 
   $eventItems.forEach(function (el, index) {
@@ -30,8 +31,8 @@ AOS.init({
   mirror: true
 });
 
-if ($aosEventMobile) {
-  // 스크롤 방향 감지해서 클래스 토글
+if ($aosScrollUpWidth) {
+  // 스크롤 방향에 따라 body 클래스 토글
   const $body = document.body;
   const $scrollEl = document.scrollingElement || document.documentElement;
 
@@ -49,15 +50,11 @@ if ($aosEventMobile) {
     $ticking = false;
   }
 
-  window.addEventListener(
-    "scroll",
-    function () {
-      if ($ticking) return;
-      $ticking = true;
-      requestAnimationFrame(applyDirection);
-    },
-    { passive: true }
-  );
+  window.addEventListener("scroll", function () {
+    if ($ticking) return;
+    $ticking = true;
+    requestAnimationFrame(applyDirection);
+  }, { passive: true });
 
   applyDirection();
 }
