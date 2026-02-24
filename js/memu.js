@@ -1,5 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
+
   /* .main_tab */
+  // 메인탭 버튼/섹션 활성화 및 컨테이너 상단 스크롤 처리
   const $tabBtns = document.querySelectorAll(".top .main_tab .tab_btn");
   const $sections = document.querySelectorAll("section[id^='memu_']");
   const $header = document.getElementById("site_header");
@@ -95,6 +97,7 @@ document.addEventListener("DOMContentLoaded", () => {
   if ($tabBtns.length) initMainTab();
 
   /* section */
+  // 섹션별로 필터/정렬/페이지네이션 상태를 관리하고 렌더링
   document.querySelectorAll("section[id^='memu_']").forEach(($section) => {
     /* common */
     // 공통 상태값, 유틸, render
@@ -301,10 +304,12 @@ document.addEventListener("DOMContentLoaded", () => {
         $b.textContent = String($i);
         if ($i === $current) $b.classList.add("on");
 
+        // 숫자 페이지 클릭 이벤트
         $b.addEventListener("click", () => {
           if ($i === $current) return;
           $current = $i;
           render();
+          scrollToContainerTopDeferred();
         });
 
         $numWrap.appendChild($b);
@@ -320,10 +325,12 @@ document.addEventListener("DOMContentLoaded", () => {
     function bindPaging() {
       if (!$pager) return;
 
+      // 화살표 클릭 이벤트
       if ($btnFirst) {
         $btnFirst.addEventListener("click", () => {
           $current = 1;
           render();
+          scrollToContainerTopDeferred();
         });
       }
 
@@ -331,13 +338,21 @@ document.addEventListener("DOMContentLoaded", () => {
         $btnPrev.addEventListener("click", () => {
           if ($current > 1) $current -= 1;
           render();
+          scrollToContainerTopDeferred();
         });
       }
 
       if ($btnNext) {
         $btnNext.addEventListener("click", () => {
-          $current += 1;
+          const $perPage = 20;
+          const $totalPages = Math.max(
+            1,
+            Math.ceil(applySort(getFilteredItems()).length / $perPage)
+          );
+
+          if ($current < $totalPages) $current += 1;
           render();
+          scrollToContainerTopDeferred();
         });
       }
 
@@ -350,6 +365,7 @@ document.addEventListener("DOMContentLoaded", () => {
           );
           $current = $totalPages;
           render();
+          scrollToContainerTopDeferred();
         });
       }
     }
