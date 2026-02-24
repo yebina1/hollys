@@ -493,7 +493,7 @@ section .memu_con .menu_list li .txt_box .price span:not(:last-child) {
 }
 
 .info_card .info_left {
-  width: 380px;
+  width: 450px;
   max-width: 40vw;
   overflow: hidden;
   border-radius: 16px 0 0 16px;
@@ -508,7 +508,7 @@ section .memu_con .menu_list li .txt_box .price span:not(:last-child) {
 }
 
 .info_card .info_right {
-  width: 560px;
+  width: 540px;
   max-width: 52vw;
   padding: 50px 40px;
   max-height: 78vh;
