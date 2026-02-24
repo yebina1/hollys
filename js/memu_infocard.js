@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
       id: "americano",
       name: "아메리카노",
       eName: "Caffe Americano",
-      img: "../img/memu_infocard/info_Caffe_Americano_img.png",
+      img: "../img/memu_infocard/info_card_Caffe_Americano_img.png",
       info: "진한 에스프레소의 맛과 향을 부드럽게 즐길 수 있는 아메리칸 스타일의 커피",
       nutrition: {
         capacity : "Regular (354ml)",
