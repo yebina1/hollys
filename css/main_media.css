@@ -98,6 +98,15 @@
 }
 
 @media screen and (max-width:750px) {
+    body.aosScrollUp [data-aos].aos-init{
+        opacity: 1;
+        transform: none;
+    }
+
+    body.aosScrollUp [data-aos].aos-animate{
+        transition-duration: 0s;
+        transition-delay: 0s;
+    }
     /* 우리가 쓸 시작 상태 */
     [data-aos].m-ready{
         opacity: 0;
@@ -298,6 +307,16 @@
         margin-right: 0;
         background: #fff;
         margin-bottom: 16px;
+    }
+
+    body.aosScrollUp .event .event_con ul li.aos-init{
+        opacity: 1;
+        transform: none;
+    }
+
+    body.aosScrollUp .event .event_con ul li.aos-animate{
+        transition-duration: 0s;
+        transition-delay: 0s;
     }
 
     .event .event_con ul li:last-child {

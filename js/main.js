@@ -1,83 +1,66 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const $aosMobile = window.innerWidth <= 750;
+  /* aos */
+const $aosEventMobile = window.innerWidth <= 500;
 
-  if (!$aosMobile) {
-    AOS.init({
-      disable: false,
-      initClassName: 'aos-init',
-      animatedClassName: 'aos-animate',
-      useClassNames: false,
-      disableMutationObserver: false,
-      debounceDelay: 50,
-      throttleDelay: 99
-    });
-    return;
-  }
+if ($aosEventMobile) {
+  // event 카드에 aos 속성 넣기
+  const $eventItems = document.querySelectorAll(".event .event_con ul li");
 
-  const $items = Array.from(document.querySelectorAll('[data-aos]'));
+  $eventItems.forEach(function (el, index) {
+    const $delay = 50 * index;
+    const $duration = 100 * (index + 1);
+
+    el.setAttribute("data-aos", "fade-down");
+    el.setAttribute("data-aos-delay", String($delay));
+    el.setAttribute("data-aos-duration", String($duration));
+    el.setAttribute("data-aos-easing", "ease-in-out");
+  });
+}
+
+// aos 초기화
+AOS.init({
+  disable: false,
+  initClassName: "aos-init",
+  animatedClassName: "aos-animate",
+  useClassNames: false,
+  disableMutationObserver: false,
+  debounceDelay: 50,
+  throttleDelay: 99,
+  once: false,
+  mirror: true
+});
+
+if ($aosEventMobile) {
+  // 스크롤 방향 감지해서 클래스 토글
+  const $body = document.body;
   const $scrollEl = document.scrollingElement || document.documentElement;
 
-  let $goingDown = true;
   let $lastTop = $scrollEl.scrollTop;
+  let $ticking = false;
 
-  function updateDirection() {
+  function applyDirection() {
     const $top = $scrollEl.scrollTop;
-    $goingDown = $top > $lastTop;
+    const $goingDown = $top > $lastTop;
     $lastTop = $top;
+
+    if ($goingDown) $body.classList.remove("aosScrollUp");
+    else $body.classList.add("aosScrollUp");
+
+    $ticking = false;
   }
 
-  window.addEventListener('scroll', updateDirection, { passive: true });
+  window.addEventListener(
+    "scroll",
+    function () {
+      if ($ticking) return;
+      $ticking = true;
+      requestAnimationFrame(applyDirection);
+    },
+    { passive: true }
+  );
 
-  $items.forEach(function (el) {
-    el.classList.add('aos-init');
-    el.classList.remove('aos-animate');
-  });
-
-  function isInView(el) {
-    const $r = el.getBoundingClientRect();
-    const $vh = window.innerHeight || document.documentElement.clientHeight;
-    return $r.top < $vh * 0.9 && $r.bottom > $vh * 0.1;
-  }
-
-  const $observer = new IntersectionObserver(function (entries) {
-
-    entries.forEach(function (entry) {
-
-      const $el = entry.target;
-
-      if (!entry.isIntersecting) {
-        $el.classList.remove('aos-animate');
-        return;
-      }
-
-      if ($goingDown) {
-        $el.classList.add('aos-animate');
-        return;
-      }
-
-      const $prevTransition = $el.style.transition;
-      $el.style.transition = 'none';
-      $el.classList.add('aos-animate');
-      void $el.offsetHeight;
-      $el.style.transition = $prevTransition;
-
-    });
-
-  }, { threshold: 0.15 });
-
-  $items.forEach(function (el) {
-    $observer.observe(el);
-  });
-
-  updateDirection();
-
-  requestAnimationFrame(function () {
-    $items.forEach(function (el) {
-      if (isInView(el)) {
-        el.classList.add('aos-animate');
-      }
-    });
-  });
+  applyDirection();
+}
 
 
   /* play 아이콘 클릭 */
@@ -283,6 +266,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const $event = document.querySelector(".event");
   if (!$event) return;
 
+  // event 스와이퍼 관련 요소 찾기
   const $eventSwiperEl = $event.querySelector(".event_con");
   const $eventPrev = $event.querySelector(".btn_prev");
   const $eventNext = $event.querySelector(".btn_next");
@@ -291,52 +275,55 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (!$eventSwiperEl || typeof Swiper === "undefined") return;
 
+  // event 스와이퍼 상태 값
   let $eventIsPlaying = true;
   let $eventSwiper = null;
-  const BREAKPOINT = 500;
-  const isMobile = () => window.innerWidth <= BREAKPOINT;
+  const $breakpoint = 500;
 
+  function isMobile() {
+    return window.innerWidth <= $breakpoint;
+  }
+
+  // event 스와이퍼 생성
   function initEventSwiper() {
     if ($eventSwiper) return;
 
     $eventSwiper = new Swiper($eventSwiperEl, {
-      slidesPerView: "auto",
-      spaceBetween: 0,
-      loop: false,
-      speed: 700,
+    slidesPerView: "auto",
+    spaceBetween: 0,
+    loop: false,
+    speed: 700,
+    centeredSlides: false,
+    centerInsufficientSlides: false,
+    autoplay: { delay: 3000, disableOnInteraction: false },
+    on: {
+      init(swiper) {
+        swiper.slideTo(0, 0);
+      },
+      resize(swiper) {
+        swiper.slideTo(0, 0);
+      },
+    },
+  });
 
-      centeredSlides: false,
-      centerInsufficientSlides: false,
+  syncToggleIcon($eventToggleIcon, $eventIsPlaying);
 
-      autoplay: { delay: 3000, disableOnInteraction: false },
-      navigation: { prevEl: $eventPrev, nextEl: $eventNext },
+  if ($eventIsPlaying) $eventSwiper.autoplay.start();
+  else $eventSwiper.autoplay.stop();
+}
 
-      on: {
-        init(swiper) {
-          swiper.slideTo(0, 0);
-        },
-        resize(swiper) {
-          swiper.slideTo(0, 0);
-        }
-      }
-    });
-
-    syncToggleIcon($eventToggleIcon, $eventIsPlaying);
-    if ($eventIsPlaying) $eventSwiper.autoplay.start();
-    else $eventSwiper.autoplay.stop();
-  }
-
+  // event 스와이퍼 제거
   function destroyEventSwiper() {
     if (!$eventSwiper) return;
 
     $eventSwiper.autoplay?.stop();
-
     $eventSwiper.destroy(true, true);
     $eventSwiper = null;
 
     syncToggleIcon($eventToggleIcon, false);
   }
 
+  // 화면 너비에 따라 event 스와이퍼 켜고 끄기
   function handleEventSwiperByWidth() {
     if (isMobile()) {
       destroyEventSwiper();
@@ -345,15 +332,42 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  // event 이전 버튼 동작
+  if ($eventPrev) {
+    $eventPrev.onclick = function (e) {
+      e.preventDefault();
+      if (!$eventSwiper) return;
+
+      const $lastIndex = $eventSwiper.slides.length - 1;
+
+      if ($eventSwiper.isBeginning) $eventSwiper.slideTo($lastIndex);
+      else $eventSwiper.slidePrev();
+    };
+  }
+
+  // event 다음 버튼 동작
+  if ($eventNext) {
+    $eventNext.onclick = function (e) {
+      e.preventDefault();
+      if (!$eventSwiper) return;
+
+      if ($eventSwiper.isEnd) $eventSwiper.slideTo(0);
+      else $eventSwiper.slideNext();
+    };
+  }
+
+  // 처음 로드 시 너비 기준으로 처리
   handleEventSwiperByWidth();
 
+  // 리사이즈 시 과도한 호출 방지
   let $eventResizeTimer = null;
-  window.addEventListener("resize", () => {
+  window.addEventListener("resize", function () {
     clearTimeout($eventResizeTimer);
     $eventResizeTimer = setTimeout(handleEventSwiperByWidth, 150);
   });
 
-  $eventToggle?.addEventListener("click", () => {
+  // event 자동재생 토글 버튼
+  $eventToggle?.addEventListener("click", function () {
     if (!$eventSwiper) return;
 
     $eventIsPlaying = !$eventIsPlaying;
