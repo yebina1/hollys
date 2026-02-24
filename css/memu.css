@@ -518,6 +518,26 @@ section .memu_con .menu_list li .txt_box .price span:not(:last-child) {
   color: #333;
 }
 
+.info_card .info_right .close {
+   position: absolute;
+   right: 40px;
+   width: 40px;
+   height: 40px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   border-radius: 30px;
+   border: 2px solid rgba(33, 39, 42, 0.2);
+}
+
+.info_card .info_right .close:hover {
+   background: rgba(33, 39, 42, 0.1);
+}
+
+.info_card .info_right .close i{
+      font-size: 28px;
+}
+
 .info_card .info_right .tit {
    padding-bottom: 20px;
    border-bottom: 3px solid rgba(230, 44, 44, 0.5);

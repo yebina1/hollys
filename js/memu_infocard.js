@@ -96,4 +96,15 @@ document.addEventListener("DOMContentLoaded", () => {
     if ($data) renderInfo($data);
   });
 
+  const $close = document.querySelector(".info_card .close");
+  const $card = document.querySelector(".info_card");
+
+  $close.addEventListener("click", () => {
+    $card.classList.add("out");
+
+    setTimeout(() => {
+      $card.classList.remove("on");
+      $card.classList.remove("out");
+    }, 50); // transition 시간과 맞추기
+  });
 });
