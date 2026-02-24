@@ -568,5 +568,4 @@ section .memu_con .menu_list li .txt_box .price span:not(:last-child) {
 }
 .info_card .nutrition .info_table td {
    color: #666;
-   background: url(../img/);
 }

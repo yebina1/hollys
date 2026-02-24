@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
       id: "americano",
       name: "아메리카노",
       eName: "Caffe Americano",
+      img: "../img/memu_infocard/info_Caffe_Americano_img.png",
       info: "진한 에스프레소의 맛과 향을 부드럽게 즐길 수 있는 아메리칸 스타일의 커피",
       nutrition: {
         capacity : "Regular (354ml)",
@@ -29,6 +30,12 @@ document.addEventListener("DOMContentLoaded", () => {
     $infoCard.querySelector(".tit p").textContent = data.eName || "";
     $infoCard.querySelector(".memu_info").textContent = data.info || "";
 
+    const $img = $infoCard.querySelector(".info_left img");
+    if ($img) {
+      $img.src = data.img || "";
+      $img.alt = data.name || "";
+    }
+
     const $allergy = $infoCard.querySelector(".allergy");
     if ($allergy) {
       if (!data.allergy) {
@@ -41,39 +48,39 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     const $tbody = $infoCard.querySelector(".nutrition .info_table tbody");
-if ($tbody) {
-  const $rows = data.nutrition?.rows || [];
+    if ($tbody) {
+      const $rows = data.nutrition?.rows || [];
 
-  if (!$rows.length) {
-    $tbody.style.display = "none";
-    $tbody.innerHTML = "";
-  } else {
-    $tbody.style.display = "";
-    $tbody.innerHTML = $rows
-      .map(
-        (r) => `
-          <tr>
-            <td>${r.label || ""}</td>
-            <td>${r.hot ?? "-"}</td>
-            <td>${r.ice ?? "-"}</td>
-          </tr>
-        `
-      )
-      .join("");
-  }
-}
+      if (!$rows.length) {
+        $tbody.style.display = "none";
+        $tbody.innerHTML = "";
+      } else {
+        $tbody.style.display = "";
+        $tbody.innerHTML = $rows
+          .map(
+            (r) => `
+              <tr>
+                <td>${r.label || ""}</td>
+                <td>${r.hot ?? "-"}</td>
+                <td>${r.ice ?? "-"}</td>
+              </tr>
+            `
+          )
+          .join("");
+      }
+    }
 
-  const $capacity = $infoCard.querySelector(".nutrition .capacity");
-if ($capacity) {
-  const cap = data.nutrition?.capacity || "";
-  $capacity.textContent = cap;
+    const $capacity = $infoCard.querySelector(".nutrition .capacity");
+      if ($capacity) {
+        const cap = data.nutrition?.capacity || "";
+        $capacity.textContent = cap;
 
-  const $p = $capacity.closest("p");
-  if ($p) $p.style.display = cap ? "" : "none";
-}
+        const $p = $capacity.closest("p");
+        if ($p) $p.style.display = cap ? "" : "none";
+      }
 
-$infoCard.classList.add("on");
-  }
+      $infoCard.classList.add("on");
+    }
 
   document.addEventListener("click", (e) => {
     const $menuItem = e.target.closest(".menu_item");
