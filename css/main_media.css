@@ -177,6 +177,13 @@
 }
  */
 @media screen and (max-width:640px) {
+    .bestmemu .inner,
+    .main_benefit .inner,
+    .service .inner,
+    .event .inner {
+        margin-inline: 16px;
+    }
+
     .main_visual .txt_area {
         position: absolute;
         left: 0;
