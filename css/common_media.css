@@ -94,6 +94,13 @@
     }
 }
 
+@media screen and (max-width:500px) {
+    header .inner,
+    footer .inner{
+        padding-inline: 16px;
+    }
+}
+
 @media screen and (max-width:455px) {
     footer .f_right .bottom_box p:nth-child(2) span:first-child:after {
         border: 0;
